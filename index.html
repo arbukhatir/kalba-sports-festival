@@ -2181,15 +2181,16 @@ nav.main .menu.open > .menu-btn .caret{transform:rotate(180deg);}
   .showcase-wrap { padding: clamp(56px,8vw,96px) 0 clamp(40px,6vw,72px); background: linear-gradient(180deg, #070909, #0b0e0e); }
   .showcase { display: flex; gap: 18px; overflow-x: auto; scroll-snap-type: x mandatory; padding: 34px clamp(16px,3vw,44px) 14px; scrollbar-width: none; -webkit-overflow-scrolling: touch; }
   .showcase::-webkit-scrollbar { display: none; }
-  .sc-item { position: relative; flex: 0 0 clamp(250px, 72vw, 360px); aspect-ratio: 3 / 4; border-radius: 6px; overflow: hidden; scroll-snap-align: start;
-    background: #111; cursor: pointer; border: 0; padding: 0; text-align: start; display: block; isolation: isolate; }
-  .sc-item img { position: absolute; inset: 0; width: 100%; height: 100%; object-fit: cover; z-index: 0;
+  /* scoped under .showcase — the agenda schedule also uses .sc-item */
+  .showcase .sc-item { position: relative; flex: 0 0 clamp(250px, 72vw, 360px); aspect-ratio: 3 / 4; border-radius: 6px; overflow: hidden; scroll-snap-align: start;
+    background: #111; cursor: pointer; border: 0; padding: 0; text-align: start; display: block; isolation: isolate; margin: 0; }
+  .showcase .sc-item img { position: absolute; inset: 0; width: 100%; height: 100%; object-fit: cover; z-index: 0;
     transition: transform .7s var(--ease-out-strong), filter .5s; filter: saturate(1.05) contrast(1.03); }
-  .sc-item::after { content: ''; position: absolute; inset: 0; z-index: 1;
+  .showcase .sc-item::after { content: ''; position: absolute; inset: 0; z-index: 1;
     background: linear-gradient(180deg, rgba(4,6,6,.05) 30%, rgba(4,6,6,.55) 62%, rgba(4,6,6,.94) 100%); transition: background .4s; }
-  .sc-item:hover img, .sc-item:focus-visible img { transform: scale(1.08); }
-  .sc-item:hover::after { background: linear-gradient(180deg, rgba(26,113,90,.14) 20%, rgba(4,6,6,.6) 62%, rgba(4,6,6,.96) 100%); }
-  .sc-item:focus-visible { outline: 2px solid var(--spark); outline-offset: 3px; }
+  .showcase .sc-item:hover img, .showcase .sc-item:focus-visible img { transform: scale(1.08); }
+  .showcase .sc-item:hover::after { background: linear-gradient(180deg, rgba(26,113,90,.14) 20%, rgba(4,6,6,.6) 62%, rgba(4,6,6,.96) 100%); }
+  .showcase .sc-item:focus-visible { outline: 2px solid var(--spark); outline-offset: 3px; }
   .sc-body { position: absolute; inset-inline: 0; bottom: 0; z-index: 2; padding: 20px; }
   .sc-num { font-family: var(--font-sport); font-size: clamp(2.6rem, 6vw, 3.7rem); line-height: .9; color: transparent; -webkit-text-stroke: 1.5px var(--spark); opacity: .92; margin-bottom: 6px; display: block; }
   .sc-ey { font-size: .72rem; font-weight: 800; letter-spacing: .16em; color: var(--spark); margin-bottom: 4px; }
@@ -2198,7 +2199,7 @@ nav.main .menu.open > .menu-btn .caret{transform:rotate(180deg);}
   .sc-ti { font-family: var(--font-display); font-size: 1.45rem; font-weight: 800; color: #fff; line-height: 1.15; margin: 0 0 10px; }
   .sc-go { display: inline-flex; align-items: center; gap: 8px; color: #eafff6; font-weight: 700; font-size: .84rem; opacity: .85; transition: gap .25s, opacity .25s; }
   .sc-go .ar { transition: transform .25s var(--ease-out-strong); }
-  .sc-item:hover .sc-go { opacity: 1; gap: 12px; color: var(--spark); }
+  .showcase .sc-item:hover .sc-go { opacity: 1; gap: 12px; color: var(--spark); }
   [dir="rtl"] .sc-go .ar { transform: scaleX(-1); }
   .sc-rail { display: flex; align-items: center; gap: 12px; max-width: 1220px; margin: 8px auto 0; padding: 0 clamp(16px,3vw,44px); color: var(--muted); font-size: .82rem; }
   .sc-rail .sc-line { flex: 1; height: 1px; background: var(--line); }
@@ -2253,7 +2254,7 @@ nav.main .menu.open > .menu-btn .caret{transform:rotate(180deg);}
   .footer > * { position: relative; z-index: 1; }
 
   @media (max-width: 640px) {
-    .sc-item { flex-basis: 78vw; }
+    .showcase .sc-item { flex-basis: 78vw; }
     body.hero-view .topbar { position: sticky; background: rgba(7,9,9,.94); } /* solid on mobile — cleaner over a busy hero */
   }
 
@@ -2333,6 +2334,30 @@ nav.main .menu.open > .menu-btn .caret{transform:rotate(180deg);}
     body.mobile-nav-open nav.main > a, body.mobile-nav-open nav.main .menu { opacity: 1; transform: none; animation: none; }
     .ph-bg { animation: none; }
   }
+
+  /* --- agenda: cinematic timeline rail + editorial day headers + scoreboard
+         milestone countdowns --- */
+  .sc-list::before { background: linear-gradient(180deg, var(--spark-deep), #12332a) !important; opacity: .6; }
+  .sc-node { background: #0b0e0e !important; box-shadow: 0 0 0 4px rgba(7,9,9,.9); transition: box-shadow .2s, transform .2s; }
+  .sc-item:hover .sc-node { transform: scale(1.08); }
+  .sc-item.open .sc-node { box-shadow: 0 0 0 4px rgba(55,226,163,.18); }
+  .sc-dayhead { border-inline-start: 4px solid var(--spark) !important; background: rgba(9,12,12,.94) !important; }
+  .sc-dayname { font-size: 1.15rem !important; }
+  .sc-daycount { color: var(--spark) !important; background: rgba(55,226,163,.12) !important; }
+  .mini-cd { font-family: var(--font-sport); color: var(--spark); font-size: 1.15rem; letter-spacing: .04em; }
+  .cal-cta { border: 1px solid var(--line); background: linear-gradient(150deg, #0c1210, #070909); border-radius: 12px; }
+
+  /* --- gallery: editorial layout — a wide feature tile then a cinematic grid --- */
+  .gallery-grid { grid-template-columns: repeat(auto-fill, minmax(220px, 1fr)); grid-auto-rows: 220px; gap: 14px; }
+  .gallery-item { border-radius: 6px; box-shadow: none; border: 1px solid var(--line); }
+  .gallery-item:first-child { grid-column: 1 / -1; grid-row: span 2; }
+  .gallery-item img { height: 100%; transition: transform .6s var(--ease-out-strong); }
+  .gallery-item:hover img { transform: scale(1.06); opacity: 1; }
+  .gallery-item:hover { border-color: var(--spark-deep); }
+  .gallery-cap { background: linear-gradient(transparent, rgba(4,6,6,.92)); font-weight: 600; padding: 30px 14px 12px; opacity: 0; transition: opacity .3s; }
+  .gallery-item:hover .gallery-cap, .gallery-item:focus-visible .gallery-cap { opacity: 1; }
+  .gallery-item:first-child .gallery-cap { opacity: 1; font-size: 1rem; }
+  @media (max-width: 620px) { .gallery-grid { grid-auto-rows: 180px; } .gallery-item:first-child { grid-row: span 1; } }
 </style>
 </head>
 <body>
