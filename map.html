@@ -6,20 +6,23 @@
 <title>الخريطة التفاعلية — مهرجان كلباء الرياضي 2026</title>
 <meta name="description" content="خريطة تفاعلية لأرض مهرجان كلباء الرياضي 2026 — الملاعب، الفعاليات، الخدمات، المداخل والمواقف.">
 <!-- Baseline CSP (see index.html). GitHub Pages serves no HTTP headers. -->
-<meta http-equiv="Content-Security-Policy" content="default-src 'self'; base-uri 'self'; object-src 'none'; script-src 'self' 'unsafe-inline'; style-src 'self' 'unsafe-inline' https://fonts.googleapis.com; font-src 'self' https://fonts.gstatic.com; img-src 'self' data:; connect-src 'self'; form-action 'self'">
+<meta http-equiv="Content-Security-Policy" content="default-src 'self'; base-uri 'self'; object-src 'none'; script-src 'self' 'unsafe-inline'; style-src 'self' 'unsafe-inline'; font-src 'self'; img-src 'self' data:; connect-src 'self'; form-action 'self'">
 <meta name="referrer" content="strict-origin-when-cross-origin">
 <link rel="preload" as="image" href="portals/festival-map.webp">
 <style>
 /* ============ foundations ============ */
-@font-face { font-family: 'Cairo'; font-weight: 800; font-display: swap;
-  src: url('fonts/cairo-800-arabic.woff2') format('woff2'); unicode-range: U+0600-06FF, U+0750-077F, U+FE70-FEFF; }
-@font-face { font-family: 'Cairo'; font-weight: 800; font-display: swap;
-  src: url('fonts/cairo-800-latin.woff2') format('woff2'); unicode-range: U+0000-00FF; }
+/* Kalba 2026 brand faces (see /fonts) */
+@font-face { font-family: 'GE Contrast'; font-weight: 300 900; font-display: swap;
+  src: url('fonts/GEContrast-Bold.otf') format('opentype'); }
+@font-face { font-family: 'TheSans'; font-weight: 400; font-display: swap;
+  src: url('fonts/TheSans-Plain.otf') format('opentype'); }
+@font-face { font-family: 'TheSans'; font-weight: 600 900; font-display: swap;
+  src: url('fonts/TheSans-Bold.otf') format('opentype'); }
 
 :root {
-  --bg: #0a0e12; --bg2: #0e141a; --ink: #eef2f5; --muted: #92a2ac;
-  --line: rgba(255,255,255,.09); --gold: #d8b571; --gold-soft: #e8d3a4;
-  --glass: rgba(13,19,25,.82); --glass-brd: rgba(255,255,255,.12);
+  --bg: #081C2B; --bg2: #0B2436; --ink: #EAF2F8; --muted: #9FB9CC;
+  --line: rgba(255,255,255,.09); --gold: #F5A81C; --gold-soft: #F7C97E;
+  --glass: rgba(8,27,42,.85); --glass-brd: rgba(255,255,255,.12);
   --ok: #4cc276; --live: #ff5c5c;
   --radius: 14px;
 }
@@ -27,10 +30,10 @@
 html, body { height: 100%; }
 body {
   background: var(--bg); color: var(--ink);
-  font: 15px/1.65 'Segoe UI', Tahoma, 'Noto Kufi Arabic', sans-serif;
+  font: 15px/1.65 'TheSans', 'Segoe UI', Tahoma, 'Noto Kufi Arabic', sans-serif;
   overflow: hidden; -webkit-tap-highlight-color: transparent;
 }
-h1, h2, h3, .brand, .qj-chip, .flt-chip { font-family: 'Cairo', 'Segoe UI', sans-serif; }
+h1, h2, h3, .brand, .qj-chip, .flt-chip { font-family: 'GE Contrast', 'TheSans', 'Segoe UI', sans-serif; }
 button { font: inherit; color: inherit; background: none; border: 0; cursor: pointer; }
 a { color: inherit; text-decoration: none; }
 :focus-visible { outline: 2px solid var(--gold); outline-offset: 2px; border-radius: 6px; }
@@ -42,7 +45,7 @@ a { color: inherit; text-decoration: none; }
 /* topbar */
 .topbar {
   display: flex; align-items: center; gap: 14px; padding: 10px 16px;
-  background: linear-gradient(180deg, rgba(10,14,18,.96), rgba(10,14,18,.88));
+  background: linear-gradient(180deg, rgba(8,27,42,.96), rgba(8,27,42,.88));
   border-bottom: 1px solid var(--line); z-index: 40; flex-wrap: wrap;
 }
 .brand { display: flex; align-items: center; gap: 10px; font-weight: 800; font-size: 1.02rem; white-space: nowrap; }
@@ -54,8 +57,8 @@ a { color: inherit; text-decoration: none; }
   font-size: .84rem; color: var(--ink); background: rgba(255,255,255,.03);
   transition: border-color .2s, background .2s;
 }
-.tbtn:hover { border-color: var(--gold); background: rgba(216,181,113,.08); }
-.tbtn.gold { border-color: rgba(216,181,113,.5); color: var(--gold-soft); }
+.tbtn:hover { border-color: var(--gold); background: rgba(245,168,28,.08); }
+.tbtn.gold { border-color: rgba(245,168,28,.5); color: var(--gold-soft); }
 
 /* quick jump */
 .qj { display: flex; gap: 6px; overflow-x: auto; scrollbar-width: none; max-width: 46vw; }
@@ -65,7 +68,7 @@ a { color: inherit; text-decoration: none; }
   font-size: .78rem; font-weight: 800; color: var(--muted); white-space: nowrap;
   transition: color .2s, border-color .2s;
 }
-.qj-chip:hover { color: var(--gold-soft); border-color: rgba(216,181,113,.45); }
+.qj-chip:hover { color: var(--gold-soft); border-color: rgba(245,168,28,.45); }
 
 /* stage */
 #stageArea { position: relative; flex: 1; min-height: 0; background: var(--bg2); }
@@ -74,7 +77,7 @@ a { color: inherit; text-decoration: none; }
 #viewport {
   position: absolute; inset: 0; overflow: hidden; touch-action: none; cursor: grab;
   background:
-    radial-gradient(1200px 600px at 50% -10%, rgba(216,181,113,.05), transparent 60%),
+    radial-gradient(1200px 600px at 50% -10%, rgba(245,168,28,.05), transparent 60%),
     var(--bg2);
 }
 #viewport.dragging { cursor: grabbing; }
@@ -87,7 +90,7 @@ a { color: inherit; text-decoration: none; }
 
 /* soft vignette so the illustration sits in the page rather than on it */
 #world::after { content: ''; position: absolute; inset: 0; pointer-events: none;
-  box-shadow: inset 0 0 90px rgba(4,8,12,.55); }
+  box-shadow: inset 0 0 90px rgba(4,16,26,.55); }
 
 /* spotlight when a zone is selected */
 #spot { position: absolute; inset: 0; pointer-events: none; opacity: 0; transition: opacity .45s; }
@@ -108,7 +111,7 @@ a { color: inherit; text-decoration: none; }
 .mk-dot {
   position: relative; display: grid; place-items: center;
   width: 34px; height: 34px; border-radius: 50%;
-  background: rgba(10,14,18,.9); border: 2px solid var(--c, var(--gold));
+  background: rgba(8,27,42,.9); border: 2px solid var(--c, var(--gold));
   color: var(--c, var(--gold)); box-shadow: 0 4px 14px rgba(0,0,0,.5);
   animation: mkFloat 3.4s ease-in-out infinite;
   transition: transform .22s;
@@ -131,15 +134,15 @@ a { color: inherit; text-decoration: none; }
 .mk.sel { z-index: 9; }
 .mk.sel .mk-dot {
   transform: scale(1.3); border-width: 2.5px;
-  box-shadow: 0 0 0 5px rgba(216,181,113,.15), 0 0 26px var(--c, var(--gold));
+  box-shadow: 0 0 0 5px rgba(245,168,28,.15), 0 0 26px var(--c, var(--gold));
 }
 .mk.sel .mk-dot::before { animation-duration: 1.8s; opacity: .8; }
 
 /* entrance markers — numbered pill with a beckoning ring */
 .mk.gate .mk-dot {
   width: auto; height: 30px; padding: 0 11px; border-radius: 999px;
-  font-family: 'Cairo', sans-serif; font-weight: 800; font-size: .8rem; letter-spacing: .5px;
-  background: linear-gradient(160deg, #20161c, #0d0a10); gap: 5px; display: flex;
+  font-family: 'GE Contrast', 'TheSans', sans-serif; font-weight: 800; font-size: .8rem; letter-spacing: .5px;
+  background: linear-gradient(160deg, #0F3346, #081C2B); gap: 5px; display: flex;
 }
 .mk.gate .mk-dot::before { border-radius: 999px; }
 .mk.gate svg { width: 13px; height: 13px; }
@@ -194,7 +197,7 @@ a { color: inherit; text-decoration: none; }
 .flt-chip .c-dot { width: 8px; height: 8px; border-radius: 50%; background: var(--c, var(--gold)); box-shadow: 0 0 8px var(--c, var(--gold)); }
 .flt-chip .n { font-size: .68rem; opacity: .7; font-family: 'Segoe UI', sans-serif; }
 .flt-chip:hover { color: var(--ink); }
-.flt-chip.on { background: rgba(216,181,113,.14); color: var(--gold-soft); }
+.flt-chip.on { background: rgba(245,168,28,.14); color: var(--gold-soft); }
 
 /* ============ zone panel (desktop) ============ */
 #panel {
@@ -246,7 +249,7 @@ a { color: inherit; text-decoration: none; }
 .pill.live::before { content: ''; width: 6px; height: 6px; border-radius: 50%; background: var(--live); animation: blink 1.4s infinite; }
 @keyframes blink { 50% { opacity: .25; } }
 .pill.ok { border-color: rgba(76,194,118,.45); color: #7bd8a0; }
-.pill.soon { border-color: rgba(216,181,113,.4); color: var(--gold-soft); }
+.pill.soon { border-color: rgba(245,168,28,.4); color: var(--gold-soft); }
 .zc-body { padding: 4px 18px 16px; overflow-y: auto; min-height: 0; }
 .zc-body > p { color: #c4ced6; font-size: .88rem; }
 .zc-meta { display: grid; grid-template-columns: 1fr 1fr; gap: 8px; margin: 14px 0; }
@@ -263,13 +266,13 @@ a { color: inherit; text-decoration: none; }
   display: flex; align-items: center; justify-content: center; gap: 7px;
 }
 .zc-acts .act svg { width: 15px; height: 15px; }
-.zc-acts .act:hover { border-color: var(--gold); background: rgba(216,181,113,.08); }
-.zc-acts .act.gold { background: rgba(216,181,113,.13); border-color: rgba(216,181,113,.5); color: var(--gold-soft); }
+.zc-acts .act:hover { border-color: var(--gold); background: rgba(245,168,28,.08); }
+.zc-acts .act.gold { background: rgba(245,168,28,.13); border-color: rgba(245,168,28,.5); color: var(--gold-soft); }
 
 /* ============ calibration ============ */
 #cal { position: absolute; inset: 0; z-index: 50; display: none; pointer-events: none; }
 #cal.on { display: block; }
-#cal .x, #cal .y { position: absolute; background: rgba(216,181,113,.55); }
+#cal .x, #cal .y { position: absolute; background: rgba(245,168,28,.55); }
 #cal .x { top: 0; bottom: 0; width: 1px; }
 #cal .y { left: 0; right: 0; height: 1px; }
 #cal .read {
@@ -279,7 +282,7 @@ a { color: inherit; text-decoration: none; }
 }
 .cal-badge {
   position: absolute; z-index: 51; top: 14px; inset-inline-start: 14px;
-  background: rgba(216,181,113,.14); border: 1px solid var(--gold); color: var(--gold-soft);
+  background: rgba(245,168,28,.14); border: 1px solid var(--gold); color: var(--gold-soft);
   padding: 6px 13px; border-radius: 999px; font-size: .76rem; font-weight: 800;
 }
 
@@ -676,7 +679,7 @@ function zoneCardHtml(z) {
     selected = id;
     markersEl.classList.add('dim');
     markersEl.querySelectorAll('.mk').forEach(function (m) { m.classList.toggle('sel', m.dataset.id === id); });
-    spot.style.background = 'radial-gradient(circle at ' + z.x + '% ' + z.y + '%, transparent 70px, rgba(4,8,12,.5) 300px)';
+    spot.style.background = 'radial-gradient(circle at ' + z.x + '% ' + z.y + '%, transparent 70px, rgba(4,16,26,.5) 300px)';
     spot.classList.add('on');
     /* gentle camera move — closer, but never disorienting */
     view.flyTo(z.x, z.y, Math.max(view.s, isMobile() ? 1.7 : 1.9));

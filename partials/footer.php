@@ -1,6 +1,7 @@
 </main>
 <footer class="footer">
-  <div class="fb">★ مهرجان كلباء الرياضي 2026</div>
+  <img class="footer-mark" src="assets/img/logo-mark-white.png" alt="" aria-hidden="true">
+  <div class="fb"><?= e(A('مهرجان كلباء الرياضي 2026', 'Kalba Sports Festival 2026')) ?></div>
   <div class="fs"><?= e(A('كلباء تستقبلكم', 'Kalba welcomes you')) ?></div>
   <div id="footNote"><?= e(A('مدينة كلباء · إمارة الشارقة · 6–13 نوفمبر 2026', 'Kalba · Sharjah · 6–13 November 2026')) ?></div>
   <nav class="foot-links" aria-label="<?= e(A('روابط', 'Links')) ?>">

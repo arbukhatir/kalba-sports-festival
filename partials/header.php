@@ -19,8 +19,8 @@ $toggleHref = $here . '?lang=' . $other;
 <header class="topbar">
   <div class="topbar-in">
     <a class="brand" href="<?= e(url('index.php')) ?>">
-      <span class="dot" aria-hidden="true"></span>
-      <span id="brandName">مهرجان كلباء الرياضي 2026</span>
+      <img class="brand-logo" src="assets/img/logo-mark.png" alt="" aria-hidden="true">
+      <span id="brandName"><?= e(A('مهرجان كلباء الرياضي 2026', 'Kalba Sports Festival 2026')) ?></span>
     </a>
     <button class="mobile-menu-btn" id="mobileMenuBtn" type="button" aria-label="القائمة" aria-expanded="false" onclick="toggleMobileNav()">
       <span></span><span></span><span></span>
