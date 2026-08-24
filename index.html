@@ -2256,6 +2256,83 @@ nav.main .menu.open > .menu-btn .caret{transform:rotate(180deg);}
     .sc-item { flex-basis: 78vw; }
     body.hero-view .topbar { position: sticky; background: rgba(7,9,9,.94); } /* solid on mobile — cleaner over a busy hero */
   }
+
+  /* ==========================================================================
+     CINEMATIC LAYER — INNER PAGES. Upgrades the shared pageHead (used by ~15
+     pages), the mobile navigation, and the news / gallery / leaderboard
+     surfaces so every route matches the homepage's premium system.
+     ========================================================================== */
+
+  /* --- shared page header: taller, editorial, cinematic when it carries media --- */
+  .pagehead { padding: clamp(84px,12vw,140px) 16px clamp(44px,6vw,64px); margin-bottom: 34px; background: linear-gradient(150deg, #060807, #0c1210); }
+  .pagehead::after { background: none !important; height: 1px !important; bottom: 0 !important;
+    background: linear-gradient(90deg, transparent, var(--spark-deep), transparent) !important; }
+  .ph-bg { position: absolute; inset: 0; background-size: cover; background-position: center; z-index: 0;
+    transform: scale(1.04); filter: saturate(1.05); animation: phZoom 18s var(--ease-out-strong) forwards; }
+  @keyframes phZoom { to { transform: scale(1.12); } }
+  .pagehead::before { background: linear-gradient(180deg, rgba(4,6,6,.55), rgba(4,6,6,.82) 60%, rgba(4,6,6,.94)) !important; }
+  .ph-kicker { color: var(--spark); display: inline-flex; align-items: center; gap: 10px; letter-spacing: .2em; }
+  html[lang="ar"] .ph-kicker { letter-spacing: normal; }
+  .ph-kicker::before { content: ''; width: 28px; height: 3px; background: var(--spark); border-radius: 2px; }
+  .pagehead h1 { font-size: clamp(2.1rem, 5.5vw, 3.6rem); }
+  .pagehead .ph-back { color: var(--spark); }
+  .pagehead .ph-back:hover { color: #fff; }
+  .ph-actions { margin-top: 22px; display: flex; gap: 12px; justify-content: center; flex-wrap: wrap; }
+
+  /* --- news: editorial featured story + supporting list --- */
+  .news-ed { max-width: 1100px; margin: 0 auto; display: grid; gap: 20px; grid-template-columns: 1.4fr 1fr; }
+  .news-feat { position: relative; grid-row: span 3; border-radius: 8px; overflow: hidden; min-height: 380px; display: flex; align-items: flex-end; isolation: isolate; }
+  .news-feat img { position: absolute; inset: 0; width: 100%; height: 100%; object-fit: cover; z-index: 0; transition: transform .7s var(--ease-out-strong); }
+  .news-feat::after { content: ''; position: absolute; inset: 0; z-index: 1; background: linear-gradient(180deg, transparent 30%, rgba(4,6,6,.6) 62%, rgba(4,6,6,.96)); }
+  .news-feat:hover img { transform: scale(1.06); }
+  .news-feat .nf-body { position: relative; z-index: 2; padding: 26px; }
+  .news-feat .nf-tag { font-size: .74rem; font-weight: 800; letter-spacing: .14em; color: var(--spark); }
+  html[lang="en"] .news-feat .nf-tag { text-transform: uppercase; }
+  .news-feat .nf-title { font-family: var(--font-display); font-size: clamp(1.4rem,3vw,2rem); font-weight: 800; color: #fff; line-height: 1.25; margin: 8px 0 0; }
+  .news-item { display: grid; grid-template-columns: auto 1fr; gap: 16px; align-items: start; padding: 16px 0; border-top: 1px solid var(--line); }
+  .news-item:first-of-type { border-top: 0; padding-top: 0; }
+  .news-item .ni-no { font-family: var(--font-sport); font-size: 1.5rem; color: transparent; -webkit-text-stroke: 1px var(--spark-deep); line-height: 1; }
+  .news-item .ni-date { color: var(--spark); font-size: .74rem; font-weight: 700; letter-spacing: .06em; }
+  .news-item .ni-title { color: #e9edf0; font-weight: 600; line-height: 1.5; margin-top: 3px; }
+  .news-item:hover .ni-title { color: #fff; }
+  @media (max-width: 760px) { .news-ed { grid-template-columns: 1fr; } .news-feat { grid-row: auto; min-height: 300px; } }
+
+  /* --- broadcast leaderboard: darker, spark leader, athletic ranks --- */
+  .lb-row { background: #0c0f0f; border-color: #1a2020; }
+  .lb-row.t1 { border-color: var(--spark); box-shadow: 0 6px 22px var(--spark-glow); }
+  .lb-row.t1 .lb-rank { background: var(--spark); color: #04120c; }
+  .lb-pts { color: var(--spark); }
+  .lb-tab.active { background: linear-gradient(135deg, var(--spark-deep), var(--sea)); border-color: var(--spark); }
+
+  /* --- full-screen cinematic mobile navigation --- */
+  @media (max-width: 900px) {
+    nav.main {
+      width: 100vw !important; max-width: none !important; inset-inline: 0 !important;
+      padding: 96px clamp(22px,7vw,44px) 40px !important; gap: 4px !important;
+      background: radial-gradient(120% 80% at 50% 0%, #0e1513, #050706 70%) !important;
+      justify-content: center !important;
+    }
+    nav.main::before { content: ''; position: absolute; inset: 0; z-index: -1;
+      background: radial-gradient(60% 50% at 50% 0%, var(--spark-glow), transparent 60%); opacity: .5; }
+    nav.main > a, nav.main .menu-btn {
+      font-family: var(--font-display); font-size: 1.35rem !important; font-weight: 800 !important;
+      padding: 14px 10px !important; border-bottom: 1px solid var(--line); border-radius: 0 !important;
+    }
+    nav.main .menu-btn { color: #f0f5f3 !important; }
+    nav.main > a.nav-login, nav.main > a.cta { font-family: var(--font); font-size: 1rem !important; border-bottom: 0; margin-top: 14px !important; }
+    body.mobile-nav-open nav.main > a, body.mobile-nav-open nav.main .menu { opacity: 0; transform: translateY(12px); animation: navIn .45s var(--ease-out-strong) forwards; }
+    body.mobile-nav-open nav.main > *:nth-child(1) { animation-delay: .05s; }
+    body.mobile-nav-open nav.main > *:nth-child(2) { animation-delay: .1s; }
+    body.mobile-nav-open nav.main > *:nth-child(3) { animation-delay: .15s; }
+    body.mobile-nav-open nav.main > *:nth-child(4) { animation-delay: .2s; }
+    body.mobile-nav-open nav.main > *:nth-child(5) { animation-delay: .25s; }
+    body.mobile-nav-open nav.main > *:nth-child(n+6) { animation-delay: .3s; }
+    @keyframes navIn { to { opacity: 1; transform: none; } }
+  }
+  @media (max-width: 900px) and (prefers-reduced-motion: reduce) {
+    body.mobile-nav-open nav.main > a, body.mobile-nav-open nav.main .menu { opacity: 1; transform: none; animation: none; }
+    .ph-bg { animation: none; }
+  }
 </style>
 </head>
 <body>
@@ -7822,12 +7899,25 @@ R.community = function () {
 };
 
 R.news = function () {
-  return pageHead(A('آخر المستجدات', 'LATEST'), A('الأخبار والإعلام', 'News & Media'), '', { bg: GALLERY[4].src }) +
-    '<section class="container section" style="max-width:640px">' +
-    NEWS.map(function (n) {
-      return '<div class="panel">' + (n.u ? '<span class="badge rejected">' + esc(A('عاجل', 'Urgent')) + '</span> ' : '') +
-        '<strong>' + esc(A(n.ar, n.en)) + '</strong><div class="muted" style="font-size:.8rem" dir="ltr">2026-11-0' + (Math.floor(Math.random() * 0) + 4) + '</div></div>';
-    }).join('') + '</section>';
+  var lead = NEWS[0], rest = NEWS.slice(1);
+  var dateFor = function (i) { return '2026-11-' + ('0' + (13 - i)).slice(-2); };
+  var feat = '<a class="news-feat" onclick="go(\'gallery\')" style="cursor:pointer">' +
+    '<img src="' + GALLERY[0].src + '" alt="" loading="lazy">' +
+    '<div class="nf-body">' +
+      '<span class="nf-tag">' + esc(lead && lead.u ? A('عاجل', 'Breaking') : A('القصة الرئيسية', 'Top story')) + '</span>' +
+      '<h2 class="nf-title">' + esc(lead ? A(lead.ar, lead.en) : '') + '</h2>' +
+      '<div class="ni-date" style="margin-top:10px">' + dateFor(0) + '</div>' +
+    '</div></a>';
+  var items = rest.map(function (n, i) {
+    return '<div class="news-item">' +
+      '<span class="ni-no" aria-hidden="true">' + ('0' + (i + 2)).slice(-2) + '</span>' +
+      '<div><div class="ni-date">' + (n.u ? '<span class="nw-live">' + esc(A('عاجل', 'Urgent')) + '</span> ' : '') + dateFor(i + 1) + '</div>' +
+      '<div class="ni-title">' + esc(A(n.ar, n.en)) + '</div></div></div>';
+  }).join('');
+  return pageHead(A('آخر المستجدات', 'LATEST'), A('الأخبار والإعلام', 'News & Media'),
+    A('كل جديد المهرجان — القصص الرئيسية والإعلانات الرسمية.', 'Everything new from the festival — top stories and official announcements.'),
+    { bg: GALLERY[4].src }) +
+    '<section class="container section"><div class="news-ed">' + feat + '<div class="news-list">' + items + '</div></div></section>';
 };
 
 /* ============ v3: about / faq / contact / gallery / policies ============ */
