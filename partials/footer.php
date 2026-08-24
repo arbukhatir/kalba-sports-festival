@@ -1,23 +1,26 @@
 </main>
 <footer class="footer">
-  <div class="fb">★ <span id="footName"></span></div>
-  <div class="fs" id="footSlogan"></div>
-  <div id="footNote"></div>
-  <div class="foot-links" id="footLinks"></div>
-  <div class="footer-nl" style="justify-content:center;margin-top:12px">
-    <input type="email" id="nlEmail" dir="ltr" style="max-width:220px">
-    <button class="btn gold sm" type="button" id="nlBtn"></button>
-  </div>
+  <div class="fb">★ مهرجان كلباء الرياضي 2026</div>
+  <div class="fs"><?= e(A('كلباء تستقبلكم', 'Kalba welcomes you')) ?></div>
+  <div id="footNote"><?= e(A('مدينة كلباء · إمارة الشارقة · 6–13 نوفمبر 2026', 'Kalba · Sharjah · 6–13 November 2026')) ?></div>
+  <nav class="foot-links" aria-label="<?= e(A('روابط', 'Links')) ?>">
+    <?php
+    $FOOT = [
+      ['about.php', 'عن المهرجان', 'About'], ['gallery.php', 'المعرض', 'Gallery'],
+      ['news.php', 'الأخبار', 'News'], ['schools.php', 'تحدي المدارس', 'Schools'],
+      ['surveys.php', 'الاستبيانات', 'Surveys'], ['join.php', 'تصريح الزيارة', 'Visitor pass'],
+      ['faq.php', 'الأسئلة الشائعة', 'FAQ'], ['contact.php', 'تواصل معنا', 'Contact'],
+      ['terms.php', 'الشروط', 'Terms'], ['privacy.php', 'الخصوصية', 'Privacy'],
+      ['map.html', 'الخريطة التفاعلية', 'Interactive map'],
+    ];
+    foreach ($FOOT as $f) echo '<a href="' . e(url($f[0])) . '">' . e(A($f[1], $f[2])) . '</a>';
+    ?>
+  </nav>
+  <form class="footer-nl" method="post" action="<?= e(url('actions/subscribe.php')) ?>" style="justify-content:center;margin-top:12px">
+    <input type="email" name="email" dir="ltr" required placeholder="<?= e(A('بريدك الإلكتروني — النشرة البريدية', 'Your email — newsletter')) ?>" style="max-width:240px">
+    <button class="btn gold sm" type="submit"><?= e(A('اشترك', 'Subscribe')) ?></button>
+  </form>
 </footer>
-<button id="kbotBtn" type="button" aria-expanded="false" aria-controls="kbot"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M21 11.5a8.4 8.4 0 0 1-9 8.4 8.9 8.9 0 0 1-3.8-.9L3 21l1.9-5.1A8.4 8.4 0 0 1 12 3a8.4 8.4 0 0 1 9 8.5z"/><path d="M8.5 11.5h.01M12 11.5h.01M15.5 11.5h.01"/></svg><span class="sr-only" id="kbotBtnLbl"></span></button>
-<div id="kbot" hidden>
-  <div class="kbot-head"><span id="kbotTitle">🤖</span><button id="kbotClose" type="button"><span aria-hidden="true">✕</span><span class="sr-only" id="kbotCloseLbl"></span></button></div>
-  <div class="kbot-msgs" id="kbotMsgs"></div>
-  <div class="kbot-chips" id="kbotChips"></div>
-  <form id="kbotForm" autocomplete="off"><input id="kbotIn" maxlength="200"><button type="submit" aria-label="send">➤</button></form>
-</div>
-<div class="toast" id="toast"></div>
-<script>window.__BOOT = { view: <?= json_encode($BOOT_VIEW, JSON_HEX_TAG|JSON_HEX_APOS|JSON_HEX_QUOT|JSON_HEX_AMP) ?>, arg: <?= json_encode($BOOT_ARG, JSON_HEX_TAG|JSON_HEX_APOS|JSON_HEX_QUOT|JSON_HEX_AMP) ?> };</script>
 <script src="assets/app.js"></script>
 </body>
 </html>
