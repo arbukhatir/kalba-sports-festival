@@ -2533,6 +2533,17 @@ function carouselHtml() {
 
 /* ============ helpers ============ */
 function esc(s) { var d = document.createElement('div'); d.textContent = s == null ? '' : s; return d.innerHTML; }
+/* Safe for a value that becomes a single-quoted JS string INSIDE a double-quoted
+   HTML attribute, e.g. onclick="pick('<here>')". esc() alone is not enough there:
+   it does not encode " or ', so a results-editor team name like `x" onerror="..."`
+   or `x');alert(1)//` would break out of the attribute or the JS string. This
+   JS-escapes backslash/quote/newline, then HTML-encodes & " < > so neither layer
+   can be escaped. */
+function jq(s) {
+  return String(s == null ? '' : s)
+    .replace(/\\/g, '\\\\').replace(/'/g, "\\'").replace(/\r?\n/g, ' ')
+    .replace(/&/g, '&amp;').replace(/"/g, '&quot;').replace(/</g, '&lt;').replace(/>/g, '&gt;');
+}
 /* Hide the launcher while the reader is moving down the page, bring it back when
    they scroll up or come to rest. Nothing here runs during the scroll event itself
    beyond storing a number; the class flip happens on the next frame. */
@@ -5899,7 +5910,7 @@ function liveTeamsMenuHtml(){
     return (
       '<button type="button" ' +
       'onclick="filterLiveTeam(\'' +
-      team.ar.replace(/'/g, "\\'") +
+      jq(team.ar) +
       '\')">' +
       esc(A(team.ar, team.en)) +
       '</button>'
@@ -5969,9 +5980,9 @@ function liveTeamOptions(){
       '\')">' + esc(A('كل الفرق', 'All teams')) +'</button>' +
     liveTeams().map(function(team){
       var val =
-        team.ar.replace(/'/g, "\\'");
+        jq(team.ar);
       var label =
-        A(team.ar, team.en).replace(/'/g, "\\'");
+        jq(A(team.ar, team.en));
       return (
         '<button type="button" class="' +
           (liveTeamFilter === team.ar ? 'selected' : '') +
@@ -5995,7 +6006,7 @@ function liveChampOptions(){
     '</button>' +
     CHAMPS.map(function(c, index){
       var label =
-        champName(c).replace(/'/g, "\\'");
+        jq(champName(c));
       return (
         '<button type="button" class="' +
           (liveChampFilter === index ? 'selected' : '') +
@@ -6077,7 +6088,7 @@ function ptsToolbarHtml(){
           '<div class="live-chip-dropdown">' +
             cats.map(function(c){
               var label =
-                A(c.ar, c.en).replace(/'/g, "\\'");
+                jq(A(c.ar, c.en));
               return (
                 '<button type="button" class="' +
                   (ptsCategory === c.k ? 'selected' : '') +
@@ -6107,7 +6118,7 @@ function ptsToolbarHtml(){
             '</button>' +
             champChoices.map(function(o){
               var label =
-                champName(o.c).replace(/'/g, "\\'");
+                jq(champName(o.c));
               return (
                 '<button type="button" class="' +
                   (ptsChampFilter === o.i ? 'selected' : '') +
@@ -6196,7 +6207,7 @@ function liveToolbarHtml(){
           '<div class="live-chip-dropdown">' +
             cats.map(function(c){
               var label =
-                A(c.ar, c.en).replace(/'/g, "\\'");
+                jq(A(c.ar, c.en));
               return (
                 '<button type="button" class="' +
                   (liveCategory === c.k ? 'selected' : '') +
@@ -6863,7 +6874,7 @@ else {
         '<div class="ov-card-grid">' +
           OVERALL.map(function (r, i) {
             var safeName =
-              r[0].replace(/'/g, "\\'");
+              jq(r[0]);
             return (
               '<div class="ov-card ' +
                 (i < 3 ? 't' + (i + 1) : '') +
