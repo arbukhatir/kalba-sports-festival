@@ -8,7 +8,7 @@ require __DIR__ . '/partials/head.php';
 require __DIR__ . '/partials/header.php';
 echo page_head(A('المتصدرون', 'LEADERBOARD'), A('لوحة المتصدرين', 'Leaderboard'),
   A('اجمع النقاط عند كل نشاط وتصدّر لوحة المهرجان.', 'Collect points at every activity and top the festival board.'),
-  ['bg' => $C['GALLERY'][2]['src']]);
+  ['bg' => 'champs/ai-boxing.webp']);
 ?>
 <section class="container section" style="max-width:680px">
   <?php if (!$rows): ?>

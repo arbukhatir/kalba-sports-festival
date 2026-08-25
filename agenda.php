@@ -22,7 +22,7 @@ unset($evs);
 
 echo page_head(A('البرنامج', 'PROGRAMME'), A('الأجندة اليومية', 'Daily programme'),
   A('كل فعاليات المهرجان على مدى 8 أيام — الملاعب والأدوار والتوقيت.', 'Every festival event across 8 days — courts, rounds and times.'),
-  ['bg' => $C['GALLERY'][2]['src']]);
+  ['bg' => 'champs/ai-running.webp']);
 ?>
 <section class="container section" style="max-width:820px">
   <h2 class="sec-title"><?= e(A('الجدول الزمني', 'Schedule')) ?></h2>

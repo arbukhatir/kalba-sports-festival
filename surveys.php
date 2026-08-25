@@ -6,7 +6,7 @@ require __DIR__ . '/partials/head.php';
 require __DIR__ . '/partials/header.php';
 echo page_head(A('رأيك يهمنا', 'YOUR VOICE'), A('الاستبيانات', 'Surveys'),
   A('شاركنا رأيك — قبل المهرجان وأثناءه وبعده.', 'Share your view — before, during and after the festival.'),
-  ['bg' => $C['GALLERY'][3]['src']]);
+  ['bg' => 'champs/ai-taekwondo.webp']);
 $surveys = [
   ['ideas', '💡', 'استبيان الأفكار', 'Ideas Survey', 'تفضيلات الجمهور حول الأنشطة.', 'Public activity preferences.'],
   ['needs', '📋', 'حصر الاحتياجات', 'Needs Assessment', 'فهم توقعات الزوار وخدماتهم.', 'Understanding visitor expectations.'],

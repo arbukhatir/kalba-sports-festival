@@ -6,7 +6,7 @@ require __DIR__ . '/partials/head.php';
 require __DIR__ . '/partials/header.php';
 echo page_head(A('نسعد بتواصلكم', 'GET IN TOUCH'), A('تواصل معنا', 'Contact us'),
   A('لأي استفسار عن المشاركة أو الرعاية أو الإعلام.', 'For any question about participation, sponsorship or media.'),
-  ['bg' => $C['GALLERY'][4]['src']]);
+  ['bg' => 'champs/ai-kayak.webp']);
 ?>
 <section class="container section" style="max-width:640px"><div class="panel">
   <?php if (isset($_GET['ok'])): ?>

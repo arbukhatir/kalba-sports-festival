@@ -6,7 +6,7 @@ require __DIR__ . '/partials/head.php';
 require __DIR__ . '/partials/header.php';
 echo page_head(A('الصور والفيديو', 'PHOTOS & VIDEO'), A('المعرض الإعلامي', 'Media Gallery'),
   A('لقطات من المهرجان — اضغط أي صورة لعرضها بالحجم الكامل.', 'Moments from the festival — tap any image to view it full size.'),
-  ['bg' => $GALLERY[0]['src']]);
+  ['bg' => 'champs/ai-beach-volleyball.webp']);
 ?>
 <section class="container section">
   <div class="gallery-grid">

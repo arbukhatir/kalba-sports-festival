@@ -7,7 +7,7 @@ require __DIR__ . '/partials/head.php';
 require __DIR__ . '/partials/header.php';
 echo page_head(A('انضم إلينا', 'JOIN US'), A('التسجيل والانضمام', 'Registration'),
   A('اختر نوع التسجيل ثم عبّئ النموذج — يصلك رقم مرجعي فور الإرسال.', 'Pick a registration type and fill the form — you get a reference number on submit.'),
-  ['bg' => $C['GALLERY'][3]['src']]);
+  ['bg' => 'champs/ai-obstacles.webp']);
 ?>
 <section class="container section" style="max-width:720px">
   <?php if (isset($_GET['ok'])): ?>

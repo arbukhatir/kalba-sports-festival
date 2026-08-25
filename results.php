@@ -8,7 +8,7 @@ require __DIR__ . '/partials/head.php';
 require __DIR__ . '/partials/header.php';
 echo page_head(A('النتائج', 'RESULTS'), A('النتائج الفورية', 'Live results'),
   A('النتائج والترتيب لحظة بلحظة خلال أيام المهرجان.', 'Scores and standings, moment by moment, through the festival.'),
-  ['bg' => $C['GALLERY'][3]['src']]);
+  ['bg' => 'champs/ai-basketball-3x3.webp']);
 ?>
 <section class="container section" style="max-width:820px">
   <?php if (!$rows): ?>

@@ -6,7 +6,7 @@ require __DIR__ . '/partials/head.php';
 require __DIR__ . '/partials/header.php';
 echo page_head(A('بطاقة الزائر', 'VISITOR CARD'), A('تصريح الزيارة المجاني', 'Free visitor pass'),
   A('تصريح رقمي مجاني يجمع نقاطك عند كل نشاط.', 'A free digital pass that collects your points at every activity.'),
-  ['bg' => $C['GALLERY'][4]['src']]);
+  ['bg' => 'champs/ai-football.webp']);
 $ages = [['<12','أقل من 12','Under 12'],['12-17','12–17','12–17'],['18-45','18–45','18–45'],['45+','45+','45+']];
 ?>
 <section class="container section" style="max-width:600px"><div class="panel">

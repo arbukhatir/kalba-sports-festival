@@ -6,7 +6,7 @@ require __DIR__ . '/partials/head.php';
 require __DIR__ . '/partials/header.php';
 echo page_head(A('آخر المستجدات', 'LATEST'), A('الأخبار والإعلام', 'News & Media'),
   A('كل جديد المهرجان — القصص الرئيسية والإعلانات الرسمية.', 'Everything new from the festival — top stories and official announcements.'),
-  ['bg' => $GALLERY[4]['src']]);
+  ['bg' => 'champs/ai-cycling.webp']);
 $lead = $NEWS[0]; $rest = array_slice($NEWS, 1);
 $date = function ($i) { return '2026-11-' . str_pad((string)(13 - $i), 2, '0', STR_PAD_LEFT); };
 ?>

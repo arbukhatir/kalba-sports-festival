@@ -6,7 +6,7 @@ require __DIR__ . '/partials/head.php';
 require __DIR__ . '/partials/header.php';
 echo page_head(A('من نحن', 'ABOUT'), A('حين تتحول مدينة إلى ملعب', 'When a city becomes a playground'),
   A('مهرجان كلباء الرياضي 2026 — ثمانية أيام من المنافسات والفعاليات المجتمعية على كورنيش كلباء بإمارة الشارقة.', 'Kalba Sports Festival 2026 — eight days of competition and community events on the Kalba Corniche, Emirate of Sharjah.'),
-  ['bg' => $C['GALLERY'][1]['src']]);
+  ['bg' => 'champs/ai-crossfit.webp']);
 ?>
 <section class="container section">
   <div class="grid g2">

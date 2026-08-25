@@ -6,7 +6,7 @@ require __DIR__ . '/partials/head.php';
 require __DIR__ . '/partials/header.php';
 echo page_head(A('مركز المساعدة', 'HELP CENTRE'), A('الأسئلة الشائعة', 'Frequently asked questions'),
   A('كل ما تحتاج معرفته عن التسجيل والتصاريح والنقاط والفعاليات.', 'Everything about registration, passes, points and events.'),
-  ['bg' => $C['GALLERY'][2]['src']]);
+  ['bg' => 'champs/ai-padel.webp']);
 ?>
 <section class="container section" style="max-width:820px">
   <?php foreach ($FAQ_CATS as $cat):
