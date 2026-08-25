@@ -110,7 +110,7 @@ $CHAMPS = [
     'ar' => 'كرة القدم',
     'en' => 'Football',
     'f' => '',
-    'img' => 'gallery/beach-football.webp',
+    'img' => 'champs/ai-football.webp',
     'sch' => [
       [
         '06/11',
@@ -161,7 +161,7 @@ $CHAMPS = [
     'ar' => 'الكرة الطائرة الشاطئية',
     'en' => 'Beach Volleyball',
     'f' => '',
-    'img' => 'champs/beach-volleyball.webp',
+    'img' => 'champs/ai-beach-volleyball.webp',
     'sch' => [
       [
         '06/11',
@@ -212,7 +212,7 @@ $CHAMPS = [
     'ar' => 'كرة السلة 3X3',
     'en' => '3x3 Basketball',
     'f' => '',
-    'img' => 'champs/basketball.webp',
+    'img' => 'champs/ai-basketball-3x3.webp',
     'sch' => [
       [
         '07/11',
@@ -243,7 +243,7 @@ $CHAMPS = [
     'ar' => 'البادل تنس',
     'en' => 'Padel Tennis',
     'f' => '',
-    'img' => 'champs/basketball.webp',
+    'img' => 'champs/ai-padel.webp',
     'sch' => [
       [
         '07/11',
@@ -269,7 +269,7 @@ $CHAMPS = [
     'ar' => 'الكروس فيت',
     'en' => 'CrossFit',
     'f' => '',
-    'img' => 'champs/crossfit.webp',
+    'img' => 'champs/ai-crossfit.webp',
     'sch' => [
       [
         '10/11',
@@ -285,7 +285,7 @@ $CHAMPS = [
     'ar' => 'البينت بول',
     'en' => 'Paintball',
     'f' => '',
-    'img' => 'champs/patrol.webp',
+    'img' => 'champs/ai-paintball.webp',
     'sch' => [
       [
         '11/11',
@@ -311,7 +311,7 @@ $CHAMPS = [
     'ar' => 'الملاكمة',
     'en' => 'Boxing',
     'f' => '',
-    'img' => 'champs/boxing.webp',
+    'img' => 'champs/ai-boxing.webp',
     'sch' => [
       [
         '12/11',
@@ -332,7 +332,7 @@ $CHAMPS = [
     'ar' => 'التايكواندو',
     'en' => 'Taekwondo',
     'f' => '',
-    'img' => 'champs/jiujitsu.webp',
+    'img' => 'champs/ai-taekwondo.webp',
     'sch' => [
       [
         '12/11',
@@ -353,7 +353,7 @@ $CHAMPS = [
     'ar' => 'الجوجيتسو',
     'en' => 'Jiu-Jitsu',
     'f' => '',
-    'img' => 'champs/jiujitsu.webp',
+    'img' => 'champs/ai-jiujitsu.webp',
     'sch' => [
       [
         '12/11',
@@ -374,7 +374,7 @@ $CHAMPS = [
     'ar' => 'سباق الجري',
     'en' => 'Running Race',
     'f' => '',
-    'img' => 'champs/half-marathon.webp',
+    'img' => 'champs/ai-running.webp',
     'sch' => [
       [
         '07/11',
@@ -390,7 +390,7 @@ $CHAMPS = [
     'ar' => 'سباق الدراجات',
     'en' => 'Cycling Race',
     'f' => '',
-    'img' => 'champs/cycling.webp',
+    'img' => 'champs/ai-cycling.webp',
     'sch' => [
       [
         '08/11',
@@ -406,7 +406,7 @@ $CHAMPS = [
     'ar' => 'الحواجز والموانع',
     'en' => 'Obstacle Course',
     'f' => '',
-    'img' => 'champs/obstacles.webp',
+    'img' => 'champs/ai-obstacles.webp',
     'sch' => [
       [
         '13/11',
@@ -422,7 +422,7 @@ $CHAMPS = [
     'ar' => 'الهايك',
     'en' => 'Hike',
     'f' => '',
-    'img' => 'champs/obstacles.webp',
+    'img' => 'champs/ai-hike.webp',
     'sch' => [
       [
         '13/11',
@@ -438,7 +438,7 @@ $CHAMPS = [
     'ar' => 'الكاياك',
     'en' => 'Kayak',
     'f' => '',
-    'img' => 'champs/kayak.webp',
+    'img' => 'champs/ai-kayak.webp',
     'sch' => [
       [
         '12/11',
@@ -454,7 +454,7 @@ $CHAMPS = [
     'ar' => 'تحدي المدارس',
     'en' => 'Schools Challenge',
     'f' => '',
-    'img' => 'gallery/beach-challenges.webp',
+    'img' => 'champs/ai-schools.webp',
     'sch' => [
       [
         '09/11',
