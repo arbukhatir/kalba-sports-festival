@@ -13,6 +13,7 @@ require __DIR__ . '/partials/header.php';
         <div class="hx-slide<?= $k === 0 ? ' on' : '' ?>" style="background-image:url(<?= e(champ_img($c)) ?>)"></div>
       <?php endforeach; ?>
     </div>
+    <video class="hm-video" src="portals/hero.mp4" autoplay muted loop playsinline preload="auto" poster="<?= e(champ_img($CHAMPS[0])) ?>"></video>
     <div class="hero-overlay"></div>
   </div>
   <div class="def-hero-in">
