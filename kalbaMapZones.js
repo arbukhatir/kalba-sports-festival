@@ -48,14 +48,14 @@ window.KALBA_MAP = {
       schedule: [{ t: '17:00', ar: 'تصفيات التحدي', en: 'Challenge heats' }] },
 
     { id: 'jiujitsu', nameAr: 'حلبة الجوجيتسو', nameEn: 'Jiu-Jitsu Arena',
-      x: 40.8, y: 53.8, category: 'sports', icon: 'martial',
+      x: 30.1, y: 42.0, category: 'sports', icon: 'martial',
       descAr: 'منافسات الجوجيتسو على البساط المخصص وسط أرض المهرجان.',
       descEn: 'Jiu-jitsu competition on the dedicated mat at the heart of the grounds.',
       hours: '16:00–21:00', status: 'open', capacity: 200,
       schedule: [{ t: '16:30', ar: 'دور المجموعات', en: 'Group stage' }, { t: '19:30', ar: 'الأدوار النهائية', en: 'Finals' }] },
 
     { id: 'taekwondo', nameAr: 'حلبة التايكوندو', nameEn: 'Taekwondo Arena',
-      x: 48.5, y: 53.2, category: 'sports', icon: 'martial',
+      x: 35.3, y: 41.8, category: 'sports', icon: 'martial',
       descAr: 'منافسات التايكوندو للفئات العمرية المعتمدة.',
       descEn: 'Taekwondo competition across the accredited age groups.',
       hours: '16:00–21:00', status: 'open', capacity: 180,
@@ -181,7 +181,7 @@ window.KALBA_MAP = {
       hours: '15:00–23:00', status: 'open', capacity: null, schedule: [] },
 
     { id: 'community-police', nameAr: 'الشرطة الاجتماعية', nameEn: 'Community Police',
-      x: 37.6, y: 57.5, category: 'services', icon: 'shield',
+      x: 39.5, y: 53.5, category: 'services', icon: 'shield',
       descAr: 'نقطة الشرطة الاجتماعية للمساعدة والمفقودات.',
       descEn: 'The community police point for assistance and lost & found.',
       hours: '15:00–23:00', status: 'open', capacity: null, schedule: [] },
