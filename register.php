@@ -18,6 +18,8 @@ echo page_head(A('انضم إلينا', 'JOIN US'), A('التسجيل والان
       <div class="btn-row" style="justify-content:center"><?= btn(A('الرئيسية', 'Home'), 'index.php', 'primary') . ' ' . btn(A('تسجيل آخر', 'Register again'), 'register.php', 'ghost') ?></div>
     </div>
   <?php elseif ($type === ''): ?>
+    <div class="panel" style="margin-bottom:16px"><strong>🏆 <?= e(A('مشارك في بطولة؟', 'Competing in a sport?')) ?></strong>
+      <?= btn(A('سجّل من صفحة الرياضة', 'Register from the sport page'), 'champs.php', 'sm gold') ?></div>
     <p class="sec-intro"><?= e(A('اختر نوع التسجيل:', 'Choose a registration type:')) ?></p>
     <div class="grid g2">
       <?php foreach ($FORMS as $k => $f): ?>
@@ -25,8 +27,6 @@ echo page_head(A('انضم إلينا', 'JOIN US'), A('التسجيل والان
           <div class="tt"><?= e(tx($f['t'])) ?></div><div class="dd muted" style="font-size:.86rem"><?= e(tx($f['d'])) ?></div></a>
       <?php endforeach; ?>
     </div>
-    <div class="panel" style="margin-top:16px"><strong>🏆 <?= e(A('مشارك في بطولة؟', 'Competing in a sport?')) ?></strong>
-      <?= btn(A('سجّل من صفحة الرياضة', 'Register from the sport page'), 'champs.php', 'sm gold') ?></div>
   <?php else: $f = $FORMS[$type]; $emailReq = $type === 'sports'; ?>
     <div class="panel">
       <div class="reg-picked"><span class="ic"><?= $f['ic'] ?></span><div><b><?= e(tx($f['t'])) ?></b><span><?= e(tx($f['d'])) ?></span></div></div>
