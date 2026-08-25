@@ -56,6 +56,32 @@
       behavior: reduce ? 'auto' : 'smooth' });
   };
 
+  /* ---- sports showcase: auto-advancing carousel. Steps a card-width every few
+     seconds and loops back to the start; any user touch, drag, wheel or arrow
+     press holds it for a while so it never fights the visitor. Skipped entirely
+     under reduced motion. ---- */
+  var scRow = document.getElementById('scRow');
+  if (scRow && !reduce) {
+    var scHoldUntil = 0;
+    var scHold = function () { scHoldUntil = Date.now() + 9000; };
+    ['pointerdown', 'wheel', 'touchstart'].forEach(function (ev) {
+      scRow.addEventListener(ev, scHold, { passive: true });
+    });
+    document.querySelectorAll('.sc-arrow').forEach(function (b) {
+      b.addEventListener('pointerdown', scHold, { passive: true });
+    });
+    setInterval(function () {
+      if (document.hidden || Date.now() < scHoldUntil) return;
+      if (scRow.matches(':hover')) return;
+      /* off-screen rows stay still (also covers the row before first scroll into view) */
+      var r = scRow.getBoundingClientRect();
+      if (r.bottom < 0 || r.top > window.innerHeight) return;
+      var atEnd = Math.abs(scRow.scrollLeft) + scRow.clientWidth >= scRow.scrollWidth - 8;
+      if (atEnd) scRow.scrollTo({ left: 0, behavior: 'smooth' });
+      else window.scScroll(1);
+    }, 3600);
+  }
+
   /* ---- scroll reveal ---- */
   if (!reduce && 'IntersectionObserver' in window) {
     document.documentElement.classList.add('reveal-ready');
