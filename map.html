@@ -478,8 +478,10 @@ function MapViewport(vp, world, img) {
     var k = Math.min(r.width / iw, r.height / ih);
     self.W = iw * k; self.H = ih * k;
     world.style.width = self.W + 'px'; world.style.height = self.H + 'px';
-    self.s = 1;
-    self.tx = (r.width - self.W) / 2; self.ty = (r.height - self.H) / 2;
+    /* open covering the whole stage (no letterbox bands); zooming out to
+       scale 1 still shows the complete plan */
+    self.s = Math.max(1, Math.max(r.width / iw, r.height / ih) / k);
+    self.tx = (r.width - self.W * self.s) / 2; self.ty = (r.height - self.H * self.s) / 2;
     self.apply(false);
   };
   this.apply = function (anim) {

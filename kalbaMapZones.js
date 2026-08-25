@@ -48,7 +48,7 @@ window.KALBA_MAP = {
       schedule: [{ t: '17:00', ar: 'تصفيات التحدي', en: 'Challenge heats' }] },
 
     { id: 'jiujitsu', nameAr: 'حلبة الجوجيتسو', nameEn: 'Jiu-Jitsu Arena',
-      x: 30.1, y: 42.0, category: 'sports', icon: 'martial',
+      x: 35.2, y: 44.9, category: 'sports', icon: 'martial',
       descAr: 'منافسات الجوجيتسو على البساط المخصص وسط أرض المهرجان.',
       descEn: 'Jiu-jitsu competition on the dedicated mat at the heart of the grounds.',
       hours: '16:00–21:00', status: 'open', capacity: 200,
