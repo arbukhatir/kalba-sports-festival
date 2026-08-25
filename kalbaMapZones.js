@@ -47,12 +47,12 @@ window.KALBA_MAP = {
       hours: '16:00–21:00', status: 'open', capacity: 150,
       schedule: [{ t: '17:00', ar: 'تصفيات التحدي', en: 'Challenge heats' }] },
 
-    { id: 'jetski', nameAr: 'حلبة الجتسكي', nameEn: 'Jet Ski Arena',
-      x: 30.1, y: 42.0, category: 'sports', icon: 'wave',
-      descAr: 'عروض الجتسكي في الحوض المخصص وسط أرض المهرجان.',
-      descEn: 'Jet ski shows in the dedicated basin at the heart of the grounds.',
-      hours: '16:30–20:30', status: 'open', capacity: 200,
-      schedule: [{ t: '18:00', ar: 'عرض السرعة', en: 'Speed show' }] },
+    { id: 'jiujitsu', nameAr: 'حلبة الجوجيتسو', nameEn: 'Jiu-Jitsu Arena',
+      x: 30.1, y: 42.0, category: 'sports', icon: 'martial',
+      descAr: 'منافسات الجوجيتسو على البساط المخصص وسط أرض المهرجان.',
+      descEn: 'Jiu-jitsu competition on the dedicated mat at the heart of the grounds.',
+      hours: '16:00–21:00', status: 'open', capacity: 200,
+      schedule: [{ t: '16:30', ar: 'دور المجموعات', en: 'Group stage' }, { t: '19:30', ar: 'الأدوار النهائية', en: 'Finals' }] },
 
     { id: 'taekwondo', nameAr: 'حلبة التايكوندو', nameEn: 'Taekwondo Arena',
       x: 35.3, y: 41.8, category: 'sports', icon: 'martial',
