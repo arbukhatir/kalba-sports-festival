@@ -104,6 +104,117 @@ $ROUNDS = [
 
 $CHAMPS = [
   [
+    's' => 'boxing',
+    'c' => 'solo',
+    'ic' => '🥊',
+    'ar' => 'الملاكمة',
+    'en' => 'Boxing',
+    'f' => '',
+    'img' => 'champs/ai-boxing.webp',
+    'sch' => [
+      [
+        '12/11',
+        '16:00–22:00',
+        'gr'
+      ],
+      [
+        '13/11',
+        '16:00–22:00',
+        'fin'
+      ]
+    ]
+  ],
+  [
+    's' => 'jiujitsu',
+    'c' => 'solo',
+    'ic' => '🥋',
+    'ar' => 'الجيوجيستو',
+    'en' => 'Jiu-Jitsu',
+    'f' => '',
+    'img' => 'champs/ai-jiujitsu.webp',
+    'sch' => [
+      [
+        '12/11',
+        '16:00–22:00',
+        'gr'
+      ],
+      [
+        '13/11',
+        '16:00–22:00',
+        'fin'
+      ]
+    ]
+  ],
+  [
+    's' => 'taekwondo',
+    'c' => 'solo',
+    'ic' => '🥋',
+    'ar' => 'التايكوندو',
+    'en' => 'Taekwondo',
+    'f' => '',
+    'img' => 'champs/ai-taekwondo.webp',
+    'sch' => [
+      [
+        '12/11',
+        '16:00–22:00',
+        'gr'
+      ],
+      [
+        '13/11',
+        '16:00–22:00',
+        'fin'
+      ]
+    ]
+  ],
+  [
+    's' => 'running',
+    'c' => 'solo',
+    'ic' => '🏃',
+    'ar' => 'سباق مهرجان كلباء للجري',
+    'en' => 'Kalba Festival Running Race',
+    'f' => '',
+    'img' => 'champs/ai-running.webp',
+    'sch' => [
+      [
+        '07/11',
+        '16:00–22:00',
+        'fin'
+      ]
+    ]
+  ],
+  [
+    's' => 'cycling',
+    'c' => 'solo',
+    'ic' => '🚴',
+    'ar' => 'سباق مهرجان كلباء للدراجات',
+    'en' => 'Kalba Festival Cycling Race',
+    'f' => '',
+    'img' => 'champs/ai-cycling.webp',
+    'sch' => [
+      [
+        '08/11',
+        '16:00–22:00',
+        'fin'
+      ]
+    ]
+  ],
+  [
+    's' => 'obstacles',
+    'c' => 'solo',
+    'ic' => '🧗',
+    'ar' => 'الحواجز والمانع',
+    'en' => 'Obstacle Course',
+    'f' => '',
+    'img' => 'champs/ai-obstacles.webp',
+    'sch' => [
+      [
+        '13/11',
+        '16:00–22:00',
+        'fin'
+      ]
+    ]
+  ],
+  [
     's' => 'football',
     'c' => 'team',
     'ic' => '<img src="portals/BeachSoccer.png" class="sport-icon" alt="">',
@@ -155,13 +266,44 @@ $CHAMPS = [
     ]
   ],
   [
-    's' => 'beach-volleyball',
+    's' => 'basketball',
+    'c' => 'team',
+    'ic' => '<img src="portals/Basketball.png" class="sport-icon" alt="">',
+    'ar' => 'كرة السلة',
+    'en' => 'Basketball',
+    'f' => '',
+    'img' => 'champs/ai-basketball-3x3.webp',
+    'sch' => [
+      [
+        '07/11',
+        '16:00',
+        'wch'
+      ],
+      [
+        '08/11',
+        '16:00–22:00',
+        'wom'
+      ],
+      [
+        '09/11',
+        '16:00–22:00',
+        'men'
+      ],
+      [
+        '10/11',
+        '16:00–22:00',
+        'sco'
+      ]
+    ]
+  ],
+  [
+    's' => 'community-volleyball',
     'c' => 'team',
     'ic' => '<img src="portals/BeachVolleyball.png" class="sport-icon" alt="">',
-    'ar' => 'الكرة الطائرة الشاطئية',
-    'en' => 'Beach Volleyball',
+    'ar' => 'كرة الطائرة المجتمعية',
+    'en' => 'Community Volleyball',
     'f' => '',
-    'img' => 'champs/ai-beach-volleyball.webp',
+    'img' => 'champs/ai-volleyball-community.webp',
     'sch' => [
       [
         '06/11',
@@ -206,42 +348,11 @@ $CHAMPS = [
     ]
   ],
   [
-    's' => 'basketball-3x3',
-    'c' => 'team',
-    'ic' => '<img src="portals/Basketball.png" class="sport-icon" alt="">',
-    'ar' => 'كرة السلة 3X3',
-    'en' => '3x3 Basketball',
-    'f' => '',
-    'img' => 'champs/ai-basketball-3x3.webp',
-    'sch' => [
-      [
-        '07/11',
-        '16:00',
-        'wch'
-      ],
-      [
-        '08/11',
-        '16:00–22:00',
-        'wom'
-      ],
-      [
-        '09/11',
-        '16:00–22:00',
-        'men'
-      ],
-      [
-        '10/11',
-        '16:00–22:00',
-        'sco'
-      ]
-    ]
-  ],
-  [
     's' => 'padel',
     'c' => 'team',
     'ic' => '🎾',
-    'ar' => 'البادل تنس',
-    'en' => 'Padel Tennis',
+    'ar' => 'البادل',
+    'en' => 'Padel',
     'f' => '',
     'img' => 'champs/ai-padel.webp',
     'sch' => [
@@ -263,29 +374,13 @@ $CHAMPS = [
     ]
   ],
   [
-    's' => 'crossfit',
-    'c' => 'team',
-    'ic' => '🏋️',
-    'ar' => 'الكروس فيت',
-    'en' => 'CrossFit',
-    'f' => '',
-    'img' => 'champs/ai-crossfit.webp',
-    'sch' => [
-      [
-        '10/11',
-        '16:00–22:00',
-        'fin'
-      ]
-    ]
-  ],
-  [
-    's' => 'paintball',
+    's' => 'airsoft',
     'c' => 'team',
     'ic' => '🎯',
-    'ar' => 'البينت بول',
-    'en' => 'Paintball',
+    'ar' => 'ايرسويفت',
+    'en' => 'Airsoft',
     'f' => '',
-    'img' => 'champs/ai-paintball.webp',
+    'img' => 'champs/ai-airsoft.webp',
     'sch' => [
       [
         '11/11',
@@ -300,133 +395,6 @@ $CHAMPS = [
       [
         '13/11',
         '16:00–22:00',
-        'fin'
-      ]
-    ]
-  ],
-  [
-    's' => 'boxing',
-    'c' => 'solo',
-    'ic' => '🥊',
-    'ar' => 'الملاكمة',
-    'en' => 'Boxing',
-    'f' => '',
-    'img' => 'champs/ai-boxing.webp',
-    'sch' => [
-      [
-        '12/11',
-        '16:00–22:00',
-        'gr'
-      ],
-      [
-        '13/11',
-        '16:00–22:00',
-        'fin'
-      ]
-    ]
-  ],
-  [
-    's' => 'taekwondo',
-    'c' => 'solo',
-    'ic' => '🥋',
-    'ar' => 'التايكواندو',
-    'en' => 'Taekwondo',
-    'f' => '',
-    'img' => 'champs/ai-taekwondo.webp',
-    'sch' => [
-      [
-        '12/11',
-        '16:00–22:00',
-        'gr'
-      ],
-      [
-        '13/11',
-        '16:00–22:00',
-        'fin'
-      ]
-    ]
-  ],
-  [
-    's' => 'jiujitsu',
-    'c' => 'solo',
-    'ic' => '🥋',
-    'ar' => 'الجوجيتسو',
-    'en' => 'Jiu-Jitsu',
-    'f' => '',
-    'img' => 'champs/ai-jiujitsu.webp',
-    'sch' => [
-      [
-        '12/11',
-        '16:00–22:00',
-        'gr'
-      ],
-      [
-        '13/11',
-        '16:00–22:00',
-        'fin'
-      ]
-    ]
-  ],
-  [
-    's' => 'running',
-    'c' => 'solo',
-    'ic' => '🏃',
-    'ar' => 'سباق الجري',
-    'en' => 'Running Race',
-    'f' => '',
-    'img' => 'champs/ai-running.webp',
-    'sch' => [
-      [
-        '07/11',
-        '16:00–22:00',
-        'fin'
-      ]
-    ]
-  ],
-  [
-    's' => 'cycling',
-    'c' => 'solo',
-    'ic' => '🚴',
-    'ar' => 'سباق الدراجات',
-    'en' => 'Cycling Race',
-    'f' => '',
-    'img' => 'champs/ai-cycling.webp',
-    'sch' => [
-      [
-        '08/11',
-        '16:00–22:00',
-        'fin'
-      ]
-    ]
-  ],
-  [
-    's' => 'obstacles',
-    'c' => 'solo',
-    'ic' => '🧗',
-    'ar' => 'الحواجز والموانع',
-    'en' => 'Obstacle Course',
-    'f' => '',
-    'img' => 'champs/ai-obstacles.webp',
-    'sch' => [
-      [
-        '13/11',
-        '16:00–22:00',
-        'fin'
-      ]
-    ]
-  ],
-  [
-    's' => 'hike',
-    'c' => 'solo',
-    'ic' => '🥾',
-    'ar' => 'الهايك',
-    'en' => 'Hike',
-    'f' => '',
-    'img' => 'champs/ai-hike.webp',
-    'sch' => [
-      [
-        '13/11',
-        '06:00',
         'fin'
       ]
     ]
@@ -448,13 +416,13 @@ $CHAMPS = [
     ]
   ],
   [
-    's' => 'schools-challenge',
+    's' => 'schools-esports',
     'c' => 'esport',
     'ic' => '🎮',
-    'ar' => 'تحدي المدارس',
-    'en' => 'Schools Challenge',
+    'ar' => 'تحدي المدارس الإلكترونية',
+    'en' => 'Schools Esports Challenge',
     'f' => '',
-    'img' => 'champs/ai-schools.webp',
+    'img' => 'champs/ai-schools-esports.webp',
     'sch' => [
       [
         '09/11',

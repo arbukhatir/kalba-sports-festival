@@ -6,7 +6,7 @@ require __DIR__ . '/partials/head.php';
 require __DIR__ . '/partials/header.php';
 echo page_head(A('للمدارس والعائلات', 'SCHOOLS & FAMILIES'), A('تحدي مدارس كلباء', 'Kalba Schools Challenge'),
   A('خمسة أيام من التحديات المعرفية والرياضية والإبداعية لطلبة المدارس وأسرهم.', 'Five days of knowledge, sports and creative challenges for students and their families.'),
-  ['bg' => 'champs/ai-schools.webp', 'actions' => btn(A('سجّل مدرستك', 'Register your school'), 'register.php', 'gold def')]);
+  ['bg' => 'champs/ai-schools-esports.webp', 'actions' => btn(A('سجّل مدرستك', 'Register your school'), 'register.php', 'gold def')]);
 ?>
 <section class="container section"><div class="grid g3">
   <?php

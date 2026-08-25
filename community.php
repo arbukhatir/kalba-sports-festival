@@ -6,7 +6,7 @@ require __DIR__ . '/partials/head.php';
 require __DIR__ . '/partials/header.php';
 echo page_head(A('للعائلة كلها', 'FOR EVERYONE'), A('المجتمع والورش', 'Community & Workshops'),
   A('ورش صحية وفعاليات عائلية مجانية طوال أيام المهرجان — المقاعد محدودة.', 'Free health workshops and family events throughout the festival — seats are limited.'),
-  ['bg' => 'champs/ai-schools.webp', 'actions' => btn(A('تصريح الزيارة المجاني', 'Free visitor pass'), 'join.php', 'gold def')]);
+  ['bg' => 'champs/ai-schools-esports.webp', 'actions' => btn(A('تصريح الزيارة المجاني', 'Free visitor pass'), 'join.php', 'gold def')]);
 ?>
 <section class="container section"><div class="grid g3">
   <?php

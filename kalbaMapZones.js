@@ -33,9 +33,9 @@ window.KALBA_MAP = {
   zones: [
 
     /* ---------------- sports ---------------- */
-    { id: 'beach-volleyball', nameAr: 'ملعب كرة طائرة شاطئية', nameEn: 'Beach Volleyball Court',
+    { id: 'community-volleyball', nameAr: 'ملعب كرة الطائرة المجتمعية', nameEn: 'Community Volleyball Court',
       x: 18.1, y: 27.5, category: 'sports', icon: 'volleyball',
-      descAr: 'الملعب الرملي الرئيسي لبطولة الكرة الطائرة الشاطئية بجوار مدرجات الجمهور.',
+      descAr: 'الملعب الرئيسي لبطولة كرة الطائرة المجتمعية بجوار مدرجات الجمهور.',
       descEn: 'The main sand court of the beach volleyball championship, beside the public stands.',
       hours: '16:00–22:00', status: 'live', capacity: 400,
       schedule: [{ t: '16:30', ar: 'دور المجموعات', en: 'Group stage' }, { t: '20:00', ar: 'مباراة استعراضية', en: 'Exhibition match' }] },
@@ -113,7 +113,7 @@ window.KALBA_MAP = {
 
     { id: 'stands-public', nameAr: 'مدرجات الجمهور', nameEn: 'Public Stands (Volleyball)',
       x: 17.8, y: 16.5, category: 'event', icon: 'stands',
-      descAr: 'مدرجات متابعة الكرة الطائرة الشاطئية.',
+      descAr: 'مدرجات متابعة كرة الطائرة المجتمعية.',
       descEn: 'Spectator stands overlooking the beach volleyball court.',
       hours: '16:00–22:00', status: 'open', capacity: 500,
       schedule: [{ t: '16:30', ar: 'فتح الأبواب', en: 'Gates open' }] },
@@ -133,10 +133,10 @@ window.KALBA_MAP = {
       hours: '16:00–22:00', status: 'open', capacity: 80,
       schedule: [{ t: '19:00', ar: 'تصفيات البطولة', en: 'Tournament heats' }, { t: '20:30', ar: 'نهائيات اليوم', en: 'Daily finals' }] },
 
-    { id: 'paintball', nameAr: 'بينت بول', nameEn: 'Paintball',
+    { id: 'airsoft', nameAr: 'ايرسويفت', nameEn: 'Airsoft',
       x: 32.0, y: 58.0, category: 'entertainment', icon: 'paint',
-      descAr: 'ساحة البينت بول — جولات جماعية بمعدات كاملة.',
-      descEn: 'The paintball field — team rounds with full gear provided.',
+      descAr: 'ساحة الايرسويفت — جولات جماعية بمعدات كاملة.',
+      descEn: 'The airsoft field — team rounds with full gear provided.',
       hours: '16:00–21:00', status: 'open', capacity: 60,
       schedule: [{ t: '17:00', ar: 'جولات مفتوحة', en: 'Open rounds' }] },
 

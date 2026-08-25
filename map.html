@@ -657,7 +657,7 @@ function zoneCardHtml(z) {
   });
 
   /* ambient activity — a few soft sparks near the busiest zones */
-  ['stage', 'football', 'restaurants', 'beach-volleyball', 'egames-east', 'side-games'].forEach(function (id, i) {
+  ['stage', 'football', 'restaurants', 'community-volleyball', 'egames-east', 'side-games'].forEach(function (id, i) {
     var z = DATA.zones.find(function (x) { return x.id === id; }); if (!z) return;
     var s = document.createElement('span');
     s.className = 'spark';

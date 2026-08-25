@@ -19,7 +19,7 @@ require __DIR__ . '/partials/header.php';
   <div class="def-hero-in">
     <div class="def-kicker"><?= e(A('مهرجان كلباء الرياضي — 6–13 نوفمبر 2026', 'KALBA SPORTS FESTIVAL — NOV 6–13, 2026')) ?></div>
     <h1><?= A('<b>٨ أيام.</b> مدينة واحدة. <b>حماس لا يتوقف!</b>', '<b>8 DAYS.</b> ONE CITY. <b>GAME ON!</b>') ?></h1>
-    <p class="def-sub"><?= e(A('١٥ رياضة معتمدة وفعاليات مجتمعية على كورنيش كلباء.', '15 official sports and community events on the Kalba Corniche.')) ?></p>
+    <p class="def-sub"><?= e(A('١٣ رياضة معتمدة وفعاليات مجتمعية على كورنيش كلباء.', '13 official sports and community events on the Kalba Corniche.')) ?></p>
     <div class="btn-row" style="justify-content:center">
       <?= btn(A('تصريح الزيارة المجاني', 'GET FREE VISITOR PASS'), 'join.php', 'gold def') ?>
       <?= btn(A('سجّل مشاركتك', 'REGISTER TO COMPETE'), 'register.php', 'def defghost') ?>
@@ -45,7 +45,7 @@ require __DIR__ . '/partials/header.php';
 </div></section>
 
 <section class="showcase-wrap">
-  <?= section_title(A('الرياضات', 'The Sports'), A('١٥ رياضة معتمدة', '15 official sports')) ?>
+  <?= section_title(A('الرياضات', 'The Sports'), A('١٣ رياضة معتمدة', '13 official sports')) ?>
   <div class="showcase" id="scRow">
     <?php foreach ($CHAMPS as $k => $c): ?>
       <a class="sc-item" href="<?= e(url('champ.php?i=' . $k)) ?>" aria-label="<?= e(champ_name($c)) ?>">
@@ -72,7 +72,7 @@ require __DIR__ . '/partials/header.php';
   <h2><?= A('<b>٨ أيام.</b> مدينة واحدة. <b>حماس لا يتوقف!</b>', '<b>8 DAYS.</b> ONE CITY. <b>GAME ON!</b>') ?></h2>
   <p><?= e(A('من 6 إلى 13 نوفمبر تتحول كلباء إلى ملعب كبير مفتوح للجميع — منافسات رسمية على الشاطئ وتحديات للمدارس والعائلات وفعاليات مجتمعية.', 'From 6 to 13 November, Kalba becomes one giant open playground — official beach competitions, school and family challenges, and community events.')) ?></p>
   <div class="def-stats">
-    <?php foreach ([['15','رياضة معتمدة','official sports'],['8','أيام منافسة','days of competition'],['+50,000','زائر متوقع','expected visitors'],['4','فئات رياضية','sport categories']] as $s): ?>
+    <?php foreach ([['13','رياضة معتمدة','official sports'],['8','أيام منافسة','days of competition'],['+50,000','زائر متوقع','expected visitors'],['4','فئات رياضية','sport categories']] as $s): ?>
       <div class="def-stat"><b><?= e($s[0]) ?></b><span><?= e(A($s[1], $s[2])) ?></span></div>
     <?php endforeach; ?>
   </div>
