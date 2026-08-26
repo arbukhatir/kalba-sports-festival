@@ -6,7 +6,7 @@ $NAV = [
   ['champs.php',      'المنافسات', 'Sports'],
   ['agenda.php',      'الأجندة',   'Agenda'],
   ['results.php',     'النتائج',   'Results'],
-  ['leaderboard.php', 'المتصدرون', 'Leaderboard'],
+  ['leaderboard.php', 'نقاط الزوار', 'Visitor points'],
   ['register.php',    'التسجيل',   'Register'],
   ['venue.php',       'الموقع',    'Venue'],
   ['contact.php',     'تواصل',     'Contact'],

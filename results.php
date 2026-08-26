@@ -10,7 +10,7 @@ try { $rows = db_all('SELECT * FROM matches ORDER BY sport, day'); } catch (Thro
 $TABS = [
   'live'     => [A('المباريات', 'Matches'),            A('نتيجة كل مباراة فور انتهائها', 'Every match as it finishes')],
   'tables'   => [A('ترتيب البطولات', 'Standings'),     A('جدول الترتيب الداخلي لكل بطولة', 'The table inside each championship')],
-  'overall'  => [A('الترتيب العام', 'Overall'),        A('ترتيب شامل عبر كل البطولات', 'One ranking across every championship')],
+  'overall'  => [A('ترتيب الفرق', 'Team ranking'),     A('ترتيب الفرق عبر كل البطولات — نقاط الزوار في صفحة المتصدرين', 'Teams across every championship — visitor points are on the activity board')],
 ];
 $tab = isset($_GET['t']) && isset($TABS[$_GET['t']]) ? $_GET['t'] : 'live';
 
@@ -27,6 +27,13 @@ echo page_head(A('النتائج', 'RESULTS'), A('النتائج الفورية'
          <?= $k === $tab ? 'aria-current="page"' : '' ?>><?= e($t[0]) ?></a>
     <?php endforeach; ?>
   </nav>
+
+  <?php if ($tab === 'overall'): ?>
+    <div class="board-switch">
+      <span class="bs-on"><?= icon('trophy') ?> <?= e(A('فرق البطولات', 'Championship teams')) ?></span>
+      <a class="bs-off" href="<?= e(url('leaderboard.php')) ?>"><?= icon('star') ?> <?= e(A('متصدرو الأنشطة', 'Activity leaders')) ?></a>
+    </div>
+  <?php endif; ?>
 
   <?php if (!$rows): ?>
     <div class="panel" style="text-align:center"><div class="be"><?= icon('trophy') ?></div>
@@ -117,7 +124,7 @@ echo page_head(A('النتائج', 'RESULTS'), A('النتائج الفورية'
       </div>
     <?php endif; ?>
 
-    <h2 class="sec-title"><?= e(A('الترتيب العام', 'Overall ranking')) ?></h2>
+    <h2 class="sec-title"><?= e(A('ترتيب الفرق العام', 'Overall team ranking')) ?></h2>
     <?php if ($overall): ?>
       <div class="lb-list">
         <?php $k = 0; foreach ($overall as $row): $k++; ?>

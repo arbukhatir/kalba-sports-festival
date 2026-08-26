@@ -46,7 +46,8 @@ require __DIR__ . '/partials/header.php';
 </div></section>
 
 <section class="showcase-wrap">
-  <?= section_title(A('الرياضات', 'The Sports'), A('١٣ رياضة معتمدة', '13 official sports')) ?>
+  <?= section_title(A('الرياضات والأنشطة', 'Sports & Activities'),
+     A('١٣ بطولة معتمدة و٤ فعاليات مجتمعية و٦ ورش', '13 championships, 4 community events and 6 workshops')) ?>
   <div class="showcase" id="scRow">
     <?php foreach ($CHAMPS as $k => $c): ?>
       <a class="sc-item" href="<?= e(url('champ.php?i=' . $k)) ?>" aria-label="<?= e(champ_name($c)) ?>">

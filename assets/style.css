@@ -2850,3 +2850,16 @@ nav.main .menu.open > .menu-btn .caret{transform:rotate(180deg);}
   .sub-chip { font-size: .8rem; padding: 5px 11px; border-radius: 999px; background: var(--surface-in);
     box-shadow: var(--nm-press-sm); color: var(--gold-soft); }
   .sub-chip:hover { color: var(--paper); }
+
+  /* ---- board switch: the two rankings are different things, so each board
+         names itself and offers the other rather than leaving a visitor to
+         guess which "leaderboard" they are looking at ---- */
+  .board-switch { display: flex; gap: 8px; flex-wrap: wrap; margin-bottom: 18px; }
+  .board-switch .bs-on, .board-switch .bs-off {
+    display: inline-flex; align-items: center; gap: 7px; min-height: 42px;
+    padding: 9px 16px; border-radius: 999px; font-size: .88rem; font-weight: 700; }
+  .board-switch .bs-on { background: var(--surface-in); box-shadow: var(--nm-press-sm); color: var(--gold-soft); }
+  .board-switch .bs-off { background: var(--surface); box-shadow: var(--nm-raise-sm); color: var(--muted);
+    transition: color 160ms ease, box-shadow 160ms var(--ease-out-soft); }
+  .board-switch .bs-off:hover { color: var(--ink); box-shadow: var(--nm-raise); }
+  .board-switch .ic-svg { width: 16px; height: 16px; }
