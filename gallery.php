@@ -2,6 +2,7 @@
 require_once __DIR__ . '/lib/render.php';
 $C = content(); $GALLERY = $C['GALLERY'];
 $PAGE_TITLE = A('المعرض الإعلامي', 'Media Gallery');
+$PAGE_DESC = A('معرض صور وفيديو مهرجان كلباء الرياضي — لقطات من المنافسات والفعاليات المجتمعية.', 'Photo and video gallery from the Kalba Sports Festival — competitions and community events.');
 require __DIR__ . '/partials/head.php';
 require __DIR__ . '/partials/header.php';
 echo page_head(A('الصور والفيديو', 'PHOTOS & VIDEO'), A('المعرض الإعلامي', 'Media Gallery'),

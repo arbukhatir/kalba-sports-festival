@@ -2,6 +2,7 @@
 require_once __DIR__ . '/lib/render.php';
 $C = content();
 $PAGE_TITLE = A('الاستبيانات', 'Surveys');
+$PAGE_DESC = A('شارك رأيك في استبيانات مهرجان كلباء الرياضي 2026 وساعدنا على تطوير التجربة.', 'Share your feedback in the Kalba Sports Festival 2026 surveys and help us improve the experience.');
 require __DIR__ . '/partials/head.php';
 require __DIR__ . '/partials/header.php';
 echo page_head(A('رأيك يهمنا', 'YOUR VOICE'), A('الاستبيانات', 'Surveys'),

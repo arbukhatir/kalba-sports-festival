@@ -3,6 +3,7 @@ require_once __DIR__ . '/lib/render.php';
 $C = content(); $FORMS = $C['FORMS'];
 $type = isset($_GET['type']) && isset($FORMS[$_GET['type']]) ? $_GET['type'] : '';
 $PAGE_TITLE = A('التسجيل', 'Register');
+$PAGE_DESC = A('سجّل في مهرجان كلباء الرياضي 2026 — تسجيل المشاركين والمطاعم والعارضين والرعاة والمتطوعين.', 'Register for Kalba Sports Festival 2026 — competitors, restaurants, exhibitors, sponsors and volunteers.');
 require __DIR__ . '/partials/head.php';
 require __DIR__ . '/partials/header.php';
 echo page_head(A('انضم إلينا', 'JOIN US'), A('التسجيل والانضمام', 'Registration'),
@@ -10,6 +11,11 @@ echo page_head(A('انضم إلينا', 'JOIN US'), A('التسجيل والان
   ['bg' => 'champs/ai-obstacles.webp']);
 ?>
 <section class="container section" style="max-width:720px">
+  <?php if (isset($_GET['err'])): ?>
+    <div class="flash err" role="alert"><?= e($_GET['err'] === 'db'
+      ? A('تعذّر حفظ طلبك حالياً. حاول مرة أخرى بعد قليل أو تواصل معنا.', 'We could not save your application right now. Please try again shortly or contact us.')
+      : A('تعذّر إرسال الطلب — تأكد من تعبئة الحقول المطلوبة بشكل صحيح.', 'Could not submit — please check that the required fields are filled in correctly.')) ?></div>
+  <?php endif; ?>
   <?php if (isset($_GET['ok'])): ?>
     <div class="panel success-panel" style="text-align:center"><div class="be">✅</div>
       <h2><?= e(A('تم استلام طلبك', 'Application received')) ?></h2>

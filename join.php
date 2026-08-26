@@ -2,6 +2,7 @@
 require_once __DIR__ . '/lib/render.php';
 $C = content();
 $PAGE_TITLE = A('تصريح الزيارة', 'Visitor Pass');
+$PAGE_DESC = A('احصل على تصريح الزيارة المجاني لمهرجان كلباء الرياضي 2026 ببطاقة رقمية ورمز دخول.', 'Get your free visitor pass for Kalba Sports Festival 2026 — a digital card with an entry code.');
 require __DIR__ . '/partials/head.php';
 require __DIR__ . '/partials/header.php';
 echo page_head(A('بطاقة الزائر', 'VISITOR CARD'), A('تصريح الزيارة المجاني', 'Free visitor pass'),

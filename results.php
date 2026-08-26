@@ -2,6 +2,7 @@
 require_once __DIR__ . '/lib/render.php';
 $C = content(); $CHAMPS = $C['CHAMPS'];
 $PAGE_TITLE = A('النتائج الفورية', 'Live Results');
+$PAGE_DESC = A('النتائج الفورية لمهرجان كلباء الرياضي 2026 — نتائج المباريات وجداول النقاط أولاً بأول.', 'Live results from Kalba Sports Festival 2026 — match scores and points tables as they happen.');
 $rows = [];
 try { $rows = db_all('SELECT * FROM matches ORDER BY sport, day'); } catch (Throwable $ex) {}
 require __DIR__ . '/partials/head.php';

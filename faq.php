@@ -2,6 +2,7 @@
 require_once __DIR__ . '/lib/render.php';
 $C = content(); $FAQS = $C['FAQS']; $FAQ_CATS = $C['FAQ_CATS'];
 $PAGE_TITLE = A('الأسئلة الشائعة', 'FAQ');
+$PAGE_DESC = A('الأسئلة الشائعة عن مهرجان كلباء الرياضي 2026 — التسجيل والدخول والمواقف والخدمات.', 'Frequently asked questions about Kalba Sports Festival 2026 — registration, entry, parking and services.');
 require __DIR__ . '/partials/head.php';
 require __DIR__ . '/partials/header.php';
 echo page_head(A('مركز المساعدة', 'HELP CENTRE'), A('الأسئلة الشائعة', 'Frequently asked questions'),

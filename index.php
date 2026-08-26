@@ -2,6 +2,7 @@
 require_once __DIR__ . '/lib/render.php';
 $C = content(); $CHAMPS = $C['CHAMPS'];
 $PAGE_TITLE = A('مهرجان كلباء الرياضي 2026', 'Kalba Sports Festival 2026');
+$PAGE_DESC = A('مهرجان كلباء الرياضي 2026 — ٨ أيام و١٣ رياضة معتمدة وفعاليات مجتمعية على كورنيش كلباء، 6–13 نوفمبر 2026.', 'Kalba Sports Festival 2026 — 8 days, 13 official sports and community events on the Kalba Corniche, 6–13 November.');
 $HERO = true;
 require __DIR__ . '/partials/head.php';
 require __DIR__ . '/partials/header.php';

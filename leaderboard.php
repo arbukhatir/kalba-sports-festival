@@ -2,6 +2,7 @@
 require_once __DIR__ . '/lib/render.php';
 $C = content();
 $PAGE_TITLE = A('لوحة المتصدرين', 'Leaderboard');
+$PAGE_DESC = A('لوحة المتصدرين في مهرجان كلباء الرياضي 2026 — ترتيب الفرق والمشاركين ونقاطهم.', 'The Kalba Sports Festival 2026 leaderboard — team and participant standings and points.');
 $rows = [];
 try { $rows = db_all('SELECT name, points FROM visitors ORDER BY points DESC, id ASC LIMIT 50'); } catch (Throwable $ex) {}
 require __DIR__ . '/partials/head.php';

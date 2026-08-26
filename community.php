@@ -2,6 +2,7 @@
 require_once __DIR__ . '/lib/render.php';
 $C = content();
 $PAGE_TITLE = A('المجتمع والورش', 'Community');
+$PAGE_DESC = A('فعاليات وورش المجتمع في مهرجان كلباء الرياضي 2026 — أنشطة لكل أفراد العائلة.', 'Community events and workshops at Kalba Sports Festival 2026 — activities for the whole family.');
 require __DIR__ . '/partials/head.php';
 require __DIR__ . '/partials/header.php';
 echo page_head(A('للعائلة كلها', 'FOR EVERYONE'), A('المجتمع والورش', 'Community & Workshops'),

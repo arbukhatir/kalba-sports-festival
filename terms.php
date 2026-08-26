@@ -1,6 +1,7 @@
 <?php
 require_once __DIR__ . '/lib/render.php';
 $PAGE_TITLE = A('الشروط والأحكام', 'Terms');
+$PAGE_DESC = A('الشروط والأحكام الخاصة بالمشاركة في مهرجان كلباء الرياضي 2026 وخدمات الموقع.', 'Terms and conditions for taking part in Kalba Sports Festival 2026 and using this site.');
 require __DIR__ . '/partials/head.php';
 require __DIR__ . '/partials/header.php';
 echo page_head(A('السياسات', 'POLICIES'), A('الشروط والأحكام', 'Terms & Conditions'), '', []);

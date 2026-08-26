@@ -2,6 +2,7 @@
 require_once __DIR__ . '/lib/render.php';
 $C = content();
 $PAGE_TITLE = A('تحدي مدارس كلباء', 'Kalba Schools Challenge');
+$PAGE_DESC = A('تحدي مدارس كلباء ضمن مهرجان كلباء الرياضي 2026 — سجّل مدرستك في المنافسات المدرسية.', 'The Kalba Schools Challenge at Kalba Sports Festival 2026 — register your school to compete.');
 require __DIR__ . '/partials/head.php';
 require __DIR__ . '/partials/header.php';
 echo page_head(A('للمدارس والعائلات', 'SCHOOLS & FAMILIES'), A('تحدي مدارس كلباء', 'Kalba Schools Challenge'),

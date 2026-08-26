@@ -2,6 +2,7 @@
 require_once __DIR__ . '/lib/render.php';
 $C = content(); $NEWS = $C['NEWS']; $GALLERY = $C['GALLERY'];
 $PAGE_TITLE = A('الأخبار والإعلام', 'News & Media');
+$PAGE_DESC = A('آخر أخبار وإعلانات مهرجان كلباء الرياضي 2026 — التحديثات الرسمية أولاً بأول.', 'The latest news and announcements from Kalba Sports Festival 2026.');
 require __DIR__ . '/partials/head.php';
 require __DIR__ . '/partials/header.php';
 echo page_head(A('آخر المستجدات', 'LATEST'), A('الأخبار والإعلام', 'News & Media'),

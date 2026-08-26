@@ -1,6 +1,7 @@
 <?php
 require_once __DIR__ . '/lib/render.php';
 $PAGE_TITLE = A('استكشف الموقع', 'The Venue');
+$PAGE_DESC = A('أرض مهرجان كلباء الرياضي 2026 على كورنيش كلباء — الملاعب والمداخل والمواقف والخدمات.', 'The Kalba Sports Festival 2026 grounds on the Corniche — arenas, entrances, parking and services.');
 require __DIR__ . '/partials/head.php';
 require __DIR__ . '/partials/header.php';
 echo page_head(A('الموقع', 'THE VENUE'), A('أرض المهرجان', 'The festival ground'),

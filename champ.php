@@ -5,6 +5,7 @@ $i = isset($_GET['i']) ? (int) $_GET['i'] : 0;
 if ($i < 0 || $i >= count($CHAMPS)) $i = 0;
 $c = $CHAMPS[$i];
 $PAGE_TITLE = champ_name($c);
+$PAGE_DESC = A(champ_name($c) . ' في مهرجان كلباء الرياضي 2026 — مواعيد المنافسة والأدوار والتسجيل.', champ_name($c) . ' at Kalba Sports Festival 2026 — fixtures, rounds and registration.');
 require __DIR__ . '/partials/head.php';
 require __DIR__ . '/partials/header.php';
 

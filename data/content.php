@@ -40,6 +40,16 @@ $GALLERY = [
   ]
 ];
 
+/* Official contact channels. Fill these in with the festival's real details;
+   any line left empty is simply not rendered, so nothing shows a dead link. */
+$CONTACT = [
+  'email'    => '',            // e.g. info@kalbasports.ae
+  'phone'    => '',            // international format, e.g. +97165551234
+  'whatsapp' => '',            // digits only, e.g. 97150XXXXXXX
+  'address'  => ['ar' => 'كورنيش كلباء، مدينة كلباء، إمارة الشارقة', 'en' => 'Kalba Corniche, Kalba, Sharjah'],
+  'hours'    => ['ar' => 'خلال أيام المهرجان: 4:00 مساءً – 11:00 مساءً', 'en' => 'During the festival: 4:00 PM – 11:00 PM'],
+];
+
 $CHAMP_CATS = [
   [
     'k' => 'team',
@@ -1229,4 +1239,4 @@ $FAQS = [
   ]
 ];
 
-return compact('GALLERY', 'CHAMP_CATS', 'ROUNDS', 'CHAMPS', 'FORMS', 'NEWS', 'FAQ_CATS', 'FAQS');
+return compact('CONTACT', 'GALLERY', 'CHAMP_CATS', 'ROUNDS', 'CHAMPS', 'FORMS', 'NEWS', 'FAQ_CATS', 'FAQS');

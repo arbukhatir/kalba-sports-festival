@@ -1,6 +1,7 @@
 <?php
 require_once __DIR__ . '/lib/render.php';
 $PAGE_TITLE = A('سياسة الخصوصية', 'Privacy');
+$PAGE_DESC = A('سياسة الخصوصية لمهرجان كلباء الرياضي 2026 — كيف نجمع بياناتك ونستخدمها ونحميها.', 'The Kalba Sports Festival 2026 privacy policy — how we collect, use and protect your data.');
 require __DIR__ . '/partials/head.php';
 require __DIR__ . '/partials/header.php';
 echo page_head(A('السياسات', 'POLICIES'), A('سياسة الخصوصية', 'Privacy Policy'), '', []);

@@ -3,6 +3,7 @@ require_once __DIR__ . '/lib/render.php';
 require_once __DIR__ . '/lib/auth.php';
 $u = current_user();
 $PAGE_TITLE = A('تسجيل الدخول', 'Log in');
+$PAGE_DESC = A('تسجيل دخول المشغّلين والمنظمين في مهرجان كلباء الرياضي 2026.', 'Operator and organiser log in for Kalba Sports Festival 2026.');
 require __DIR__ . '/partials/head.php';
 require __DIR__ . '/partials/header.php';
 echo page_head(A('للمصرح لهم', 'STAFF'), A('تسجيل دخول المشغّلين', 'Operator log in'),

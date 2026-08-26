@@ -16,8 +16,17 @@
     foreach ($FOOT as $f) echo '<a href="' . e(url($f[0])) . '">' . e(A($f[1], $f[2])) . '</a>';
     ?>
   </nav>
+  <?php if (isset($_GET['sub'])): ?>
+    <div class="nl-flash <?= $_GET['sub'] === 'ok' ? 'ok' : 'err' ?>" role="status">
+      <?= e($_GET['sub'] === 'ok'
+        ? A('تم تسجيل بريدك في النشرة البريدية. شكراً لك!', 'You are subscribed to the newsletter. Thank you!')
+        : A('تعذّر الاشتراك — تأكد من صحة البريد الإلكتروني.', 'Could not subscribe — please check the email address.')) ?>
+    </div>
+  <?php endif; ?>
   <form class="footer-nl" method="post" action="<?= e(url('actions/subscribe.php')) ?>" style="justify-content:center;margin-top:12px">
-    <input type="email" name="email" dir="ltr" required placeholder="<?= e(A('بريدك الإلكتروني — النشرة البريدية', 'Your email — newsletter')) ?>" style="max-width:240px">
+    <label class="sr-only" for="nlEmail"><?= e(A('بريدك الإلكتروني للنشرة البريدية', 'Your email for the newsletter')) ?></label>
+    <input type="email" id="nlEmail" name="email" dir="ltr" required
+           placeholder="<?= e(A('بريدك الإلكتروني', 'Your email')) ?>" style="max-width:240px">
     <button class="btn gold sm" type="submit"><?= e(A('اشترك', 'Subscribe')) ?></button>
   </form>
 </footer>

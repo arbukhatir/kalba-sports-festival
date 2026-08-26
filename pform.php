@@ -5,6 +5,7 @@ $i = isset($_GET['i']) ? (int) $_GET['i'] : 0;
 if ($i < 0 || $i >= count($CHAMPS)) $i = 0;
 $c = $CHAMPS[$i];
 $PAGE_TITLE = A('تسجيل مشارك', 'Participant registration');
+$PAGE_DESC = A('سجّل مشاركتك في ' . champ_name($c) . ' ضمن مهرجان كلباء الرياضي 2026.', 'Register to compete in ' . champ_name($c) . ' at Kalba Sports Festival 2026.');
 require __DIR__ . '/partials/head.php';
 require __DIR__ . '/partials/header.php';
 echo page_head(A('تسجيل مشارك', 'PARTICIPANT'), champ_name($c),

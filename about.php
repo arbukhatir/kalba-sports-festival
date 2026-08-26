@@ -2,6 +2,7 @@
 require_once __DIR__ . '/lib/render.php';
 $C = content();
 $PAGE_TITLE = A('عن المهرجان', 'About');
+$PAGE_DESC = A('عن مهرجان كلباء الرياضي 2026 — رؤية المهرجان وفئاته الرياضية وما يقدمه للمجتمع.', 'About Kalba Sports Festival 2026 — the vision, the sport categories and what it offers the community.');
 require __DIR__ . '/partials/head.php';
 require __DIR__ . '/partials/header.php';
 echo page_head(A('من نحن', 'ABOUT'), A('حين تتحول مدينة إلى ملعب', 'When a city becomes a playground'),
