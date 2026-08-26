@@ -137,4 +137,65 @@
     });
     renumber();
   }
+
+  /* ---- agenda: filters + list/calendar view ----
+     Filtering happens in the page: the whole programme is already rendered, so
+     narrowing it is instant and works while offline. With JS off every event
+     stays visible, which is the behaviour that matters most. */
+  var agFilters = document.getElementById('agFilters');
+  if (agFilters) {
+    var agSport = document.getElementById('agSport'),
+        agDay   = document.getElementById('agDay'),
+        agCat   = document.getElementById('agCat'),
+        agCount = document.getElementById('agCount'),
+        agEmpty = document.getElementById('agEmpty'),
+        agList  = document.getElementById('agList'),
+        agCal   = document.getElementById('agCal');
+
+    function agApply() {
+      var sp = agSport.value, dy = agDay.value, ct = agCat.value, shown = 0;
+      agList.querySelectorAll('.sc-item').forEach(function (li) {
+        var ok = (!sp || li.dataset.sport === sp) &&
+                 (!dy || li.dataset.day === dy) &&
+                 (!ct || li.dataset.cat === ct);
+        li.hidden = !ok;
+        if (ok) shown++;
+      });
+      /* a day with nothing left in it should not leave a lonely header */
+      agList.querySelectorAll('.sc-day').forEach(function (sec) {
+        var any = sec.querySelector('.sc-item:not([hidden])');
+        sec.hidden = !any;
+        if (any) {
+          var n = sec.querySelectorAll('.sc-item:not([hidden])').length;
+          var c = sec.querySelector('.sc-daycount');
+          if (c) c.textContent = n + ' ' + (c.dataset.word || c.textContent.replace(/^\d+\s*/, ''));
+        }
+      });
+      /* the calendar view filters on the same keys */
+      agCal.querySelectorAll('.agc-ev').forEach(function (li) {
+        li.hidden = !((!sp || li.dataset.sport === sp) && (!ct || li.dataset.cat === ct));
+      });
+      agCal.querySelectorAll('.agc-day').forEach(function (col) {
+        col.hidden = !!(dy && col.dataset.day !== dy);
+      });
+      agCount.textContent = shown;
+      agEmpty.hidden = shown !== 0;
+    }
+    [agSport, agDay, agCat].forEach(function (sel) { sel.addEventListener('change', agApply); });
+
+    function agReset() { agSport.value = ''; agDay.value = ''; agCat.value = ''; agApply(); }
+    document.getElementById('agReset').addEventListener('click', agReset);
+    var emptyReset = document.getElementById('agEmptyReset');
+    if (emptyReset) emptyReset.addEventListener('click', agReset);
+
+    var bList = document.getElementById('agViewList'), bCal = document.getElementById('agViewCal');
+    function agView(cal) {
+      agList.hidden = cal; agCal.hidden = !cal;
+      bList.classList.toggle('on', !cal); bCal.classList.toggle('on', cal);
+      bList.setAttribute('aria-pressed', String(!cal)); bCal.setAttribute('aria-pressed', String(cal));
+    }
+    bList.addEventListener('click', function () { agView(false); });
+    bCal.addEventListener('click', function () { agView(true); });
+    agView(false);
+  }
 })();

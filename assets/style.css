@@ -2730,3 +2730,32 @@ nav.main .menu.open > .menu-btn .caret{transform:rotate(180deg);}
   .pts-table tbody tr:hover { background: var(--surface-in); box-shadow: none; }
   .pts-table td { color: var(--ink); }
   .points-team strong { color: var(--paper); }
+
+  /* ---- agenda: filter bar, add-to-calendar, calendar view ---- */
+  .ag-filters { gap: 14px; margin-bottom: 20px; }
+  .ag-selects { display: grid; grid-template-columns: repeat(3, 1fr); gap: 12px; }
+  .ag-selects .field { margin-bottom: 0; }
+  .ag-views { display: flex; align-items: center; gap: 8px; flex-wrap: wrap; }
+  .ag-views .seg-btn { display: inline-flex; align-items: center; gap: 6px; padding: 8px 14px; min-height: 40px; }
+  .sc-add { display: grid; place-items: center; width: 36px; height: 36px; border-radius: 10px;
+    color: var(--muted); box-shadow: var(--nm-raise-sm); background: var(--surface);
+    transition: color 150ms ease, box-shadow 150ms var(--ease-out-soft); }
+  .sc-add:hover { color: var(--gold-soft); box-shadow: var(--nm-raise); }
+  .sc-add:active { box-shadow: var(--nm-press-sm); }
+  .sc-item[hidden], .sc-day[hidden], .agc-ev[hidden], .agc-day[hidden] { display: none !important; }
+
+  .agc-grid { display: grid; grid-template-columns: repeat(auto-fit, minmax(190px, 1fr)); gap: 14px; }
+  .agc-day { background: var(--surface); border-radius: 14px; padding: 14px; box-shadow: var(--nm-raise-sm);
+    display: flex; flex-direction: column; gap: 10px; }
+  .agc-head { display: flex; flex-direction: column; gap: 2px; padding-bottom: 10px;
+    border-bottom: 1px solid var(--line); }
+  .agc-date { font-family: var(--font-sport); font-size: 1.35rem; color: var(--gold); line-height: 1; }
+  .agc-name { font-size: .82rem; color: var(--muted); font-weight: 600; }
+  .agc-list { list-style: none; margin: 0; padding: 0; display: grid; gap: 8px; }
+  .agc-ev { display: grid; gap: 1px; padding: 8px 10px; border-radius: 10px; background: var(--surface-in); }
+  .agc-t { font-size: .76rem; font-weight: 700; color: var(--gold-soft); font-variant-numeric: tabular-nums; }
+  .agc-ev a { font-size: .88rem; font-weight: 600; color: var(--ink); }
+  .agc-ev a:hover { color: var(--gold-soft); }
+  .agc-ev small { font-size: .74rem; color: var(--muted); }
+  .agc-count { margin-top: auto; font-size: .76rem; color: var(--muted); font-weight: 600; }
+  @media (max-width: 640px) { .ag-selects { grid-template-columns: 1fr; } }
