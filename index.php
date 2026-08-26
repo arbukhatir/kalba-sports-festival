@@ -48,20 +48,42 @@ require __DIR__ . '/partials/header.php';
 <section class="showcase-wrap">
   <?= section_title(A('الرياضات والأنشطة', 'Sports & Activities'),
      A('١٣ بطولة معتمدة و٤ فعاليات مجتمعية و٦ ورش', '13 championships, 4 community events and 6 workshops')) ?>
+  <?php
+  /* One rail for everything the festival puts on: the championships first,
+     then the community events, then the workshops. Each entry keeps its own
+     destination, so a card always lands where that thing actually lives. */
+  $rail = [];
+  foreach ($CHAMPS as $k => $c) {
+    $rail[] = ['img' => champ_img($c), 'ey' => champ_cat_name($c['c']),
+               'ti' => champ_name($c), 'href' => 'champ.php?i=' . $k,
+               'go' => A('استكشف', 'Explore')];
+  }
+  foreach ($C['COMMUNITY'] as $ev) {
+    $rail[] = ['img' => $ev['img'] ?? '', 'ey' => A('فعالية مجتمعية', 'Community event'),
+               'ti' => tx($ev['t']), 'href' => 'community.php',
+               'go' => A('التفاصيل', 'Details')];
+  }
+  foreach ($C['WORKSHOPS'] as $w) {
+    $tba = strpos($w['s'], 'workshop-') === 0;
+    $rail[] = ['img' => $w['img'] ?? '', 'ey' => A('ورشة صحية', 'Health workshop'),
+               'ti' => tx($w['t']), 'href' => 'community.php',
+               'go' => $tba ? A('قريباً', 'Soon') : A('احجز مقعدك', 'Reserve a seat')];
+  }
+  ?>
   <div class="showcase" id="scRow">
-    <?php foreach ($CHAMPS as $k => $c): ?>
-      <a class="sc-item" href="<?= e(url('champ.php?i=' . $k)) ?>" aria-label="<?= e(champ_name($c)) ?>">
-        <img src="<?= e(champ_img($c)) ?>" alt="" loading="lazy">
+    <?php foreach ($rail as $k => $it): ?>
+      <a class="sc-item" href="<?= e(url($it['href'])) ?>" aria-label="<?= e($it['ti']) ?>">
+        <img src="<?= e($it['img']) ?>" alt="" loading="lazy">
         <div class="sc-body">
           <span class="sc-num"><?= sprintf('%02d', $k + 1) ?></span>
-          <div class="sc-ey"><?= e(champ_cat_name($c['c'])) ?></div>
-          <h3 class="sc-ti"><?= e(champ_name($c)) ?></h3>
-          <span class="sc-go"><?= e(A('استكشف', 'Explore')) ?> <span class="ar" aria-hidden="true">→</span></span>
+          <div class="sc-ey"><?= e($it['ey']) ?></div>
+          <h3 class="sc-ti"><?= e($it['ti']) ?></h3>
+          <span class="sc-go"><?= e($it['go']) ?> <span class="ar" aria-hidden="true">&rarr;</span></span>
         </div>
       </a>
     <?php endforeach; ?>
   </div>
-  <div class="sc-rail"><span><?= e(A('اسحب لاستكشاف كل الرياضات', 'Drag to explore all sports')) ?></span>
+  <div class="sc-rail"><span><?= e(A('اسحب لاستكشاف كل الرياضات والأنشطة', 'Drag to explore every sport and activity')) ?></span>
     <span class="sc-line"></span>
     <span class="sc-arrows">
       <button type="button" class="sc-arrow" onclick="scScroll(-1)" aria-label="<?= e(A('السابق','Previous')) ?>">‹</button>
