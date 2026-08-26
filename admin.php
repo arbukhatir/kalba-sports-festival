@@ -2,6 +2,7 @@
 require_once __DIR__ . '/lib/render.php';
 require_once __DIR__ . '/lib/auth.php';
 $u = require_view('admin');
+$C = content();
 $PAGE_TITLE = A('لوحة التحكم', 'Admin');
 
 $stats = ['apps' => 0, 'pending' => 0, 'accepted' => 0, 'visitors' => 0, 'messages' => 0, 'subs' => 0];
@@ -33,6 +34,13 @@ echo page_head(A('غرفة التحكم', 'CONTROL ROOM'), A('لوحة التح�
     <?php endforeach; ?>
   </div>
 
+      <div class="adm-export">
+        <span class="hint"><?= e(A('تصدير قوائم المسجلين للجنة المنظمة:', 'Export the registration lists for the committee:')) ?></span>
+        <a class="btn ghost sm" href="<?= e(url('actions/export.php')) ?>"><?= icon('clipboard') ?> <?= e(A('كل الطلبات (CSV)', 'All registrations (CSV)')) ?></a>
+        <?php foreach ($C['CHAMPS'] as $ec): ?>
+          <a class="btn ghost sm" href="<?= e(url('actions/export.php?type=' . rawurlencode($ec['s']))) ?>"><?= e(champ_name($ec)) ?></a>
+        <?php endforeach; ?>
+      </div>
   <div class="panel"><h2 class="sec-h" style="margin-top:0"><?= e(A('أحدث الطلبات', 'Latest applications')) ?></h2>
     <?php if (!$apps): ?><p class="muted"><?= e(A('لا طلبات بعد.', 'No applications yet.')) ?></p><?php else: ?>
     <div style="overflow-x:auto"><table class="t">

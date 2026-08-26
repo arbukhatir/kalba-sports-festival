@@ -23,6 +23,19 @@ $ages = [['<12','أقل من 12','Under 12'],['12-17','12–17','12–17'],['18-
         <select id="ja" name="age" required><option value=""><?= e(A('اختر','Choose')) ?></option>
           <?php foreach ($ages as $a) echo '<option value="' . e($a[0]) . '">' . e(A($a[1], $a[2])) . '</option>'; ?>
         </select></div>
+      <!-- One pass for the whole family, so a parent is not asked to repeat
+           the form per child at the gate. -->
+      <div class="field">
+        <label class="flabel" for="jf"><?= e(A('مرافقون على نفس التصريح', 'People joining on this pass')) ?>
+          <span class="opt">(<?= e(A('اختياري', 'optional')) ?>)</span></label>
+        <select id="jf" name="family">
+          <?php for ($f = 0; $f <= 8; $f++): ?>
+            <option value="<?= $f ?>"><?= e($f === 0 ? A('لا أحد — تصريح فردي', 'Just me — single pass')
+                : sprintf(A('%d مرافقين', '%d more'), $f)) ?></option>
+          <?php endfor; ?>
+        </select>
+        <div class="hint"><?= e(A('تصريح عائلي واحد يُمسح مرة واحدة عند الدخول للجميع.', 'One family pass, scanned once at the gate for everyone.')) ?></div>
+      </div>
       <label class="check" style="margin-bottom:12px"><input type="checkbox" name="consent" value="1" required> <span><?= e(A('أوافق على الشروط وسياسة الخصوصية', 'I agree to the Terms and Privacy Policy')) ?></span></label>
       <button class="btn gold block" type="submit"><?= e(A('أنشئ تصريحي', 'Create my pass')) ?></button>
     </form>

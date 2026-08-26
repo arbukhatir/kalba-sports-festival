@@ -2759,3 +2759,29 @@ nav.main .menu.open > .menu-btn .caret{transform:rotate(180deg);}
   .agc-ev small { font-size: .74rem; color: var(--muted); }
   .agc-count { margin-top: auto; font-size: .76rem; color: var(--muted); font-weight: 600; }
   @media (max-width: 640px) { .ag-selects { grid-template-columns: 1fr; } }
+
+  /* ---- application status: reference, state badge, three-stage rail ---- */
+  .as-head { display: flex; align-items: center; justify-content: space-between; gap: 12px;
+    flex-wrap: wrap; margin-bottom: 10px; }
+  .as-ref { font-size: .85rem; color: var(--muted); }
+  .as-ref b { color: var(--gold-soft); font-size: 1.05rem; letter-spacing: 1px; margin-inline-start: 6px; }
+  .as-rail { list-style: none; margin: 18px 0; padding: 0; display: grid; grid-template-columns: repeat(3, 1fr); gap: 6px; }
+  .as-rail li { display: flex; flex-direction: column; align-items: center; gap: 7px; text-align: center; position: relative; }
+  .as-rail li::before { content: ''; position: absolute; top: 13px; inset-inline-start: -50%;
+    width: 100%; height: 2px; background: var(--line); }
+  .as-rail li:first-child::before { display: none; }
+  .as-rail li.done::before { background: var(--gold); }
+  .as-dot { width: 28px; height: 28px; border-radius: 50%; display: grid; place-items: center;
+    background: var(--surface-in); box-shadow: var(--nm-press-sm); color: var(--muted); position: relative; z-index: 1; }
+  .as-rail li.done .as-dot { background: var(--gold); color: #06202F; box-shadow: var(--nm-raise-sm); }
+  .as-rail li.done .as-dot .ic-svg { width: 16px; height: 16px; }
+  .as-t { font-size: .78rem; font-weight: 600; color: var(--muted); }
+  .as-rail li.cur .as-t { color: var(--gold-soft); font-weight: 800; }
+  .badge.pending  { background: rgba(251,191,36,.16); color: var(--warn-ink); }
+  .badge.accepted { background: rgba(76,194,118,.16); color: var(--ok-ink); }
+  .badge.rejected { background: rgba(248,113,113,.16); color: var(--bad-ink); }
+
+  /* ---- admin: export row ---- */
+  .adm-export { display: flex; align-items: center; gap: 8px; flex-wrap: wrap; margin: 6px 0 16px; }
+  .adm-export .hint { flex: 1 1 100%; margin-bottom: 2px; }
+  .adm-export .btn { text-decoration: none; }
