@@ -52,6 +52,7 @@ echo page_head(A('غرفة التحكم', 'CONTROL ROOM'), A('لوحة التح�
           <td class="btn-row" style="margin:0">
             <?php foreach ([['accepted','قبول','Accept','ok'],['pending','تعليق','Hold','warn'],['rejected','رفض','Reject','danger']] as $b): ?>
               <form method="post" action="<?= e(url('actions/app-status.php')) ?>" style="display:inline">
+      <?= csrf_field() ?>
                 <input type="hidden" name="id" value="<?= (int) $a['id'] ?>"><input type="hidden" name="status" value="<?= $b[0] ?>">
                 <button class="btn sm <?= $b[3] ?>" type="submit"><?= e(A($b[1], $b[2])) ?></button>
               </form>

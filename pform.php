@@ -25,15 +25,19 @@ echo page_head($isTeam ? A('تسجيل فريق', 'TEAM ENTRY') : A('تسجيل 
       <div class="vqr"><?= qr_svg($_GET['ok'], 190) ?></div>
       <div class="vcode"><?= e(A('اعرض هذا الرمز عند الاعتماد الميداني', 'Show this at field accreditation')) ?> · <b dir="ltr"><?= e($_GET['ok']) ?></b></div>
     </div>
-    <div class="btn-row"><?= btn(A('الرياضات', 'Sports'), 'champs.php', 'primary') ?></div>
+    <div class="btn-row">
+      <?= btn(A('تتبّع حالة طلبي', 'Track my application'), 'my.php?code=' . rawurlencode($_GET['ok']), 'gold') ?>
+      <?= btn(A('الرياضات', 'Sports'), 'champs.php', 'ghost') ?>
+    </div>
   <?php else: ?>
     <?php if (isset($_GET['err'])): ?><div class="flash err" role="alert"><?= e($_GET['err'] === 'roster'
       ? A('أضف أسماء اللاعبين المطلوبة قبل الإرسال.', 'Please add the required player names before submitting.')
       : A('تحقق من الحقول وحاول مجدداً.', 'Check the fields and try again.')) ?></div><?php endif; ?>
     <form method="post" action="<?= e(url('actions/register.php')) ?>" enctype="multipart/form-data">
+      <?= csrf_field() ?>
       <input type="hidden" name="type" value="<?= e($c['s']) ?>">
+      <input type="hidden" name="_sport" value="<?= (int)$i ?>">
       <?php if ($isTeam): ?>
-        <input type="hidden" name="f_team_min" value="<?= $tmin ?>">
         <div class="field"><label class="flabel" for="_team"><?= e(A('اسم الفريق', 'Team name')) ?> <span class="req">*</span></label>
           <input type="text" id="_team" name="f_team_name" maxlength="120" required></div>
         <div class="field"><label class="flabel" for="_club"><?= e(A('النادي أو الجهة', 'Club or organisation')) ?> <span class="opt">(<?= e(A('اختياري','optional')) ?>)</span></label>

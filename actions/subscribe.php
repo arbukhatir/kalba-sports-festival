@@ -1,5 +1,6 @@
 <?php
 require_once __DIR__ . '/../lib/db.php';
+require_once __DIR__ . '/../lib/security.php';
 /* Return to the page the visitor submitted from (the newsletter form lives in
    the footer of every page), falling back to the homepage. */
 function back($flag) {
@@ -17,9 +18,9 @@ function back($flag) {
   }
   header('Location: ../' . $to . '#nlEmail'); exit;
 }
-if ($_SERVER['REQUEST_METHOD'] !== 'POST') { header('Location: ../index.php'); exit; }
-$email = trim($_POST['email'] ?? '');
-if (!filter_var($email, FILTER_VALIDATE_EMAIL)) back('err');
+guard_post('index.php', 'subscribe', 5, 3600);
+$email = clean_email($_POST['email'] ?? '');
+if ($email === '') back('err');
 try {
   db_run('INSERT IGNORE INTO subscribers (email) VALUES (?)', [$email]);
   back('ok');

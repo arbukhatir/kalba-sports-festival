@@ -19,6 +19,7 @@ echo page_head(A('استبيان', 'SURVEY'), A($d[1], $d[2]), '', ['back' => ['
     <div class="btn-row" style="justify-content:center"><?= btn(A('الرئيسية','Home'),'index.php','primary') ?></div>
   <?php else: ?>
     <form method="post" action="<?= e(url('actions/survey.php')) ?>">
+      <?= csrf_field() ?>
       <input type="hidden" name="survey" value="<?= e($k) ?>">
       <div class="field"><label class="flabel" for="s1"><?= e(A('الفئة العمرية', 'Age group')) ?> <span class="req">*</span></label>
         <select id="s1" name="f_age" required><option value=""><?= e(A('اختر','Choose')) ?></option>

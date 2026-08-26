@@ -19,6 +19,7 @@ echo page_head(A('للمصرح لهم', 'STAFF'), A('تسجيل دخول الم�
   <?php else: ?>
     <?php if (isset($_GET['err'])): ?><div class="flash err"><?= e(A('اسم المستخدم أو كلمة المرور غير صحيحة.', 'Wrong username or password.')) ?></div><?php endif; ?>
     <form method="post" action="<?= e(url('actions/login.php')) ?>">
+      <?= csrf_field() ?>
       <div class="field"><label class="flabel" for="gu"><?= e(A('اسم المستخدم', 'Username')) ?></label><input type="text" id="gu" name="username" dir="ltr" autocomplete="username" required></div>
       <div class="field"><label class="flabel" for="gp"><?= e(A('كلمة المرور', 'Password')) ?></label><input type="password" id="gp" name="password" dir="ltr" autocomplete="current-password" required></div>
       <button class="btn primary block" type="submit"><?= e(A('تسجيل الدخول', 'Log in')) ?></button>

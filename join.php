@@ -22,6 +22,7 @@ $ages = [['<12','أقل من 12','Under 12'],['12-17','12–17','12–17'],['18-
   <?php else: ?>
     <?php if (isset($_GET['err'])): ?><div class="flash err"><?= e(A('تحقق من الحقول والموافقة على الشروط.', 'Check the fields and accept the terms.')) ?></div><?php endif; ?>
     <form method="post" action="<?= e(url('actions/join.php')) ?>">
+      <?= csrf_field() ?>
       <div class="field"><label class="flabel" for="jn"><?= e(A('الاسم الكامل','Full name')) ?> <span class="req">*</span></label><input type="text" id="jn" name="name" maxlength="120" required></div>
       <div class="field"><label class="flabel" for="ja"><?= e(A('الفئة العمرية','Age group')) ?> <span class="req">*</span></label>
         <select id="ja" name="age" required><option value=""><?= e(A('اختر','Choose')) ?></option>

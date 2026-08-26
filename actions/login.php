@@ -1,7 +1,8 @@
 <?php
 require_once __DIR__ . '/../lib/auth.php';
+require_once __DIR__ . '/../lib/security.php';
 function back($to) { header('Location: ../' . $to); exit; }
-if ($_SERVER['REQUEST_METHOD'] !== 'POST') back('gate.php');
+guard_post('gate.php', 'login', 5, 900);
 $user = trim($_POST['username'] ?? '');
 $pass = (string) ($_POST['password'] ?? '');
 try {

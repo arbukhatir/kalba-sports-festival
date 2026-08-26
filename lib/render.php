@@ -2,6 +2,12 @@
 /* Server-side render helpers — produce the same cinematic markup/classes the old
    JS builders did, so assets/style.css styles them unchanged. */
 require_once __DIR__ . '/i18n.php';
+require_once __DIR__ . '/security.php';
+/* Start the session before a single byte of the page is emitted. Left until
+   csrf_field() renders mid-body, session_start() would come after the headers
+   had gone and no cookie would ever reach the visitor — so every token would
+   fail to match on the next request. */
+sec_session();
 require_once __DIR__ . '/icons.php';
 require_once __DIR__ . '/qr.php';
 

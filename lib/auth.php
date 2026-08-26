@@ -3,10 +3,9 @@
 require_once __DIR__ . '/db.php';
 
 function auth_start() {
-  if (session_status() === PHP_SESSION_NONE) {
-    session_name('kalbaops');
-    session_start();
-  }
+  /* one hardened session for the whole site: httponly, samesite, secure on https */
+  require_once __DIR__ . '/security.php';
+  sec_session();
 }
 
 function current_user() {
@@ -17,9 +16,12 @@ function current_user() {
 /* Roles → which admin tabs/tools they may use (mirrors the old access table). */
 function role_can($role, $view) {
   $map = [
+    /* 'admin' is the applications panel and the registration export, which
+       carry every applicant's name, phone and email. A scores account needs
+       neither, so it no longer gets them. */
     'admin'     => ['admin' => 1, 'award' => 1, 'screen' => 1, 'results' => 1],
     'organizer' => ['award' => 1, 'screen' => 1],
-    'results'   => ['admin' => 1, 'results' => 1, 'screen' => 1],
+    'results'   => ['results' => 1, 'screen' => 1],
   ];
   return !empty($map[$role][$view]);
 }
@@ -36,6 +38,8 @@ function try_login($username, $password) {
   $row = db_one('SELECT * FROM admin_users WHERE username = ?', [$username]);
   if (!$row || !password_verify($password, $row['pass_hash'])) return false;
   auth_start();
+  /* a new id on privilege change, so a session fixed before login is useless */
+  session_regenerate_id(true);
   $_SESSION['ops'] = ['username' => $row['username'], 'role' => $row['role'], 'sport' => $row['sport']];
   db_run('INSERT INTO audit_log (event, actor, detail) VALUES (\'login.ok\', ?, ?)', [$row['username'], $row['role']]);
   return true;

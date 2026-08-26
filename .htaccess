@@ -6,7 +6,11 @@ ErrorDocument 403 /404.php
 <FilesMatch "^(config\.php|config\.sample\.php)$">
   Require all denied
 </FilesMatch>
-RedirectMatch 404 ^/(data|lib|sql|tools)/
+RedirectMatch 404 ^/(data|lib|sql|tools|storage)/
+# Applicants upload IBAN certificates and ID copies here. They are personal
+# documents, so they are never served directly; the committee reads them
+# through an authenticated action instead.
+RedirectMatch 404 ^/uploads/
 
 # Long-cache immutable assets, short-cache markup
 <IfModule mod_expires.c>

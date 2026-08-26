@@ -9,6 +9,8 @@
       ['about.php', 'عن المهرجان', 'About'], ['gallery.php', 'المعرض', 'Gallery'],
       ['news.php', 'الأخبار', 'News'], ['schools.php', 'تحدي المدارس', 'Schools'],
       ['surveys.php', 'الاستبيانات', 'Surveys'], ['join.php', 'تصريح الزيارة', 'Visitor pass'],
+      ['my.php', 'تتبّع طلبي', 'Track my application'], ['community.php', 'المجتمع والورش', 'Community'],
+      ['results.php', 'النتائج الفورية', 'Live results'],
       ['faq.php', 'الأسئلة الشائعة', 'FAQ'], ['contact.php', 'تواصل معنا', 'Contact'],
       ['terms.php', 'الشروط', 'Terms'], ['privacy.php', 'الخصوصية', 'Privacy'],
       ['map.html', 'الخريطة التفاعلية', 'Interactive map'],
@@ -24,6 +26,7 @@
     </div>
   <?php endif; ?>
   <form class="footer-nl" method="post" action="<?= e(url('actions/subscribe.php')) ?>" style="justify-content:center;margin-top:12px">
+      <?= csrf_field() ?>
     <label class="sr-only" for="nlEmail"><?= e(A('بريدك الإلكتروني للنشرة البريدية', 'Your email for the newsletter')) ?></label>
     <input type="email" id="nlEmail" name="email" dir="ltr" required
            placeholder="<?= e(A('بريدك الإلكتروني', 'Your email')) ?>" style="max-width:240px">
@@ -42,7 +45,7 @@ $BNAV = [
    '<svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M8 21h8M12 17v4M7 4h10v4a5 5 0 0 1-10 0z"/><path d="M7 6H4v1a4 4 0 0 0 3 3.9M17 6h3v1a4 4 0 0 1-3 3.9"/></svg>'],
   ['register.php', 'سجّل', 'Register',
    '<svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" aria-hidden="true"><path d="M12 5v14M5 12h14"/></svg>'],
-  ['leaderboard.php', 'النتائج', 'Results',
+  ['results.php', 'النتائج', 'Results',
    '<svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M4 20V10M12 20V4M20 20v-7"/></svg>'],
   ['agenda.php', 'الأجندة', 'Agenda',
    '<svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><rect x="3" y="5" width="18" height="16" rx="2"/><path d="M8 3v4M16 3v4M3 10h18"/></svg>'],

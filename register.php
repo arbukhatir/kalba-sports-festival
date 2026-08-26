@@ -21,7 +21,7 @@ echo page_head(A('انضم إلينا', 'JOIN US'), A('التسجيل والان
       <h2><?= e(A('تم استلام طلبك', 'Application received')) ?></h2>
       <p><?= e(A('رقمك المرجعي', 'Your reference')) ?>: <b dir="ltr"><?= e($_GET['ok']) ?></b></p>
       <p class="muted"><?= e(A('يظهر طلبك في لوحة التحكم وتتم مراجعته من اللجنة.', 'Your application appears in the admin panel for committee review.')) ?></p>
-      <div class="btn-row" style="justify-content:center"><?= btn(A('الرئيسية', 'Home'), 'index.php', 'primary') . ' ' . btn(A('تسجيل آخر', 'Register again'), 'register.php', 'ghost') ?></div>
+      <div class="btn-row" style="justify-content:center"><?= btn(A('تتبّع حالة طلبي', 'Track my application'), 'my.php?code=' . rawurlencode($_GET['ok']), 'gold') . ' ' . btn(A('تسجيل آخر', 'Register again'), 'register.php', 'ghost') ?></div>
     </div>
   <?php elseif ($type === ''): ?>
     <div class="panel" style="margin-bottom:16px"><strong><?= icon('trophy') ?> <?= e(A('مشارك في بطولة؟', 'Competing in a sport?')) ?></strong>
@@ -37,6 +37,7 @@ echo page_head(A('انضم إلينا', 'JOIN US'), A('التسجيل والان
     <div class="panel">
       <div class="reg-picked"><span class="ic"><?= $f['ic'] ?></span><div><b><?= e(tx($f['t'])) ?></b><span><?= e(tx($f['d'])) ?></span></div></div>
       <form method="post" action="<?= e(url('actions/register.php')) ?>" enctype="multipart/form-data">
+      <?= csrf_field() ?>
         <input type="hidden" name="type" value="<?= e($type) ?>">
         <h2 class="sec-h reg-sub"><?= e(A('بيانات مقدّم الطلب', 'Applicant details')) ?></h2>
         <div class="field"><label class="flabel" for="_name"><?= e(A('الاسم الكامل', 'Full name')) ?> <span class="req">*</span></label><input type="text" id="_name" name="_name" maxlength="150" required></div>

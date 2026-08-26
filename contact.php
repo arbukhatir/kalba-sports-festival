@@ -43,6 +43,7 @@ echo page_head(A('نسعد بتواصلكم', 'GET IN TOUCH'), A('تواصل م�
     <div class="flash err"><?= e(A('تعذّر الإرسال — تحقق من الحقول وحاول مجدداً.', 'Could not send — check the fields and try again.')) ?></div>
   <?php endif; ?>
   <form method="post" action="<?= e(url('actions/contact.php')) ?>">
+      <?= csrf_field() ?>
     <div class="field"><label class="flabel" for="cn"><?= e(A('الاسم', 'Name')) ?> <span class="req">*</span></label><input type="text" id="cn" name="name" maxlength="120" required></div>
     <div class="field"><label class="flabel" for="ce"><?= e(A('البريد الإلكتروني', 'Email')) ?></label><input type="email" id="ce" name="email" dir="ltr" maxlength="160"></div>
     <div class="field"><label class="flabel" for="cb"><?= e(A('رسالتك', 'Your message')) ?> <span class="req">*</span></label><textarea id="cb" name="body" rows="4" maxlength="2000" required></textarea></div>

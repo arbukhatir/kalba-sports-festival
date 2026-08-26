@@ -15,6 +15,7 @@ echo page_head(A('واجهة المنظم', 'ORGANIZER'), A('منح النقاط
   <?php if (isset($_GET['ok'])): ?><div class="flash ok"><?= e(A('مُنحت النقاط بنجاح.', 'Points awarded.')) ?></div>
   <?php elseif (isset($_GET['err'])): ?><div class="flash err"><?= e(A('رمز زائر غير صحيح أو خطأ.', 'Invalid visitor code or error.')) ?></div><?php endif; ?>
   <form method="post" action="<?= e(url('actions/award.php')) ?>">
+      <?= csrf_field() ?>
     <div class="field"><label class="flabel" for="vc"><?= e(A('رمز الزائر', 'Visitor code')) ?> <span class="req">*</span></label><input type="text" id="vc" name="code" dir="ltr" required></div>
     <div class="field"><label class="flabel" for="ac"><?= e(A('النشاط', 'Activity')) ?> <span class="req">*</span></label>
       <select id="ac" name="activity" required><option value=""><?= e(A('اختر','Choose')) ?></option>

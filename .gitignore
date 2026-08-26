@@ -4,3 +4,6 @@ uploads/
 
 # stray third-party clone; never part of this project
 claude-code-plugins-plus-skills/
+
+# rate-limit counters are runtime state, not source
+storage/ratelimit/

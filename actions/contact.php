@@ -1,12 +1,13 @@
 <?php
 require_once __DIR__ . '/../lib/db.php';
+require_once __DIR__ . '/../lib/security.php';
 function back($to) { header('Location: ../' . $to); exit; }
-if ($_SERVER['REQUEST_METHOD'] !== 'POST') back('contact.php');
-$name = trim($_POST['name'] ?? '');
-$email = trim($_POST['email'] ?? '');
-$body = trim($_POST['body'] ?? '');
+guard_post('contact.php', 'contact', 5, 600);
+$name  = clean_text($_POST['name'] ?? '', 120);
+$email = clean_email($_POST['email'] ?? '');
+$body  = clean_text($_POST['body'] ?? '', 2000);
 if ($name === '' || $body === '') back('contact.php?err=1');
-if ($email !== '' && !filter_var($email, FILTER_VALIDATE_EMAIL)) back('contact.php?err=1');
+if (($_POST['email'] ?? '') !== '' && $email === '') back('contact.php?err=1');
 try {
   db_run('INSERT INTO messages (name, email, body) VALUES (?,?,?)', [$name, $email !== '' ? $email : null, $body]);
   back('contact.php?ok=1');

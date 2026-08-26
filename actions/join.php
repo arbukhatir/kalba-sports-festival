@@ -1,9 +1,10 @@
 <?php
 require_once __DIR__ . '/../lib/db.php';
+require_once __DIR__ . '/../lib/security.php';
 function back($to) { header('Location: ../' . $to); exit; }
-if ($_SERVER['REQUEST_METHOD'] !== 'POST') back('join.php');
-$name = trim($_POST['name'] ?? '');
-$age = trim($_POST['age'] ?? '');
+guard_post('join.php', 'join', 5, 600);
+$name = clean_text($_POST['name'] ?? '', 120);
+$age  = clean_text($_POST['age'] ?? '', 24);
 /* a family pass covers the holder plus up to eight companions */
 $family = max(0, min(8, (int)($_POST['family'] ?? 0)));
 $consent = !empty($_POST['consent']);
