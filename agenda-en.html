@@ -1,1873 +1,937 @@
 <!doctype html>
-
 <html lang="en" dir="ltr">
-
 <head>
-
 <meta charset="utf-8">
-
 <meta name="viewport" content="width=device-width, initial-scale=1.0, viewport-fit=cover">
-
 <title>Programme — Kalba Sports Festival 2026</title>
-
 <meta name="description" content="The daily programme of Kalba Sports Festival 2026 — every event across eight days, filtered by championship, day and category.">
-
 <meta property="og:title" content="Programme">
-
 <meta property="og:description" content="The daily programme of Kalba Sports Festival 2026 — every event across eight days, filtered by championship, day and category.">
-
 <meta property="og:type" content="website">
-
 <meta property="og:locale" content="en_AE">
-
-
+<meta http-equiv="Content-Security-Policy" content="default-src 'self'; base-uri 'self'; object-src 'none'; script-src 'self' 'unsafe-inline'; style-src 'self' 'unsafe-inline'; font-src 'self'; img-src 'self' data:; connect-src 'self'; form-action 'self'">
 <meta name="referrer" content="strict-origin-when-cross-origin">
-
 <meta name="theme-color" content="#0A2133">
-
 <link rel="icon" type="image/png" href="assets/img/favicon.png">
-
 <link rel="stylesheet" href="assets/style.css">
-
 </head>
-
 <body>
-
 <a class="skip-link" href="#app">تخطَّ إلى المحتوى</a>
-
 <header class="topbar">
-
   <div class="topbar-in">
-
     <a class="brand" href="index-en.html">
-
       <img class="brand-logo" src="assets/img/logo-mark.png" alt="" aria-hidden="true">
-
       <span id="brandName">Kalba Sports Festival 2026</span>
-
     </a>
-
     <button class="mobile-menu-btn" id="mobileMenuBtn" type="button" aria-label="القائمة" aria-expanded="false" onclick="toggleMobileNav()">
-
       <span></span><span></span><span></span>
-
     </button>
-
     <nav class="main" id="mainNav">
-
               <a href="index-en.html">Home</a>
-
               <a href="champs-en.html">Sports</a>
-
               <a href="agenda-en.html" class="active">Agenda</a>
-
               <a href="results-en.html">Results</a>
-
               <a href="leaderboard-en.html">Visitor points</a>
-
               <a href="register-en.html">Register</a>
-
               <a href="venue-en.html">Venue</a>
-
               <a href="contact-en.html">Contact</a>
-
             <a class="nav-login" href="gate-en.html">Log in</a>
-
       <a class="lang" href="agenda.html">عربي</a>
-
     </nav>
-
   </div>
-
 </header>
-
 <div class="mobile-nav-overlay" id="mobileNavOverlay" onclick="closeMobileNav()"></div>
-
 <main id="app" tabindex="-1">
-
 <header class="pagehead"><div class="ph-bg" style="background-image:url(champs/ai-running.webp)"></div><div class="pagehead-in"><div class="ph-kicker">PROGRAMME</div><h1>Daily programme</h1><p class="ph-sub">Every festival event across 8 days — filter by championship, day or category, and add what matters to your calendar.</p></div></header><section class="container section" style="max-width:880px">
 
-
-
   <div class="cal-cta">
-
     <span class="cal-cta-ic"><svg class="ic-svg" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true" focusable="false"><rect x="3.5" y="5" width="17" height="15.5" rx="2.4"/><path d="M3.5 9.8h17M8.5 3v4M15.5 3v4"/></svg></span>
-
     <span class="cal-cta-txt">
-
       <strong>Add the whole festival to your calendar</strong>
-
       <span class="cal-cta-sub">One calendar file with all 39 events — works with iPhone, Android and Outlook.</span>
-
     </span>
-
     <a class="btn gold" href="#">Download calendar</a>  </div>
 
-
-
   <div class="sc-tools ag-filters" id="agFilters">
-
     <div class="ag-selects">
-
       <div class="field">
-
         <label class="flabel" for="agSport">Championship</label>
-
         <select id="agSport"><option value="">All championships</option>
-
           <option value="0">Boxing</option><option value="1">Jiu-Jitsu</option><option value="2">Taekwondo</option><option value="3">Kalba Festival Running Race</option><option value="4">Kalba Festival Cycling Race</option><option value="5">Obstacle Course</option><option value="6">Football</option><option value="7">Basketball</option><option value="8">Community Volleyball</option><option value="9">Padel</option><option value="10">Airsoft</option><option value="11">Kayak</option><option value="12">Schools Esports Challenge</option>        </select>
-
       </div>
-
       <div class="field">
-
         <label class="flabel" for="agDay">Day</label>
-
         <select id="agDay"><option value="">All days</option>
-
           <option value="06/11">Fri · 6 Nov</option><option value="07/11">Sat · 7 Nov</option><option value="08/11">Sun · 8 Nov</option><option value="09/11">Mon · 9 Nov</option><option value="10/11">Tue · 10 Nov</option><option value="11/11">Wed · 11 Nov</option><option value="12/11">Thu · 12 Nov</option><option value="13/11">Fri · 13 Nov</option>        </select>
-
       </div>
-
       <div class="field">
-
         <label class="flabel" for="agCat">Category</label>
-
         <select id="agCat"><option value="">All categories</option>
-
           <option value="team">Team Sports</option><option value="solo">Individual Sports</option><option value="marine">Marine Sports</option><option value="esport">Esports</option>        </select>
-
       </div>
-
     </div>
-
     <div class="sc-meta">
-
       <span>Showing <b id="agCount">39</b> of <b>39</b> events</span>
-
       <span class="ag-views">
-
         <button type="button" class="seg-btn on" id="agViewList"><svg class="ic-svg" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true" focusable="false"><rect x="5" y="4.8" width="14" height="15.7" rx="2.2"/><path d="M9 4.8V3.6h6v1.2"/><path d="M8.8 10.5h6.4M8.8 14h6.4M8.8 17.2h3.6"/></svg> List</button>
-
         <button type="button" class="seg-btn" id="agViewCal"><svg class="ic-svg" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true" focusable="false"><rect x="3.5" y="5" width="17" height="15.5" rx="2.4"/><path d="M3.5 9.8h17M8.5 3v4M15.5 3v4"/></svg> Calendar</button>
-
         <button type="button" class="sc-reset" id="agReset">Reset</button>
-
       </span>
-
     </div>
-
   </div>
-
-
 
   <div id="agList">
-
           <section class="sc-day" data-day="06/11">
-
         <h2 class="sc-dayhead">
-
           <span class="sc-dayname">Fri · 6 Nov</span>
-
           <span class="sc-daycount">2 events</span>
-
         </h2>
-
         <ul class="sc-list">
-
                       <li class="sc-item" data-sport="6" data-day="06/11" data-cat="team">
-
               <div class="sc-toggle" style="cursor:default">
-
                 <span class="sc-node" style="color:var(--gold)"><svg class="ic-svg sport-icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true" focusable="false"><circle cx="12" cy="12" r="9"/><path d="M12 7.5 8.6 10l1.3 4h4.2l1.3-4z"/><path d="M12 3v4.5M4.2 9.4 8.6 10M19.8 9.4 15.4 10M6.8 18.6 9.9 14M17.2 18.6 14.1 14"/></svg></span>
-
                 <span>
-
                   <span class="sc-time" dir="ltr" style="color:var(--gold-soft)">16:00–21:00</span>
-
                   <span class="sc-title">Football — 4 matches</span>
-
                 </span>
-
                 <a class="sc-add" href="#"
-
                    title="Add to my calendar"
-
                    aria-label="Add to my calendar: Football — 4 matches"><svg class="ic-svg" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true" focusable="false"><rect x="3.5" y="5" width="17" height="15.5" rx="2.4"/><path d="M3.5 9.8h17M8.5 3v4M15.5 3v4"/></svg></a>
-
               </div>
-
             </li>
-
                       <li class="sc-item" data-sport="8" data-day="06/11" data-cat="team">
-
               <div class="sc-toggle" style="cursor:default">
-
                 <span class="sc-node" style="color:var(--gold)"><svg class="ic-svg sport-icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true" focusable="false"><circle cx="12" cy="12" r="9"/><path d="M12 3c2.4 3.2 3 7.4 1.6 11.2M3.3 10.4c4 .6 7.6 3 9.6 6.4M20.5 14.6c-3.4-2.2-7.7-2.6-11.4-1"/></svg></span>
-
                 <span>
-
                   <span class="sc-time" dir="ltr" style="color:var(--gold-soft)">16:00–21:00</span>
-
                   <span class="sc-title">Community Volleyball — 4 matches</span>
-
                 </span>
-
                 <a class="sc-add" href="#"
-
                    title="Add to my calendar"
-
                    aria-label="Add to my calendar: Community Volleyball — 4 matches"><svg class="ic-svg" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true" focusable="false"><rect x="3.5" y="5" width="17" height="15.5" rx="2.4"/><path d="M3.5 9.8h17M8.5 3v4M15.5 3v4"/></svg></a>
-
               </div>
-
             </li>
-
                   </ul>
-
       </section>
-
           <section class="sc-day" data-day="07/11">
-
         <h2 class="sc-dayhead">
-
           <span class="sc-dayname">Sat · 7 Nov</span>
-
           <span class="sc-daycount">5 events</span>
-
         </h2>
-
         <ul class="sc-list">
-
                       <li class="sc-item" data-sport="7" data-day="07/11" data-cat="team">
-
               <div class="sc-toggle" style="cursor:default">
-
                 <span class="sc-node" style="color:var(--gold)"><svg class="ic-svg sport-icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true" focusable="false"><circle cx="12" cy="12" r="9"/><path d="M12 3v18M3 12h18"/><path d="M5.6 5.6c3.6 3.6 3.6 9.2 0 12.8M18.4 5.6c-3.6 3.6-3.6 9.2 0 12.8"/></svg></span>
-
                 <span>
-
                   <span class="sc-time" dir="ltr" style="color:var(--gold-soft)">16:00</span>
-
                   <span class="sc-title">Basketball — Wheelchair finals</span>
-
                 </span>
-
                 <a class="sc-add" href="#"
-
                    title="Add to my calendar"
-
                    aria-label="Add to my calendar: Basketball — Wheelchair finals"><svg class="ic-svg" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true" focusable="false"><rect x="3.5" y="5" width="17" height="15.5" rx="2.4"/><path d="M3.5 9.8h17M8.5 3v4M15.5 3v4"/></svg></a>
-
               </div>
-
             </li>
-
                       <li class="sc-item" data-sport="6" data-day="07/11" data-cat="team">
-
               <div class="sc-toggle" style="cursor:default">
-
                 <span class="sc-node" style="color:var(--gold)"><svg class="ic-svg sport-icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true" focusable="false"><circle cx="12" cy="12" r="9"/><path d="M12 7.5 8.6 10l1.3 4h4.2l1.3-4z"/><path d="M12 3v4.5M4.2 9.4 8.6 10M19.8 9.4 15.4 10M6.8 18.6 9.9 14M17.2 18.6 14.1 14"/></svg></span>
-
                 <span>
-
                   <span class="sc-time" dir="ltr" style="color:var(--gold-soft)">16:00–21:00</span>
-
                   <span class="sc-title">Football — 4 matches</span>
-
                 </span>
-
                 <a class="sc-add" href="#"
-
                    title="Add to my calendar"
-
                    aria-label="Add to my calendar: Football — 4 matches"><svg class="ic-svg" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true" focusable="false"><rect x="3.5" y="5" width="17" height="15.5" rx="2.4"/><path d="M3.5 9.8h17M8.5 3v4M15.5 3v4"/></svg></a>
-
               </div>
-
             </li>
-
                       <li class="sc-item" data-sport="8" data-day="07/11" data-cat="team">
-
               <div class="sc-toggle" style="cursor:default">
-
                 <span class="sc-node" style="color:var(--gold)"><svg class="ic-svg sport-icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true" focusable="false"><circle cx="12" cy="12" r="9"/><path d="M12 3c2.4 3.2 3 7.4 1.6 11.2M3.3 10.4c4 .6 7.6 3 9.6 6.4M20.5 14.6c-3.4-2.2-7.7-2.6-11.4-1"/></svg></span>
-
                 <span>
-
                   <span class="sc-time" dir="ltr" style="color:var(--gold-soft)">16:00–21:00</span>
-
                   <span class="sc-title">Community Volleyball — 4 matches</span>
-
                 </span>
-
                 <a class="sc-add" href="#"
-
                    title="Add to my calendar"
-
                    aria-label="Add to my calendar: Community Volleyball — 4 matches"><svg class="ic-svg" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true" focusable="false"><rect x="3.5" y="5" width="17" height="15.5" rx="2.4"/><path d="M3.5 9.8h17M8.5 3v4M15.5 3v4"/></svg></a>
-
               </div>
-
             </li>
-
                       <li class="sc-item" data-sport="3" data-day="07/11" data-cat="solo">
-
               <div class="sc-toggle" style="cursor:default">
-
                 <span class="sc-node" style="color:var(--gold)"><svg class="ic-svg sport-icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true" focusable="false"><circle cx="15.5" cy="4.6" r="1.9"/><path d="M13.6 9.2 9.8 11l-.9 4.2"/><path d="m13.6 9.2 3.6 2.1 1.1 3.6"/><path d="M8.9 15.2 6 18.4M17.2 11.3 20 10M11.4 10.3 7.8 8.6"/></svg></span>
-
                 <span>
-
                   <span class="sc-time" dir="ltr" style="color:var(--gold-soft)">16:00–22:00</span>
-
                   <span class="sc-title">Kalba Festival Running Race — Finals</span>
-
                 </span>
-
                 <a class="sc-add" href="#"
-
                    title="Add to my calendar"
-
                    aria-label="Add to my calendar: Kalba Festival Running Race — Finals"><svg class="ic-svg" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true" focusable="false"><rect x="3.5" y="5" width="17" height="15.5" rx="2.4"/><path d="M3.5 9.8h17M8.5 3v4M15.5 3v4"/></svg></a>
-
               </div>
-
             </li>
-
                       <li class="sc-item" data-sport="9" data-day="07/11" data-cat="team">
-
               <div class="sc-toggle" style="cursor:default">
-
                 <span class="sc-node" style="color:var(--gold)"><svg class="ic-svg sport-icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true" focusable="false"><ellipse cx="10" cy="9" rx="6" ry="7"/><path d="M6.5 6.2 13.5 12M13.5 6.2 6.5 12"/><path d="m14.4 14 5.1 6.4"/></svg></span>
-
                 <span>
-
                   <span class="sc-time" dir="ltr" style="color:var(--gold-soft)">16:00–22:00</span>
-
                   <span class="sc-title">Padel — Group stage</span>
-
                 </span>
-
                 <a class="sc-add" href="#"
-
                    title="Add to my calendar"
-
                    aria-label="Add to my calendar: Padel — Group stage"><svg class="ic-svg" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true" focusable="false"><rect x="3.5" y="5" width="17" height="15.5" rx="2.4"/><path d="M3.5 9.8h17M8.5 3v4M15.5 3v4"/></svg></a>
-
               </div>
-
             </li>
-
                   </ul>
-
       </section>
-
           <section class="sc-day" data-day="08/11">
-
         <h2 class="sc-dayhead">
-
           <span class="sc-dayname">Sun · 8 Nov</span>
-
           <span class="sc-daycount">5 events</span>
-
         </h2>
-
         <ul class="sc-list">
-
                       <li class="sc-item" data-sport="6" data-day="08/11" data-cat="team">
-
               <div class="sc-toggle" style="cursor:default">
-
                 <span class="sc-node" style="color:var(--gold)"><svg class="ic-svg sport-icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true" focusable="false"><circle cx="12" cy="12" r="9"/><path d="M12 7.5 8.6 10l1.3 4h4.2l1.3-4z"/><path d="M12 3v4.5M4.2 9.4 8.6 10M19.8 9.4 15.4 10M6.8 18.6 9.9 14M17.2 18.6 14.1 14"/></svg></span>
-
                 <span>
-
                   <span class="sc-time" dir="ltr" style="color:var(--gold-soft)">16:00–21:00</span>
-
                   <span class="sc-title">Football — 4 matches</span>
-
                 </span>
-
                 <a class="sc-add" href="#"
-
                    title="Add to my calendar"
-
                    aria-label="Add to my calendar: Football — 4 matches"><svg class="ic-svg" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true" focusable="false"><rect x="3.5" y="5" width="17" height="15.5" rx="2.4"/><path d="M3.5 9.8h17M8.5 3v4M15.5 3v4"/></svg></a>
-
               </div>
-
             </li>
-
                       <li class="sc-item" data-sport="8" data-day="08/11" data-cat="team">
-
               <div class="sc-toggle" style="cursor:default">
-
                 <span class="sc-node" style="color:var(--gold)"><svg class="ic-svg sport-icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true" focusable="false"><circle cx="12" cy="12" r="9"/><path d="M12 3c2.4 3.2 3 7.4 1.6 11.2M3.3 10.4c4 .6 7.6 3 9.6 6.4M20.5 14.6c-3.4-2.2-7.7-2.6-11.4-1"/></svg></span>
-
                 <span>
-
                   <span class="sc-time" dir="ltr" style="color:var(--gold-soft)">16:00–21:00</span>
-
                   <span class="sc-title">Community Volleyball — 4 matches</span>
-
                 </span>
-
                 <a class="sc-add" href="#"
-
                    title="Add to my calendar"
-
                    aria-label="Add to my calendar: Community Volleyball — 4 matches"><svg class="ic-svg" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true" focusable="false"><rect x="3.5" y="5" width="17" height="15.5" rx="2.4"/><path d="M3.5 9.8h17M8.5 3v4M15.5 3v4"/></svg></a>
-
               </div>
-
             </li>
-
                       <li class="sc-item" data-sport="4" data-day="08/11" data-cat="solo">
-
               <div class="sc-toggle" style="cursor:default">
-
                 <span class="sc-node" style="color:var(--gold)"><svg class="ic-svg sport-icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true" focusable="false"><circle cx="5.5" cy="16.5" r="3.6"/><circle cx="18.5" cy="16.5" r="3.6"/><path d="M5.5 16.5 10 8h4l4.5 8.5M10 8h5.5"/><circle cx="16" cy="4.6" r="1.6"/><path d="M9 16.5h5"/></svg></span>
-
                 <span>
-
                   <span class="sc-time" dir="ltr" style="color:var(--gold-soft)">16:00–22:00</span>
-
                   <span class="sc-title">Kalba Festival Cycling Race — Finals</span>
-
                 </span>
-
                 <a class="sc-add" href="#"
-
                    title="Add to my calendar"
-
                    aria-label="Add to my calendar: Kalba Festival Cycling Race — Finals"><svg class="ic-svg" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true" focusable="false"><rect x="3.5" y="5" width="17" height="15.5" rx="2.4"/><path d="M3.5 9.8h17M8.5 3v4M15.5 3v4"/></svg></a>
-
               </div>
-
             </li>
-
                       <li class="sc-item" data-sport="7" data-day="08/11" data-cat="team">
-
               <div class="sc-toggle" style="cursor:default">
-
                 <span class="sc-node" style="color:var(--gold)"><svg class="ic-svg sport-icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true" focusable="false"><circle cx="12" cy="12" r="9"/><path d="M12 3v18M3 12h18"/><path d="M5.6 5.6c3.6 3.6 3.6 9.2 0 12.8M18.4 5.6c-3.6 3.6-3.6 9.2 0 12.8"/></svg></span>
-
                 <span>
-
                   <span class="sc-time" dir="ltr" style="color:var(--gold-soft)">16:00–22:00</span>
-
                   <span class="sc-title">Basketball — Women&#039;s competition</span>
-
                 </span>
-
                 <a class="sc-add" href="#"
-
                    title="Add to my calendar"
-
                    aria-label="Add to my calendar: Basketball — Women&#039;s competition"><svg class="ic-svg" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true" focusable="false"><rect x="3.5" y="5" width="17" height="15.5" rx="2.4"/><path d="M3.5 9.8h17M8.5 3v4M15.5 3v4"/></svg></a>
-
               </div>
-
             </li>
-
                       <li class="sc-item" data-sport="9" data-day="08/11" data-cat="team">
-
               <div class="sc-toggle" style="cursor:default">
-
                 <span class="sc-node" style="color:var(--gold)"><svg class="ic-svg sport-icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true" focusable="false"><ellipse cx="10" cy="9" rx="6" ry="7"/><path d="M6.5 6.2 13.5 12M13.5 6.2 6.5 12"/><path d="m14.4 14 5.1 6.4"/></svg></span>
-
                 <span>
-
                   <span class="sc-time" dir="ltr" style="color:var(--gold-soft)">16:00–22:00</span>
-
                   <span class="sc-title">Padel — Group stage</span>
-
                 </span>
-
                 <a class="sc-add" href="#"
-
                    title="Add to my calendar"
-
                    aria-label="Add to my calendar: Padel — Group stage"><svg class="ic-svg" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true" focusable="false"><rect x="3.5" y="5" width="17" height="15.5" rx="2.4"/><path d="M3.5 9.8h17M8.5 3v4M15.5 3v4"/></svg></a>
-
               </div>
-
             </li>
-
                   </ul>
-
       </section>
-
           <section class="sc-day" data-day="09/11">
-
         <h2 class="sc-dayhead">
-
           <span class="sc-dayname">Mon · 9 Nov</span>
-
           <span class="sc-daycount">5 events</span>
-
         </h2>
-
         <ul class="sc-list">
-
                       <li class="sc-item" data-sport="6" data-day="09/11" data-cat="team">
-
               <div class="sc-toggle" style="cursor:default">
-
                 <span class="sc-node" style="color:var(--gold)"><svg class="ic-svg sport-icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true" focusable="false"><circle cx="12" cy="12" r="9"/><path d="M12 7.5 8.6 10l1.3 4h4.2l1.3-4z"/><path d="M12 3v4.5M4.2 9.4 8.6 10M19.8 9.4 15.4 10M6.8 18.6 9.9 14M17.2 18.6 14.1 14"/></svg></span>
-
                 <span>
-
                   <span class="sc-time" dir="ltr" style="color:var(--gold-soft)">16:00–21:00</span>
-
                   <span class="sc-title">Football — 4 matches</span>
-
                 </span>
-
                 <a class="sc-add" href="#"
-
                    title="Add to my calendar"
-
                    aria-label="Add to my calendar: Football — 4 matches"><svg class="ic-svg" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true" focusable="false"><rect x="3.5" y="5" width="17" height="15.5" rx="2.4"/><path d="M3.5 9.8h17M8.5 3v4M15.5 3v4"/></svg></a>
-
               </div>
-
             </li>
-
                       <li class="sc-item" data-sport="8" data-day="09/11" data-cat="team">
-
               <div class="sc-toggle" style="cursor:default">
-
                 <span class="sc-node" style="color:var(--gold)"><svg class="ic-svg sport-icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true" focusable="false"><circle cx="12" cy="12" r="9"/><path d="M12 3c2.4 3.2 3 7.4 1.6 11.2M3.3 10.4c4 .6 7.6 3 9.6 6.4M20.5 14.6c-3.4-2.2-7.7-2.6-11.4-1"/></svg></span>
-
                 <span>
-
                   <span class="sc-time" dir="ltr" style="color:var(--gold-soft)">16:00–21:00</span>
-
                   <span class="sc-title">Community Volleyball — 4 matches</span>
-
                 </span>
-
                 <a class="sc-add" href="#"
-
                    title="Add to my calendar"
-
                    aria-label="Add to my calendar: Community Volleyball — 4 matches"><svg class="ic-svg" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true" focusable="false"><rect x="3.5" y="5" width="17" height="15.5" rx="2.4"/><path d="M3.5 9.8h17M8.5 3v4M15.5 3v4"/></svg></a>
-
               </div>
-
             </li>
-
                       <li class="sc-item" data-sport="7" data-day="09/11" data-cat="team">
-
               <div class="sc-toggle" style="cursor:default">
-
                 <span class="sc-node" style="color:var(--gold)"><svg class="ic-svg sport-icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true" focusable="false"><circle cx="12" cy="12" r="9"/><path d="M12 3v18M3 12h18"/><path d="M5.6 5.6c3.6 3.6 3.6 9.2 0 12.8M18.4 5.6c-3.6 3.6-3.6 9.2 0 12.8"/></svg></span>
-
                 <span>
-
                   <span class="sc-time" dir="ltr" style="color:var(--gold-soft)">16:00–22:00</span>
-
                   <span class="sc-title">Basketball — Men&#039;s finals</span>
-
                 </span>
-
                 <a class="sc-add" href="#"
-
                    title="Add to my calendar"
-
                    aria-label="Add to my calendar: Basketball — Men&#039;s finals"><svg class="ic-svg" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true" focusable="false"><rect x="3.5" y="5" width="17" height="15.5" rx="2.4"/><path d="M3.5 9.8h17M8.5 3v4M15.5 3v4"/></svg></a>
-
               </div>
-
             </li>
-
                       <li class="sc-item" data-sport="9" data-day="09/11" data-cat="team">
-
               <div class="sc-toggle" style="cursor:default">
-
                 <span class="sc-node" style="color:var(--gold)"><svg class="ic-svg sport-icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true" focusable="false"><ellipse cx="10" cy="9" rx="6" ry="7"/><path d="M6.5 6.2 13.5 12M13.5 6.2 6.5 12"/><path d="m14.4 14 5.1 6.4"/></svg></span>
-
                 <span>
-
                   <span class="sc-time" dir="ltr" style="color:var(--gold-soft)">16:00–22:00</span>
-
                   <span class="sc-title">Padel — Finals</span>
-
                 </span>
-
                 <a class="sc-add" href="#"
-
                    title="Add to my calendar"
-
                    aria-label="Add to my calendar: Padel — Finals"><svg class="ic-svg" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true" focusable="false"><rect x="3.5" y="5" width="17" height="15.5" rx="2.4"/><path d="M3.5 9.8h17M8.5 3v4M15.5 3v4"/></svg></a>
-
               </div>
-
             </li>
-
                       <li class="sc-item" data-sport="12" data-day="09/11" data-cat="esport">
-
               <div class="sc-toggle" style="cursor:default">
-
                 <span class="sc-node" style="color:var(--gold)"><svg class="ic-svg sport-icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true" focusable="false"><rect x="2.5" y="7.5" width="19" height="10" rx="4.2"/><path d="M7 11v3M5.5 12.5h3"/><circle cx="16" cy="11.8" r="1"/><circle cx="18.4" cy="14" r="1"/></svg></span>
-
                 <span>
-
                   <span class="sc-time" dir="ltr" style="color:var(--gold-soft)">16:00–22:00</span>
-
                   <span class="sc-title">Schools Esports Challenge — Group stage</span>
-
                 </span>
-
                 <a class="sc-add" href="#"
-
                    title="Add to my calendar"
-
                    aria-label="Add to my calendar: Schools Esports Challenge — Group stage"><svg class="ic-svg" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true" focusable="false"><rect x="3.5" y="5" width="17" height="15.5" rx="2.4"/><path d="M3.5 9.8h17M8.5 3v4M15.5 3v4"/></svg></a>
-
               </div>
-
             </li>
-
                   </ul>
-
       </section>
-
           <section class="sc-day" data-day="10/11">
-
         <h2 class="sc-dayhead">
-
           <span class="sc-dayname">Tue · 10 Nov</span>
-
           <span class="sc-daycount">4 events</span>
-
         </h2>
-
         <ul class="sc-list">
-
                       <li class="sc-item" data-sport="6" data-day="10/11" data-cat="team">
-
               <div class="sc-toggle" style="cursor:default">
-
                 <span class="sc-node" style="color:var(--gold)"><svg class="ic-svg sport-icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true" focusable="false"><circle cx="12" cy="12" r="9"/><path d="M12 7.5 8.6 10l1.3 4h4.2l1.3-4z"/><path d="M12 3v4.5M4.2 9.4 8.6 10M19.8 9.4 15.4 10M6.8 18.6 9.9 14M17.2 18.6 14.1 14"/></svg></span>
-
                 <span>
-
                   <span class="sc-time" dir="ltr" style="color:var(--gold-soft)">16:00–21:00</span>
-
                   <span class="sc-title">Football — 4 matches</span>
-
                 </span>
-
                 <a class="sc-add" href="#"
-
                    title="Add to my calendar"
-
                    aria-label="Add to my calendar: Football — 4 matches"><svg class="ic-svg" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true" focusable="false"><rect x="3.5" y="5" width="17" height="15.5" rx="2.4"/><path d="M3.5 9.8h17M8.5 3v4M15.5 3v4"/></svg></a>
-
               </div>
-
             </li>
-
                       <li class="sc-item" data-sport="8" data-day="10/11" data-cat="team">
-
               <div class="sc-toggle" style="cursor:default">
-
                 <span class="sc-node" style="color:var(--gold)"><svg class="ic-svg sport-icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true" focusable="false"><circle cx="12" cy="12" r="9"/><path d="M12 3c2.4 3.2 3 7.4 1.6 11.2M3.3 10.4c4 .6 7.6 3 9.6 6.4M20.5 14.6c-3.4-2.2-7.7-2.6-11.4-1"/></svg></span>
-
                 <span>
-
                   <span class="sc-time" dir="ltr" style="color:var(--gold-soft)">16:00–21:00</span>
-
                   <span class="sc-title">Community Volleyball — 4 matches</span>
-
                 </span>
-
                 <a class="sc-add" href="#"
-
                    title="Add to my calendar"
-
                    aria-label="Add to my calendar: Community Volleyball — 4 matches"><svg class="ic-svg" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true" focusable="false"><rect x="3.5" y="5" width="17" height="15.5" rx="2.4"/><path d="M3.5 9.8h17M8.5 3v4M15.5 3v4"/></svg></a>
-
               </div>
-
             </li>
-
                       <li class="sc-item" data-sport="7" data-day="10/11" data-cat="team">
-
               <div class="sc-toggle" style="cursor:default">
-
                 <span class="sc-node" style="color:var(--gold)"><svg class="ic-svg sport-icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true" focusable="false"><circle cx="12" cy="12" r="9"/><path d="M12 3v18M3 12h18"/><path d="M5.6 5.6c3.6 3.6 3.6 9.2 0 12.8M18.4 5.6c-3.6 3.6-3.6 9.2 0 12.8"/></svg></span>
-
                 <span>
-
                   <span class="sc-time" dir="ltr" style="color:var(--gold-soft)">16:00–22:00</span>
-
                   <span class="sc-title">Basketball — Schools finals</span>
-
                 </span>
-
                 <a class="sc-add" href="#"
-
                    title="Add to my calendar"
-
                    aria-label="Add to my calendar: Basketball — Schools finals"><svg class="ic-svg" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true" focusable="false"><rect x="3.5" y="5" width="17" height="15.5" rx="2.4"/><path d="M3.5 9.8h17M8.5 3v4M15.5 3v4"/></svg></a>
-
               </div>
-
             </li>
-
                       <li class="sc-item" data-sport="12" data-day="10/11" data-cat="esport">
-
               <div class="sc-toggle" style="cursor:default">
-
                 <span class="sc-node" style="color:var(--gold)"><svg class="ic-svg sport-icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true" focusable="false"><rect x="2.5" y="7.5" width="19" height="10" rx="4.2"/><path d="M7 11v3M5.5 12.5h3"/><circle cx="16" cy="11.8" r="1"/><circle cx="18.4" cy="14" r="1"/></svg></span>
-
                 <span>
-
                   <span class="sc-time" dir="ltr" style="color:var(--gold-soft)">16:00–22:00</span>
-
                   <span class="sc-title">Schools Esports Challenge — Group stage</span>
-
                 </span>
-
                 <a class="sc-add" href="#"
-
                    title="Add to my calendar"
-
                    aria-label="Add to my calendar: Schools Esports Challenge — Group stage"><svg class="ic-svg" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true" focusable="false"><rect x="3.5" y="5" width="17" height="15.5" rx="2.4"/><path d="M3.5 9.8h17M8.5 3v4M15.5 3v4"/></svg></a>
-
               </div>
-
             </li>
-
                   </ul>
-
       </section>
-
           <section class="sc-day" data-day="11/11">
-
         <h2 class="sc-dayhead">
-
           <span class="sc-dayname">Wed · 11 Nov</span>
-
           <span class="sc-daycount">4 events</span>
-
         </h2>
-
         <ul class="sc-list">
-
                       <li class="sc-item" data-sport="6" data-day="11/11" data-cat="team">
-
               <div class="sc-toggle" style="cursor:default">
-
                 <span class="sc-node" style="color:var(--gold)"><svg class="ic-svg sport-icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true" focusable="false"><circle cx="12" cy="12" r="9"/><path d="M12 7.5 8.6 10l1.3 4h4.2l1.3-4z"/><path d="M12 3v4.5M4.2 9.4 8.6 10M19.8 9.4 15.4 10M6.8 18.6 9.9 14M17.2 18.6 14.1 14"/></svg></span>
-
                 <span>
-
                   <span class="sc-time" dir="ltr" style="color:var(--gold-soft)">16:00–21:00</span>
-
                   <span class="sc-title">Football — 4 matches</span>
-
                 </span>
-
                 <a class="sc-add" href="#"
-
                    title="Add to my calendar"
-
                    aria-label="Add to my calendar: Football — 4 matches"><svg class="ic-svg" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true" focusable="false"><rect x="3.5" y="5" width="17" height="15.5" rx="2.4"/><path d="M3.5 9.8h17M8.5 3v4M15.5 3v4"/></svg></a>
-
               </div>
-
             </li>
-
                       <li class="sc-item" data-sport="8" data-day="11/11" data-cat="team">
-
               <div class="sc-toggle" style="cursor:default">
-
                 <span class="sc-node" style="color:var(--gold)"><svg class="ic-svg sport-icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true" focusable="false"><circle cx="12" cy="12" r="9"/><path d="M12 3c2.4 3.2 3 7.4 1.6 11.2M3.3 10.4c4 .6 7.6 3 9.6 6.4M20.5 14.6c-3.4-2.2-7.7-2.6-11.4-1"/></svg></span>
-
                 <span>
-
                   <span class="sc-time" dir="ltr" style="color:var(--gold-soft)">16:00–21:00</span>
-
                   <span class="sc-title">Community Volleyball — 4 matches</span>
-
                 </span>
-
                 <a class="sc-add" href="#"
-
                    title="Add to my calendar"
-
                    aria-label="Add to my calendar: Community Volleyball — 4 matches"><svg class="ic-svg" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true" focusable="false"><rect x="3.5" y="5" width="17" height="15.5" rx="2.4"/><path d="M3.5 9.8h17M8.5 3v4M15.5 3v4"/></svg></a>
-
               </div>
-
             </li>
-
                       <li class="sc-item" data-sport="10" data-day="11/11" data-cat="team">
-
               <div class="sc-toggle" style="cursor:default">
-
                 <span class="sc-node" style="color:var(--gold)"><svg class="ic-svg sport-icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true" focusable="false"><circle cx="12" cy="12" r="8.5"/><circle cx="12" cy="12" r="4.5"/><circle cx="12" cy="12" r="1"/><path d="M12 1.5v3M12 19.5v3M1.5 12h3M19.5 12h3"/></svg></span>
-
                 <span>
-
                   <span class="sc-time" dir="ltr" style="color:var(--gold-soft)">16:00–22:00</span>
-
                   <span class="sc-title">Airsoft — Group stage</span>
-
                 </span>
-
                 <a class="sc-add" href="#"
-
                    title="Add to my calendar"
-
                    aria-label="Add to my calendar: Airsoft — Group stage"><svg class="ic-svg" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true" focusable="false"><rect x="3.5" y="5" width="17" height="15.5" rx="2.4"/><path d="M3.5 9.8h17M8.5 3v4M15.5 3v4"/></svg></a>
-
               </div>
-
             </li>
-
                       <li class="sc-item" data-sport="12" data-day="11/11" data-cat="esport">
-
               <div class="sc-toggle" style="cursor:default">
-
                 <span class="sc-node" style="color:var(--gold)"><svg class="ic-svg sport-icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true" focusable="false"><rect x="2.5" y="7.5" width="19" height="10" rx="4.2"/><path d="M7 11v3M5.5 12.5h3"/><circle cx="16" cy="11.8" r="1"/><circle cx="18.4" cy="14" r="1"/></svg></span>
-
                 <span>
-
                   <span class="sc-time" dir="ltr" style="color:var(--gold-soft)">16:00–22:00</span>
-
                   <span class="sc-title">Schools Esports Challenge — Finals</span>
-
                 </span>
-
                 <a class="sc-add" href="#"
-
                    title="Add to my calendar"
-
                    aria-label="Add to my calendar: Schools Esports Challenge — Finals"><svg class="ic-svg" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true" focusable="false"><rect x="3.5" y="5" width="17" height="15.5" rx="2.4"/><path d="M3.5 9.8h17M8.5 3v4M15.5 3v4"/></svg></a>
-
               </div>
-
             </li>
-
                   </ul>
-
       </section>
-
           <section class="sc-day" data-day="12/11">
-
         <h2 class="sc-dayhead">
-
           <span class="sc-dayname">Thu · 12 Nov</span>
-
           <span class="sc-daycount">7 events</span>
-
         </h2>
-
         <ul class="sc-list">
-
                       <li class="sc-item" data-sport="0" data-day="12/11" data-cat="solo">
-
               <div class="sc-toggle" style="cursor:default">
-
                 <span class="sc-node" style="color:var(--gold)"><svg class="ic-svg sport-icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true" focusable="false"><path d="M7 8.5A3.5 3.5 0 0 1 10.5 5h3A4.5 4.5 0 0 1 18 9.5v3a3 3 0 0 1-3 3H9.5a2.5 2.5 0 0 1-2.5-2.5z"/><path d="M7 10.5H5.8A1.8 1.8 0 0 0 4 12.3v.4a1.8 1.8 0 0 0 1.8 1.8H7"/><path d="M9 15.5V18a1 1 0 0 0 1 1h4a1 1 0 0 0 1-1v-2.5"/></svg></span>
-
                 <span>
-
                   <span class="sc-time" dir="ltr" style="color:var(--gold-soft)">16:00–22:00</span>
-
                   <span class="sc-title">Boxing — Group stage</span>
-
                 </span>
-
                 <a class="sc-add" href="#"
-
                    title="Add to my calendar"
-
                    aria-label="Add to my calendar: Boxing — Group stage"><svg class="ic-svg" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true" focusable="false"><rect x="3.5" y="5" width="17" height="15.5" rx="2.4"/><path d="M3.5 9.8h17M8.5 3v4M15.5 3v4"/></svg></a>
-
               </div>
-
             </li>
-
                       <li class="sc-item" data-sport="1" data-day="12/11" data-cat="solo">
-
               <div class="sc-toggle" style="cursor:default">
-
                 <span class="sc-node" style="color:var(--gold)"><svg class="ic-svg sport-icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true" focusable="false"><path d="M3 11h18v3H3z"/><path d="M8 14v5l-2.5-1.6L3 19l2-5M16 14v5l2.5-1.6L21 19l-2-5"/><path d="M9.5 11V8.5a2.5 2.5 0 0 1 5 0V11"/></svg></span>
-
                 <span>
-
                   <span class="sc-time" dir="ltr" style="color:var(--gold-soft)">16:00–22:00</span>
-
                   <span class="sc-title">Jiu-Jitsu — Group stage</span>
-
                 </span>
-
                 <a class="sc-add" href="#"
-
                    title="Add to my calendar"
-
                    aria-label="Add to my calendar: Jiu-Jitsu — Group stage"><svg class="ic-svg" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true" focusable="false"><rect x="3.5" y="5" width="17" height="15.5" rx="2.4"/><path d="M3.5 9.8h17M8.5 3v4M15.5 3v4"/></svg></a>
-
               </div>
-
             </li>
-
                       <li class="sc-item" data-sport="2" data-day="12/11" data-cat="solo">
-
               <div class="sc-toggle" style="cursor:default">
-
                 <span class="sc-node" style="color:var(--gold)"><svg class="ic-svg sport-icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true" focusable="false"><path d="M3 11h18v3H3z"/><path d="M8 14v5l-2.5-1.6L3 19l2-5M16 14v5l2.5-1.6L21 19l-2-5"/><path d="M9.5 11V8.5a2.5 2.5 0 0 1 5 0V11"/></svg></span>
-
                 <span>
-
                   <span class="sc-time" dir="ltr" style="color:var(--gold-soft)">16:00–22:00</span>
-
                   <span class="sc-title">Taekwondo — Group stage</span>
-
                 </span>
-
                 <a class="sc-add" href="#"
-
                    title="Add to my calendar"
-
                    aria-label="Add to my calendar: Taekwondo — Group stage"><svg class="ic-svg" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true" focusable="false"><rect x="3.5" y="5" width="17" height="15.5" rx="2.4"/><path d="M3.5 9.8h17M8.5 3v4M15.5 3v4"/></svg></a>
-
               </div>
-
             </li>
-
                       <li class="sc-item" data-sport="6" data-day="12/11" data-cat="team">
-
               <div class="sc-toggle" style="cursor:default">
-
                 <span class="sc-node" style="color:var(--gold)"><svg class="ic-svg sport-icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true" focusable="false"><circle cx="12" cy="12" r="9"/><path d="M12 7.5 8.6 10l1.3 4h4.2l1.3-4z"/><path d="M12 3v4.5M4.2 9.4 8.6 10M19.8 9.4 15.4 10M6.8 18.6 9.9 14M17.2 18.6 14.1 14"/></svg></span>
-
                 <span>
-
                   <span class="sc-time" dir="ltr" style="color:var(--gold-soft)">16:00–22:00</span>
-
                   <span class="sc-title">Football — Quarter-finals</span>
-
                 </span>
-
                 <a class="sc-add" href="#"
-
                    title="Add to my calendar"
-
                    aria-label="Add to my calendar: Football — Quarter-finals"><svg class="ic-svg" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true" focusable="false"><rect x="3.5" y="5" width="17" height="15.5" rx="2.4"/><path d="M3.5 9.8h17M8.5 3v4M15.5 3v4"/></svg></a>
-
               </div>
-
             </li>
-
                       <li class="sc-item" data-sport="8" data-day="12/11" data-cat="team">
-
               <div class="sc-toggle" style="cursor:default">
-
                 <span class="sc-node" style="color:var(--gold)"><svg class="ic-svg sport-icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true" focusable="false"><circle cx="12" cy="12" r="9"/><path d="M12 3c2.4 3.2 3 7.4 1.6 11.2M3.3 10.4c4 .6 7.6 3 9.6 6.4M20.5 14.6c-3.4-2.2-7.7-2.6-11.4-1"/></svg></span>
-
                 <span>
-
                   <span class="sc-time" dir="ltr" style="color:var(--gold-soft)">16:00–22:00</span>
-
                   <span class="sc-title">Community Volleyball — Quarter-finals</span>
-
                 </span>
-
                 <a class="sc-add" href="#"
-
                    title="Add to my calendar"
-
                    aria-label="Add to my calendar: Community Volleyball — Quarter-finals"><svg class="ic-svg" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true" focusable="false"><rect x="3.5" y="5" width="17" height="15.5" rx="2.4"/><path d="M3.5 9.8h17M8.5 3v4M15.5 3v4"/></svg></a>
-
               </div>
-
             </li>
-
                       <li class="sc-item" data-sport="10" data-day="12/11" data-cat="team">
-
               <div class="sc-toggle" style="cursor:default">
-
                 <span class="sc-node" style="color:var(--gold)"><svg class="ic-svg sport-icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true" focusable="false"><circle cx="12" cy="12" r="8.5"/><circle cx="12" cy="12" r="4.5"/><circle cx="12" cy="12" r="1"/><path d="M12 1.5v3M12 19.5v3M1.5 12h3M19.5 12h3"/></svg></span>
-
                 <span>
-
                   <span class="sc-time" dir="ltr" style="color:var(--gold-soft)">16:00–22:00</span>
-
                   <span class="sc-title">Airsoft — Group stage</span>
-
                 </span>
-
                 <a class="sc-add" href="#"
-
                    title="Add to my calendar"
-
                    aria-label="Add to my calendar: Airsoft — Group stage"><svg class="ic-svg" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true" focusable="false"><rect x="3.5" y="5" width="17" height="15.5" rx="2.4"/><path d="M3.5 9.8h17M8.5 3v4M15.5 3v4"/></svg></a>
-
               </div>
-
             </li>
-
                       <li class="sc-item" data-sport="11" data-day="12/11" data-cat="marine">
-
               <div class="sc-toggle" style="cursor:default">
-
                 <span class="sc-node" style="color:var(--gold)"><svg class="ic-svg sport-icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true" focusable="false"><path d="M3 15.5c3.4 2.6 14.6 2.6 18 0"/><path d="M4.6 13.2c3.6 1.6 11.2 1.6 14.8 0"/><path d="M7 4.8 17 12.4M17 4.8 7 12.4"/></svg></span>
-
                 <span>
-
                   <span class="sc-time" dir="ltr" style="color:var(--gold-soft)">16:00–22:00</span>
-
                   <span class="sc-title">Kayak — Finals</span>
-
                 </span>
-
                 <a class="sc-add" href="#"
-
                    title="Add to my calendar"
-
                    aria-label="Add to my calendar: Kayak — Finals"><svg class="ic-svg" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true" focusable="false"><rect x="3.5" y="5" width="17" height="15.5" rx="2.4"/><path d="M3.5 9.8h17M8.5 3v4M15.5 3v4"/></svg></a>
-
               </div>
-
             </li>
-
                   </ul>
-
       </section>
-
           <section class="sc-day" data-day="13/11">
-
         <h2 class="sc-dayhead">
-
           <span class="sc-dayname">Fri · 13 Nov</span>
-
           <span class="sc-daycount">7 events</span>
-
         </h2>
-
         <ul class="sc-list">
-
                       <li class="sc-item" data-sport="0" data-day="13/11" data-cat="solo">
-
               <div class="sc-toggle" style="cursor:default">
-
                 <span class="sc-node" style="color:var(--gold)"><svg class="ic-svg sport-icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true" focusable="false"><path d="M7 8.5A3.5 3.5 0 0 1 10.5 5h3A4.5 4.5 0 0 1 18 9.5v3a3 3 0 0 1-3 3H9.5a2.5 2.5 0 0 1-2.5-2.5z"/><path d="M7 10.5H5.8A1.8 1.8 0 0 0 4 12.3v.4a1.8 1.8 0 0 0 1.8 1.8H7"/><path d="M9 15.5V18a1 1 0 0 0 1 1h4a1 1 0 0 0 1-1v-2.5"/></svg></span>
-
                 <span>
-
                   <span class="sc-time" dir="ltr" style="color:var(--gold-soft)">16:00–22:00</span>
-
                   <span class="sc-title">Boxing — Finals</span>
-
                 </span>
-
                 <a class="sc-add" href="#"
-
                    title="Add to my calendar"
-
                    aria-label="Add to my calendar: Boxing — Finals"><svg class="ic-svg" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true" focusable="false"><rect x="3.5" y="5" width="17" height="15.5" rx="2.4"/><path d="M3.5 9.8h17M8.5 3v4M15.5 3v4"/></svg></a>
-
               </div>
-
             </li>
-
                       <li class="sc-item" data-sport="1" data-day="13/11" data-cat="solo">
-
               <div class="sc-toggle" style="cursor:default">
-
                 <span class="sc-node" style="color:var(--gold)"><svg class="ic-svg sport-icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true" focusable="false"><path d="M3 11h18v3H3z"/><path d="M8 14v5l-2.5-1.6L3 19l2-5M16 14v5l2.5-1.6L21 19l-2-5"/><path d="M9.5 11V8.5a2.5 2.5 0 0 1 5 0V11"/></svg></span>
-
                 <span>
-
                   <span class="sc-time" dir="ltr" style="color:var(--gold-soft)">16:00–22:00</span>
-
                   <span class="sc-title">Jiu-Jitsu — Finals</span>
-
                 </span>
-
                 <a class="sc-add" href="#"
-
                    title="Add to my calendar"
-
                    aria-label="Add to my calendar: Jiu-Jitsu — Finals"><svg class="ic-svg" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true" focusable="false"><rect x="3.5" y="5" width="17" height="15.5" rx="2.4"/><path d="M3.5 9.8h17M8.5 3v4M15.5 3v4"/></svg></a>
-
               </div>
-
             </li>
-
                       <li class="sc-item" data-sport="2" data-day="13/11" data-cat="solo">
-
               <div class="sc-toggle" style="cursor:default">
-
                 <span class="sc-node" style="color:var(--gold)"><svg class="ic-svg sport-icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true" focusable="false"><path d="M3 11h18v3H3z"/><path d="M8 14v5l-2.5-1.6L3 19l2-5M16 14v5l2.5-1.6L21 19l-2-5"/><path d="M9.5 11V8.5a2.5 2.5 0 0 1 5 0V11"/></svg></span>
-
                 <span>
-
                   <span class="sc-time" dir="ltr" style="color:var(--gold-soft)">16:00–22:00</span>
-
                   <span class="sc-title">Taekwondo — Finals</span>
-
                 </span>
-
                 <a class="sc-add" href="#"
-
                    title="Add to my calendar"
-
                    aria-label="Add to my calendar: Taekwondo — Finals"><svg class="ic-svg" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true" focusable="false"><rect x="3.5" y="5" width="17" height="15.5" rx="2.4"/><path d="M3.5 9.8h17M8.5 3v4M15.5 3v4"/></svg></a>
-
               </div>
-
             </li>
-
                       <li class="sc-item" data-sport="5" data-day="13/11" data-cat="solo">
-
               <div class="sc-toggle" style="cursor:default">
-
                 <span class="sc-node" style="color:var(--gold)"><svg class="ic-svg sport-icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true" focusable="false"><path d="M4 20V6M4 6h9l-1.6 2.4L13 11H4"/><path d="M17 20v-7M14 13h6"/><path d="M14 16.5h6"/></svg></span>
-
                 <span>
-
                   <span class="sc-time" dir="ltr" style="color:var(--gold-soft)">16:00–22:00</span>
-
                   <span class="sc-title">Obstacle Course — Finals</span>
-
                 </span>
-
                 <a class="sc-add" href="#"
-
                    title="Add to my calendar"
-
                    aria-label="Add to my calendar: Obstacle Course — Finals"><svg class="ic-svg" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true" focusable="false"><rect x="3.5" y="5" width="17" height="15.5" rx="2.4"/><path d="M3.5 9.8h17M8.5 3v4M15.5 3v4"/></svg></a>
-
               </div>
-
             </li>
-
                       <li class="sc-item" data-sport="6" data-day="13/11" data-cat="team">
-
               <div class="sc-toggle" style="cursor:default">
-
                 <span class="sc-node" style="color:var(--gold)"><svg class="ic-svg sport-icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true" focusable="false"><circle cx="12" cy="12" r="9"/><path d="M12 7.5 8.6 10l1.3 4h4.2l1.3-4z"/><path d="M12 3v4.5M4.2 9.4 8.6 10M19.8 9.4 15.4 10M6.8 18.6 9.9 14M17.2 18.6 14.1 14"/></svg></span>
-
                 <span>
-
                   <span class="sc-time" dir="ltr" style="color:var(--gold-soft)">16:00–22:00</span>
-
                   <span class="sc-title">Football — Semi-finals</span>
-
                 </span>
-
                 <a class="sc-add" href="#"
-
                    title="Add to my calendar"
-
                    aria-label="Add to my calendar: Football — Semi-finals"><svg class="ic-svg" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true" focusable="false"><rect x="3.5" y="5" width="17" height="15.5" rx="2.4"/><path d="M3.5 9.8h17M8.5 3v4M15.5 3v4"/></svg></a>
-
               </div>
-
             </li>
-
                       <li class="sc-item" data-sport="8" data-day="13/11" data-cat="team">
-
               <div class="sc-toggle" style="cursor:default">
-
                 <span class="sc-node" style="color:var(--gold)"><svg class="ic-svg sport-icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true" focusable="false"><circle cx="12" cy="12" r="9"/><path d="M12 3c2.4 3.2 3 7.4 1.6 11.2M3.3 10.4c4 .6 7.6 3 9.6 6.4M20.5 14.6c-3.4-2.2-7.7-2.6-11.4-1"/></svg></span>
-
                 <span>
-
                   <span class="sc-time" dir="ltr" style="color:var(--gold-soft)">16:00–22:00</span>
-
                   <span class="sc-title">Community Volleyball — Semi-finals</span>
-
                 </span>
-
                 <a class="sc-add" href="#"
-
                    title="Add to my calendar"
-
                    aria-label="Add to my calendar: Community Volleyball — Semi-finals"><svg class="ic-svg" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true" focusable="false"><rect x="3.5" y="5" width="17" height="15.5" rx="2.4"/><path d="M3.5 9.8h17M8.5 3v4M15.5 3v4"/></svg></a>
-
               </div>
-
             </li>
-
                       <li class="sc-item" data-sport="10" data-day="13/11" data-cat="team">
-
               <div class="sc-toggle" style="cursor:default">
-
                 <span class="sc-node" style="color:var(--gold)"><svg class="ic-svg sport-icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true" focusable="false"><circle cx="12" cy="12" r="8.5"/><circle cx="12" cy="12" r="4.5"/><circle cx="12" cy="12" r="1"/><path d="M12 1.5v3M12 19.5v3M1.5 12h3M19.5 12h3"/></svg></span>
-
                 <span>
-
                   <span class="sc-time" dir="ltr" style="color:var(--gold-soft)">16:00–22:00</span>
-
                   <span class="sc-title">Airsoft — Finals</span>
-
                 </span>
-
                 <a class="sc-add" href="#"
-
                    title="Add to my calendar"
-
                    aria-label="Add to my calendar: Airsoft — Finals"><svg class="ic-svg" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true" focusable="false"><rect x="3.5" y="5" width="17" height="15.5" rx="2.4"/><path d="M3.5 9.8h17M8.5 3v4M15.5 3v4"/></svg></a>
-
               </div>
-
             </li>
-
                   </ul>
-
       </section>
-
         <div class="sc-empty" id="agEmpty" hidden>
-
       <svg class="ic-svg" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true" focusable="false"><circle cx="12" cy="12" r="9"/><path d="M9.6 9.6a2.5 2.5 0 1 1 3.4 2.3c-.7.3-1 .9-1 1.6v.4"/><path d="M12 17.2h.01"/></svg>      <p>No events match these filters.</p>
-
       <button type="button" class="btn ghost sm" id="agEmptyReset">Reset filters</button>
-
     </div>
-
   </div>
-
-
 
   <div id="agCal" hidden>
-
     <div class="agc-grid">
-
               <div class="agc-day" data-day="06/11">
-
           <div class="agc-head">
-
             <span class="agc-date" dir="ltr">06/11</span>
-
             <span class="agc-name">Fri · 6 Nov</span>
-
           </div>
-
           <ul class="agc-list">
-
                           <li class="agc-ev" data-sport="6" data-cat="team">
-
                 <span class="agc-t" dir="ltr">16:00</span>
-
                 <a href="champ-6-en.html">Football</a>
-
                 <small>4 matches</small>
-
               </li>
-
                           <li class="agc-ev" data-sport="8" data-cat="team">
-
                 <span class="agc-t" dir="ltr">16:00</span>
-
                 <a href="champ-8-en.html">Community Volleyball</a>
-
                 <small>4 matches</small>
-
               </li>
-
                       </ul>
-
           <span class="agc-count">2 events</span>
-
         </div>
-
               <div class="agc-day" data-day="07/11">
-
           <div class="agc-head">
-
             <span class="agc-date" dir="ltr">07/11</span>
-
             <span class="agc-name">Sat · 7 Nov</span>
-
           </div>
-
           <ul class="agc-list">
-
                           <li class="agc-ev" data-sport="7" data-cat="team">
-
                 <span class="agc-t" dir="ltr">16:00</span>
-
                 <a href="champ-7-en.html">Basketball</a>
-
                 <small>Wheelchair finals</small>
-
               </li>
-
                           <li class="agc-ev" data-sport="6" data-cat="team">
-
                 <span class="agc-t" dir="ltr">16:00</span>
-
                 <a href="champ-6-en.html">Football</a>
-
                 <small>4 matches</small>
-
               </li>
-
                           <li class="agc-ev" data-sport="8" data-cat="team">
-
                 <span class="agc-t" dir="ltr">16:00</span>
-
                 <a href="champ-8-en.html">Community Volleyball</a>
-
                 <small>4 matches</small>
-
               </li>
-
                           <li class="agc-ev" data-sport="3" data-cat="solo">
-
                 <span class="agc-t" dir="ltr">16:00</span>
-
                 <a href="champ-3-en.html">Kalba Festival Running Race</a>
-
                 <small>Finals</small>
-
               </li>
-
                           <li class="agc-ev" data-sport="9" data-cat="team">
-
                 <span class="agc-t" dir="ltr">16:00</span>
-
                 <a href="champ-9-en.html">Padel</a>
-
                 <small>Group stage</small>
-
               </li>
-
                       </ul>
-
           <span class="agc-count">5 events</span>
-
         </div>
-
               <div class="agc-day" data-day="08/11">
-
           <div class="agc-head">
-
             <span class="agc-date" dir="ltr">08/11</span>
-
             <span class="agc-name">Sun · 8 Nov</span>
-
           </div>
-
           <ul class="agc-list">
-
                           <li class="agc-ev" data-sport="6" data-cat="team">
-
                 <span class="agc-t" dir="ltr">16:00</span>
-
                 <a href="champ-6-en.html">Football</a>
-
                 <small>4 matches</small>
-
               </li>
-
                           <li class="agc-ev" data-sport="8" data-cat="team">
-
                 <span class="agc-t" dir="ltr">16:00</span>
-
                 <a href="champ-8-en.html">Community Volleyball</a>
-
                 <small>4 matches</small>
-
               </li>
-
                           <li class="agc-ev" data-sport="4" data-cat="solo">
-
                 <span class="agc-t" dir="ltr">16:00</span>
-
                 <a href="champ-4-en.html">Kalba Festival Cycling Race</a>
-
                 <small>Finals</small>
-
               </li>
-
                           <li class="agc-ev" data-sport="7" data-cat="team">
-
                 <span class="agc-t" dir="ltr">16:00</span>
-
                 <a href="champ-7-en.html">Basketball</a>
-
                 <small>Women&#039;s competition</small>
-
               </li>
-
                           <li class="agc-ev" data-sport="9" data-cat="team">
-
                 <span class="agc-t" dir="ltr">16:00</span>
-
                 <a href="champ-9-en.html">Padel</a>
-
                 <small>Group stage</small>
-
               </li>
-
                       </ul>
-
           <span class="agc-count">5 events</span>
-
         </div>
-
               <div class="agc-day" data-day="09/11">
-
           <div class="agc-head">
-
             <span class="agc-date" dir="ltr">09/11</span>
-
             <span class="agc-name">Mon · 9 Nov</span>
-
           </div>
-
           <ul class="agc-list">
-
                           <li class="agc-ev" data-sport="6" data-cat="team">
-
                 <span class="agc-t" dir="ltr">16:00</span>
-
                 <a href="champ-6-en.html">Football</a>
-
                 <small>4 matches</small>
-
               </li>
-
                           <li class="agc-ev" data-sport="8" data-cat="team">
-
                 <span class="agc-t" dir="ltr">16:00</span>
-
                 <a href="champ-8-en.html">Community Volleyball</a>
-
                 <small>4 matches</small>
-
               </li>
-
                           <li class="agc-ev" data-sport="7" data-cat="team">
-
                 <span class="agc-t" dir="ltr">16:00</span>
-
                 <a href="champ-7-en.html">Basketball</a>
-
                 <small>Men&#039;s finals</small>
-
               </li>
-
                           <li class="agc-ev" data-sport="9" data-cat="team">
-
                 <span class="agc-t" dir="ltr">16:00</span>
-
                 <a href="champ-9-en.html">Padel</a>
-
                 <small>Finals</small>
-
               </li>
-
                           <li class="agc-ev" data-sport="12" data-cat="esport">
-
                 <span class="agc-t" dir="ltr">16:00</span>
-
                 <a href="champ-12-en.html">Schools Esports Challenge</a>
-
                 <small>Group stage</small>
-
               </li>
-
                       </ul>
-
           <span class="agc-count">5 events</span>
-
         </div>
-
               <div class="agc-day" data-day="10/11">
-
           <div class="agc-head">
-
             <span class="agc-date" dir="ltr">10/11</span>
-
             <span class="agc-name">Tue · 10 Nov</span>
-
           </div>
-
           <ul class="agc-list">
-
                           <li class="agc-ev" data-sport="6" data-cat="team">
-
                 <span class="agc-t" dir="ltr">16:00</span>
-
                 <a href="champ-6-en.html">Football</a>
-
                 <small>4 matches</small>
-
               </li>
-
                           <li class="agc-ev" data-sport="8" data-cat="team">
-
                 <span class="agc-t" dir="ltr">16:00</span>
-
                 <a href="champ-8-en.html">Community Volleyball</a>
-
                 <small>4 matches</small>
-
               </li>
-
                           <li class="agc-ev" data-sport="7" data-cat="team">
-
                 <span class="agc-t" dir="ltr">16:00</span>
-
                 <a href="champ-7-en.html">Basketball</a>
-
                 <small>Schools finals</small>
-
               </li>
-
                           <li class="agc-ev" data-sport="12" data-cat="esport">
-
                 <span class="agc-t" dir="ltr">16:00</span>
-
                 <a href="champ-12-en.html">Schools Esports Challenge</a>
-
                 <small>Group stage</small>
-
               </li>
-
                       </ul>
-
           <span class="agc-count">4 events</span>
-
         </div>
-
               <div class="agc-day" data-day="11/11">
-
           <div class="agc-head">
-
             <span class="agc-date" dir="ltr">11/11</span>
-
             <span class="agc-name">Wed · 11 Nov</span>
-
           </div>
-
           <ul class="agc-list">
-
                           <li class="agc-ev" data-sport="6" data-cat="team">
-
                 <span class="agc-t" dir="ltr">16:00</span>
-
                 <a href="champ-6-en.html">Football</a>
-
                 <small>4 matches</small>
-
               </li>
-
                           <li class="agc-ev" data-sport="8" data-cat="team">
-
                 <span class="agc-t" dir="ltr">16:00</span>
-
                 <a href="champ-8-en.html">Community Volleyball</a>
-
                 <small>4 matches</small>
-
               </li>
-
                           <li class="agc-ev" data-sport="10" data-cat="team">
-
                 <span class="agc-t" dir="ltr">16:00</span>
-
                 <a href="champ-10-en.html">Airsoft</a>
-
                 <small>Group stage</small>
-
               </li>
-
                           <li class="agc-ev" data-sport="12" data-cat="esport">
-
                 <span class="agc-t" dir="ltr">16:00</span>
-
                 <a href="champ-12-en.html">Schools Esports Challenge</a>
-
                 <small>Finals</small>
-
               </li>
-
                       </ul>
-
           <span class="agc-count">4 events</span>
-
         </div>
-
               <div class="agc-day" data-day="12/11">
-
           <div class="agc-head">
-
             <span class="agc-date" dir="ltr">12/11</span>
-
             <span class="agc-name">Thu · 12 Nov</span>
-
           </div>
-
           <ul class="agc-list">
-
                           <li class="agc-ev" data-sport="0" data-cat="solo">
-
                 <span class="agc-t" dir="ltr">16:00</span>
-
                 <a href="champ-0-en.html">Boxing</a>
-
                 <small>Group stage</small>
-
               </li>
-
                           <li class="agc-ev" data-sport="1" data-cat="solo">
-
                 <span class="agc-t" dir="ltr">16:00</span>
-
                 <a href="champ-1-en.html">Jiu-Jitsu</a>
-
                 <small>Group stage</small>
-
               </li>
-
                           <li class="agc-ev" data-sport="2" data-cat="solo">
-
                 <span class="agc-t" dir="ltr">16:00</span>
-
                 <a href="champ-2-en.html">Taekwondo</a>
-
                 <small>Group stage</small>
-
               </li>
-
                           <li class="agc-ev" data-sport="6" data-cat="team">
-
                 <span class="agc-t" dir="ltr">16:00</span>
-
                 <a href="champ-6-en.html">Football</a>
-
                 <small>Quarter-finals</small>
-
               </li>
-
                           <li class="agc-ev" data-sport="8" data-cat="team">
-
                 <span class="agc-t" dir="ltr">16:00</span>
-
                 <a href="champ-8-en.html">Community Volleyball</a>
-
                 <small>Quarter-finals</small>
-
               </li>
-
                           <li class="agc-ev" data-sport="10" data-cat="team">
-
                 <span class="agc-t" dir="ltr">16:00</span>
-
                 <a href="champ-10-en.html">Airsoft</a>
-
                 <small>Group stage</small>
-
               </li>
-
                           <li class="agc-ev" data-sport="11" data-cat="marine">
-
                 <span class="agc-t" dir="ltr">16:00</span>
-
                 <a href="champ-11-en.html">Kayak</a>
-
                 <small>Finals</small>
-
               </li>
-
                       </ul>
-
           <span class="agc-count">7 events</span>
-
         </div>
-
               <div class="agc-day" data-day="13/11">
-
           <div class="agc-head">
-
             <span class="agc-date" dir="ltr">13/11</span>
-
             <span class="agc-name">Fri · 13 Nov</span>
-
           </div>
-
           <ul class="agc-list">
-
                           <li class="agc-ev" data-sport="0" data-cat="solo">
-
                 <span class="agc-t" dir="ltr">16:00</span>
-
                 <a href="champ-0-en.html">Boxing</a>
-
                 <small>Finals</small>
-
               </li>
-
                           <li class="agc-ev" data-sport="1" data-cat="solo">
-
                 <span class="agc-t" dir="ltr">16:00</span>
-
                 <a href="champ-1-en.html">Jiu-Jitsu</a>
-
                 <small>Finals</small>
-
               </li>
-
                           <li class="agc-ev" data-sport="2" data-cat="solo">
-
                 <span class="agc-t" dir="ltr">16:00</span>
-
                 <a href="champ-2-en.html">Taekwondo</a>
-
                 <small>Finals</small>
-
               </li>
-
                           <li class="agc-ev" data-sport="5" data-cat="solo">
-
                 <span class="agc-t" dir="ltr">16:00</span>
-
                 <a href="champ-5-en.html">Obstacle Course</a>
-
                 <small>Finals</small>
-
               </li>
-
                           <li class="agc-ev" data-sport="6" data-cat="team">
-
                 <span class="agc-t" dir="ltr">16:00</span>
-
                 <a href="champ-6-en.html">Football</a>
-
                 <small>Semi-finals</small>
-
               </li>
-
                           <li class="agc-ev" data-sport="8" data-cat="team">
-
                 <span class="agc-t" dir="ltr">16:00</span>
-
                 <a href="champ-8-en.html">Community Volleyball</a>
-
                 <small>Semi-finals</small>
-
               </li>
-
                           <li class="agc-ev" data-sport="10" data-cat="team">
-
                 <span class="agc-t" dir="ltr">16:00</span>
-
                 <a href="champ-10-en.html">Airsoft</a>
-
                 <small>Finals</small>
-
               </li>
-
                       </ul>
-
           <span class="agc-count">7 events</span>
-
         </div>
-
           </div>
-
   </div>
-
 </section>
-
 </main>
-
 <footer class="footer">
-
   <img class="footer-mark" src="assets/img/logo-mark-white.png" alt="" aria-hidden="true">
-
   <div class="fb">Kalba Sports Festival 2026</div>
-
   <div id="footNote">Kalba · Sharjah · 6–13 November 2026</div>
-
   <nav class="foot-links" aria-label="Links">
-
     <a href="about-en.html">About</a><a href="gallery-en.html">Gallery</a><a href="news-en.html">News</a><a href="schools-en.html">Schools</a><a href="surveys-en.html">Surveys</a><a href="join-en.html">Visitor pass</a><a href="my-en.html">Track my application</a><a href="community-en.html">Community</a><a href="results-en.html">Live results</a><a href="faq-en.html">FAQ</a><a href="contact-en.html">Contact</a><a href="terms-en.html">Terms</a><a href="privacy-en.html">Privacy</a><a href="map.html?lang=en">Interactive map</a>  </nav>
-
     <form class="footer-nl" method="post" action="actions/subscribe.php?lang=en" style="justify-content:center;margin-top:12px">
-
-      <input type="hidden" name="_csrf" value="26a7f937540040fedee1de2c57f804a40428995e50054db1626b558e574c8dcd">    <label class="sr-only" for="nlEmail">Your email for the newsletter</label>
-
+      <input type="hidden" name="_csrf" value="00c6b2f33d5873196f1b283a523e898e701fffbf8b4d8926001d1c072a0222fc">    <label class="sr-only" for="nlEmail">Your email for the newsletter</label>
     <input type="email" id="nlEmail" name="email" dir="ltr" required
-
            placeholder="Your email" style="max-width:240px">
-
     <button class="btn gold sm" type="submit">Subscribe</button>
-
   </form>
-
 </footer>
-
 <nav class="bottombar" aria-label="Quick navigation">
-
       <a class="bb-item"
-
        href="index-en.html">
-
       <span class="bb-ic"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M3 10.5 12 3l9 7.5"/><path d="M5 9.5V21h14V9.5"/></svg></span>
-
       <span class="bb-lbl">Home</span>
-
     </a>
-
       <a class="bb-item"
-
        href="champs-en.html">
-
       <span class="bb-ic"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M8 21h8M12 17v4M7 4h10v4a5 5 0 0 1-10 0z"/><path d="M7 6H4v1a4 4 0 0 0 3 3.9M17 6h3v1a4 4 0 0 1-3 3.9"/></svg></span>
-
       <span class="bb-lbl">Sports</span>
-
     </a>
-
       <a class="bb-item bb-cta"
-
        href="register-en.html">
-
       <span class="bb-ic"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" aria-hidden="true"><path d="M12 5v14M5 12h14"/></svg></span>
-
       <span class="bb-lbl">Register</span>
-
     </a>
-
       <a class="bb-item"
-
        href="results-en.html">
-
       <span class="bb-ic"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M4 20V10M12 20V4M20 20v-7"/></svg></span>
-
       <span class="bb-lbl">Results</span>
-
     </a>
-
       <a class="bb-item active"
-
        href="agenda-en.html" aria-current="page">
-
       <span class="bb-ic"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><rect x="3" y="5" width="18" height="16" rx="2"/><path d="M8 3v4M16 3v4M3 10h18"/></svg></span>
-
       <span class="bb-lbl">Agenda</span>
-
     </a>
-
   </nav>
-
 <script src="assets/app.js"></script>
-
 </body>
-
 </html>
-

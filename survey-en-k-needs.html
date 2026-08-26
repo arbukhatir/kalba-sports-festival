@@ -1,201 +1,101 @@
 <!doctype html>
-
 <html lang="en" dir="ltr">
-
 <head>
-
 <meta charset="utf-8">
-
 <meta name="viewport" content="width=device-width, initial-scale=1.0, viewport-fit=cover">
-
 <title>Needs Assessment — Kalba Sports Festival 2026</title>
-
 <meta name="description" content="Kalba Sports Festival 2026 — 8 days and 13 official sports on the Kalba Corniche, 6–13 November 2026.">
-
 <meta property="og:title" content="Needs Assessment">
-
 <meta property="og:description" content="Kalba Sports Festival 2026 — 8 days and 13 official sports on the Kalba Corniche, 6–13 November 2026.">
-
 <meta property="og:type" content="website">
-
 <meta property="og:locale" content="en_AE">
-
-
+<meta http-equiv="Content-Security-Policy" content="default-src 'self'; base-uri 'self'; object-src 'none'; script-src 'self' 'unsafe-inline'; style-src 'self' 'unsafe-inline'; font-src 'self'; img-src 'self' data:; connect-src 'self'; form-action 'self'">
 <meta name="referrer" content="strict-origin-when-cross-origin">
-
 <meta name="theme-color" content="#0A2133">
-
 <link rel="icon" type="image/png" href="assets/img/favicon.png">
-
 <link rel="stylesheet" href="assets/style.css">
-
 </head>
-
 <body>
-
 <a class="skip-link" href="#app">تخطَّ إلى المحتوى</a>
-
 <header class="topbar">
-
   <div class="topbar-in">
-
     <a class="brand" href="index-en.html">
-
       <img class="brand-logo" src="assets/img/logo-mark.png" alt="" aria-hidden="true">
-
       <span id="brandName">Kalba Sports Festival 2026</span>
-
     </a>
-
     <button class="mobile-menu-btn" id="mobileMenuBtn" type="button" aria-label="القائمة" aria-expanded="false" onclick="toggleMobileNav()">
-
       <span></span><span></span><span></span>
-
     </button>
-
     <nav class="main" id="mainNav">
-
               <a href="index-en.html">Home</a>
-
               <a href="champs-en.html">Sports</a>
-
               <a href="agenda-en.html">Agenda</a>
-
               <a href="results-en.html">Results</a>
-
               <a href="leaderboard-en.html">Visitor points</a>
-
               <a href="register-en.html">Register</a>
-
               <a href="venue-en.html">Venue</a>
-
               <a href="contact-en.html">Contact</a>
-
             <a class="nav-login" href="gate-en.html">Log in</a>
-
       <a class="lang" href="survey.html">عربي</a>
-
     </nav>
-
   </div>
-
 </header>
-
 <div class="mobile-nav-overlay" id="mobileNavOverlay" onclick="closeMobileNav()"></div>
-
 <main id="app" tabindex="-1">
-
 <header class="pagehead"><div class="pagehead-in"><a class="ph-back" href="surveys-en.html">&larr; All surveys</a><div class="ph-kicker">SURVEY</div><h1>Needs Assessment</h1></div></header><section class="container section" style="max-width:640px"><div class="panel">
-
       <form method="post" action="actions/survey.php?lang=en">
-
-      <input type="hidden" name="_csrf" value="82d24d821d576bf1ff8ced6d04e3e342a756a8bd8a09e7f41a5d3cab6a36407e">      <input type="hidden" name="survey" value="needs">
-
+      <input type="hidden" name="_csrf" value="46d8436da9fde76556980804be0955f61b7f3ce2ac748032b6d66299f688d236">      <input type="hidden" name="survey" value="needs">
       <div class="field"><label class="flabel" for="s1">Age group <span class="req">*</span></label>
-
         <select id="s1" name="f_age" required><option value="">Choose</option>
-
           <option>&lt;12</option><option>12–17</option><option>18–45</option><option>45+</option></select></div>
-
       <div class="field"><label class="flabel" for="s2">Rate the festival (1–5) <span class="req">*</span></label>
-
         <select id="s2" name="f_rating" required><option value="">Choose</option>
-
           <option>1</option><option>2</option><option>3</option><option>4</option><option>5</option></select></div>
-
       <div class="field"><label class="flabel" for="s3">Your comments</label><textarea id="s3" name="f_comment" rows="3" maxlength="1000"></textarea></div>
-
       <button class="btn primary block" type="submit">Submit</button>
-
     </form>
-
   </div></section>
-
 </main>
-
 <footer class="footer">
-
   <img class="footer-mark" src="assets/img/logo-mark-white.png" alt="" aria-hidden="true">
-
   <div class="fb">Kalba Sports Festival 2026</div>
-
   <div id="footNote">Kalba · Sharjah · 6–13 November 2026</div>
-
   <nav class="foot-links" aria-label="Links">
-
     <a href="about-en.html">About</a><a href="gallery-en.html">Gallery</a><a href="news-en.html">News</a><a href="schools-en.html">Schools</a><a href="surveys-en.html">Surveys</a><a href="join-en.html">Visitor pass</a><a href="my-en.html">Track my application</a><a href="community-en.html">Community</a><a href="results-en.html">Live results</a><a href="faq-en.html">FAQ</a><a href="contact-en.html">Contact</a><a href="terms-en.html">Terms</a><a href="privacy-en.html">Privacy</a><a href="map.html?lang=en">Interactive map</a>  </nav>
-
     <form class="footer-nl" method="post" action="actions/subscribe.php?lang=en" style="justify-content:center;margin-top:12px">
-
-      <input type="hidden" name="_csrf" value="82d24d821d576bf1ff8ced6d04e3e342a756a8bd8a09e7f41a5d3cab6a36407e">    <label class="sr-only" for="nlEmail">Your email for the newsletter</label>
-
+      <input type="hidden" name="_csrf" value="46d8436da9fde76556980804be0955f61b7f3ce2ac748032b6d66299f688d236">    <label class="sr-only" for="nlEmail">Your email for the newsletter</label>
     <input type="email" id="nlEmail" name="email" dir="ltr" required
-
            placeholder="Your email" style="max-width:240px">
-
     <button class="btn gold sm" type="submit">Subscribe</button>
-
   </form>
-
 </footer>
-
 <nav class="bottombar" aria-label="Quick navigation">
-
       <a class="bb-item"
-
        href="index-en.html">
-
       <span class="bb-ic"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M3 10.5 12 3l9 7.5"/><path d="M5 9.5V21h14V9.5"/></svg></span>
-
       <span class="bb-lbl">Home</span>
-
     </a>
-
       <a class="bb-item"
-
        href="champs-en.html">
-
       <span class="bb-ic"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M8 21h8M12 17v4M7 4h10v4a5 5 0 0 1-10 0z"/><path d="M7 6H4v1a4 4 0 0 0 3 3.9M17 6h3v1a4 4 0 0 1-3 3.9"/></svg></span>
-
       <span class="bb-lbl">Sports</span>
-
     </a>
-
       <a class="bb-item bb-cta"
-
        href="register-en.html">
-
       <span class="bb-ic"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" aria-hidden="true"><path d="M12 5v14M5 12h14"/></svg></span>
-
       <span class="bb-lbl">Register</span>
-
     </a>
-
       <a class="bb-item"
-
        href="results-en.html">
-
       <span class="bb-ic"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M4 20V10M12 20V4M20 20v-7"/></svg></span>
-
       <span class="bb-lbl">Results</span>
-
     </a>
-
       <a class="bb-item"
-
        href="agenda-en.html">
-
       <span class="bb-ic"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><rect x="3" y="5" width="18" height="16" rx="2"/><path d="M8 3v4M16 3v4M3 10h18"/></svg></span>
-
       <span class="bb-lbl">Agenda</span>
-
     </a>
-
   </nav>
-
 <script src="assets/app.js"></script>
-
 </body>
-
 </html>
-
