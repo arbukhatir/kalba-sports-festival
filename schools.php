@@ -12,12 +12,12 @@ echo page_head(A('للمدارس والعائلات', 'SCHOOLS & FAMILIES'), A('
 <section class="container section"><div class="grid g3">
   <?php
   $b = [
-    ['🧠', A('تحديات معرفية', 'Knowledge'), A('مسابقات ثقافية وعلمية بنقاط فورية.', 'Cultural and science quizzes with instant points.')],
-    ['🏃', A('تحديات رياضية', 'Sports'), A('سباقات وألعاب جماعية على الشاطئ.', 'Races and team games on the beach.')],
-    ['🎨', A('تحديات إبداعية', 'Creative'), A('ورش فنية ومشاريع جماعية.', 'Art workshops and group projects.')],
-    ['🏆', A('كأس المدارس', 'Schools cup'), A('لوحات متصدرين يومية وكأس للمدرسة الأعلى نقاطاً.', 'Daily leaderboards and a cup for the top school.')],
-    ['⭐', A('مكافآت السرعة', 'Speed bonuses'), A('نقاط إضافية لأسرع المشاركين.', 'Extra points for the fastest participants.')],
-    ['👪', A('مشاركة عائلية', 'Family'), A('فعاليات تجمع الطلبة وأسرهم.', 'Events that bring students and families together.')],
+    [icon('bulb'), A('تحديات معرفية', 'Knowledge'), A('مسابقات ثقافية وعلمية بنقاط فورية.', 'Cultural and science quizzes with instant points.')],
+    [icon('running'), A('تحديات رياضية', 'Sports'), A('سباقات وألعاب جماعية على الشاطئ.', 'Races and team games on the beach.')],
+    [icon('palette'), A('تحديات إبداعية', 'Creative'), A('ورش فنية ومشاريع جماعية.', 'Art workshops and group projects.')],
+    [icon('trophy'), A('كأس المدارس', 'Schools cup'), A('لوحات متصدرين يومية وكأس للمدرسة الأعلى نقاطاً.', 'Daily leaderboards and a cup for the top school.')],
+    [icon('star'), A('مكافآت السرعة', 'Speed bonuses'), A('نقاط إضافية لأسرع المشاركين.', 'Extra points for the fastest participants.')],
+    [icon('family'), A('مشاركة عائلية', 'Family'), A('فعاليات تجمع الطلبة وأسرهم.', 'Events that bring students and families together.')],
   ];
   foreach ($b as $x) echo '<div class="card" style="text-align:center"><div class="ic">' . $x[0] . '</div><div class="tt">' . e($x[1]) . '</div><p class="muted" style="font-size:.88rem">' . e($x[2]) . '</p></div>';
   ?>

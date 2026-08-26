@@ -9,9 +9,9 @@ echo page_head(A('رأيك يهمنا', 'YOUR VOICE'), A('الاستبيانات
   A('شاركنا رأيك — قبل المهرجان وأثناءه وبعده.', 'Share your view — before, during and after the festival.'),
   ['bg' => 'champs/ai-taekwondo.webp']);
 $surveys = [
-  ['ideas', '💡', 'استبيان الأفكار', 'Ideas Survey', 'تفضيلات الجمهور حول الأنشطة.', 'Public activity preferences.'],
-  ['needs', '📋', 'حصر الاحتياجات', 'Needs Assessment', 'فهم توقعات الزوار وخدماتهم.', 'Understanding visitor expectations.'],
-  ['satisfaction', '⭐', 'قياس الرضا', 'Satisfaction', 'الرضا العام ومؤشر التوصية.', 'Overall satisfaction and NPS.'],
+  ['ideas', icon('bulb'), 'استبيان الأفكار', 'Ideas Survey', 'تفضيلات الجمهور حول الأنشطة.', 'Public activity preferences.'],
+  ['needs', icon('clipboard'), 'حصر الاحتياجات', 'Needs Assessment', 'فهم توقعات الزوار وخدماتهم.', 'Understanding visitor expectations.'],
+  ['satisfaction', icon('star'), 'قياس الرضا', 'Satisfaction', 'الرضا العام ومؤشر التوصية.', 'Overall satisfaction and NPS.'],
 ];
 ?>
 <section class="container section"><div class="grid g3">

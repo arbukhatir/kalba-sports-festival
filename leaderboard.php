@@ -13,7 +13,7 @@ echo page_head(A('المتصدرون', 'LEADERBOARD'), A('لوحة المتصد�
 ?>
 <section class="container section" style="max-width:680px">
   <?php if (!$rows): ?>
-    <div class="panel" style="text-align:center"><div class="be">⭐</div>
+    <div class="panel" style="text-align:center"><div class="be"><?= icon('star') ?></div>
       <h2 class="sec-h" style="margin-top:0"><?= e(A('كن أول المتصدرين', 'Be the first on the board')) ?></h2>
       <p class="muted"><?= e(A('أنشئ تصريح الزيارة واجمع النقاط عند كل نشاط.', 'Create your visitor pass and collect points at every activity.')) ?></p>
       <div class="btn-row" style="justify-content:center"><?= btn(A('تصريح الزيارة المجاني', 'Free visitor pass'), 'join.php', 'gold') ?></div>

@@ -56,7 +56,7 @@ echo page_head($isTeam ? A('تسجيل فريق', 'TEAM ENTRY') : A('تسجيل 
               <label class="sr-only" for="pl<?= $r ?>"><?= e(A('اسم اللاعب', 'Player name')) ?> <?= $r + 1 ?></label>
               <input type="text" id="pl<?= $r ?>" name="f_players[]" maxlength="120" required
                      placeholder="<?= e(A('اسم اللاعب', 'Player name')) ?> <?= $r + 1 ?>">
-              <button type="button" class="pf-del" aria-label="<?= e(A('احذف اللاعب', 'Remove player')) ?>">✕</button>
+              <button type="button" class="pf-del" aria-label="<?= e(A('احذف اللاعب', 'Remove player')) ?>"><?= icon('close') ?></button>
             </div>
           <?php endfor; ?>
         </div>

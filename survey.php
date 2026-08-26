@@ -1,9 +1,9 @@
 <?php
 require_once __DIR__ . '/lib/render.php';
 $defs = [
-  'ideas' => ['💡', 'استبيان الأفكار', 'Ideas Survey'],
-  'needs' => ['📋', 'حصر الاحتياجات', 'Needs Assessment'],
-  'satisfaction' => ['⭐', 'قياس الرضا', 'Satisfaction'],
+  'ideas' => [icon('bulb'), 'استبيان الأفكار', 'Ideas Survey'],
+  'needs' => [icon('clipboard'), 'حصر الاحتياجات', 'Needs Assessment'],
+  'satisfaction' => [icon('star'), 'قياس الرضا', 'Satisfaction'],
 ];
 $k = isset($_GET['k']) && isset($defs[$_GET['k']]) ? $_GET['k'] : '';
 if ($k === '') { header('Location: ' . url('surveys.php')); exit; }

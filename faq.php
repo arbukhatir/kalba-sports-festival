@@ -18,7 +18,7 @@ echo page_head(A('مركز المساعدة', 'HELP CENTRE'), A('الأسئلة 
       <details class="faq-item"><summary><?= e(tx($f['q'])) ?></summary><p><?= e(tx($f['a'])) ?></p></details>
     <?php endforeach; ?>
   <?php endforeach; ?>
-  <div class="panel" style="margin-top:20px"><strong>❓ <?= e(A('لم تجد إجابتك؟', 'Didn’t find your answer?')) ?></strong>
+  <div class="panel" style="margin-top:20px"><strong><?= icon('question') ?> <?= e(A('لم تجد إجابتك؟', 'Didn’t find your answer?')) ?></strong>
     <?= btn(A('تواصل معنا', 'Contact us'), 'contact.php', 'sm gold') ?></div>
 </section>
 <?php require __DIR__ . '/partials/footer.php'; ?>

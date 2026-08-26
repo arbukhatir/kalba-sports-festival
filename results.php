@@ -13,7 +13,7 @@ echo page_head(A('النتائج', 'RESULTS'), A('النتائج الفورية'
 ?>
 <section class="container section" style="max-width:820px">
   <?php if (!$rows): ?>
-    <div class="panel" style="text-align:center"><div class="be">🏆</div>
+    <div class="panel" style="text-align:center"><div class="be"><?= icon('trophy') ?></div>
       <h2 class="sec-h" style="margin-top:0"><?= e(A('تبدأ النتائج مع انطلاق المنافسات', 'Results begin when competition starts')) ?></h2>
       <p class="muted"><?= e(A('من 6 إلى 13 نوفمبر 2026 — تظهر النتائج هنا فور إدخالها من غرفة التحكم.', 'From 6–13 November 2026 — scores appear here as they are entered from the control room.')) ?></p>
       <div class="btn-row" style="justify-content:center"><?= btn(A('تصفح الرياضات', 'Browse the sports'), 'champs.php', 'primary') ?></div>

@@ -12,9 +12,9 @@ require __DIR__ . '/partials/head.php';
 require __DIR__ . '/partials/header.php';
 ?>
 <section class="container section">
-  <div class="ss-head"><span class="ss-brand">★ <?= e(A('مهرجان كلباء الرياضي 2026', 'Kalba Sports Festival 2026')) ?></span>
+  <div class="ss-head"><span class="ss-brand"><?= icon('star') ?> <?= e(A('مهرجان كلباء الرياضي 2026', 'Kalba Sports Festival 2026')) ?></span>
     <span class="ss-live"><span class="live-dot"></span> <?= e(A('مباشر', 'LIVE')) ?></span></div>
-  <h2 class="sec-title">🏆 <?= e(A('أعلى المتصدرين', 'Top leaders')) ?></h2>
+  <h2 class="sec-title"><?= icon('trophy') ?> <?= e(A('أعلى المتصدرين', 'Top leaders')) ?></h2>
   <?php if (!$top): ?>
     <p class="muted"><?= e(A('في انتظار أول النقاط…', 'Awaiting the first points…')) ?></p>
   <?php else: foreach ($top as $k => $r): ?>

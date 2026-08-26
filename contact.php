@@ -14,24 +14,24 @@ echo page_head(A('نسعد بتواصلكم', 'GET IN TOUCH'), A('تواصل م�
     <h2 class="sec-h" style="margin-top:0"><?= e(A('طرق التواصل', 'Ways to reach us')) ?></h2>
     <ul class="cw-list">
       <?php if (!empty($CT['phone'])): ?>
-        <li><span class="cw-ic" aria-hidden="true">📞</span>
+        <li><span class="cw-ic" aria-hidden="true"><?= icon('phone') ?></span>
           <span class="cw-body"><b><?= e(A('الهاتف', 'Phone')) ?></b>
             <a href="tel:<?= e(preg_replace('/[^0-9+]/', '', $CT['phone'])) ?>" dir="ltr"><?= e($CT['phone']) ?></a></span></li>
       <?php endif; ?>
       <?php if (!empty($CT['whatsapp'])): ?>
-        <li><span class="cw-ic" aria-hidden="true">💬</span>
+        <li><span class="cw-ic" aria-hidden="true"><?= icon('chat') ?></span>
           <span class="cw-body"><b><?= e(A('واتساب', 'WhatsApp')) ?></b>
             <a href="https://wa.me/<?= e(preg_replace('/[^0-9]/', '', $CT['whatsapp'])) ?>" target="_blank" rel="noopener" dir="ltr"><?= e($CT['whatsapp']) ?></a></span></li>
       <?php endif; ?>
       <?php if (!empty($CT['email'])): ?>
-        <li><span class="cw-ic" aria-hidden="true">✉️</span>
+        <li><span class="cw-ic" aria-hidden="true"><?= icon('mail') ?></span>
           <span class="cw-body"><b><?= e(A('البريد الإلكتروني', 'Email')) ?></b>
             <a href="mailto:<?= e($CT['email']) ?>" dir="ltr"><?= e($CT['email']) ?></a></span></li>
       <?php endif; ?>
-      <li><span class="cw-ic" aria-hidden="true">📍</span>
+      <li><span class="cw-ic" aria-hidden="true"><?= icon('pin') ?></span>
         <span class="cw-body"><b><?= e(A('الموقع', 'Address')) ?></b>
           <a href="https://maps.google.com/?q=25.0757,56.3620" target="_blank" rel="noopener"><?= e(tx($CT['address'])) ?></a></span></li>
-      <li><span class="cw-ic" aria-hidden="true">🕓</span>
+      <li><span class="cw-ic" aria-hidden="true"><?= icon('clock') ?></span>
         <span class="cw-body"><b><?= e(A('ساعات العمل', 'Hours')) ?></b><span><?= e(tx($CT['hours'])) ?></span></span></li>
     </ul>
   </div>

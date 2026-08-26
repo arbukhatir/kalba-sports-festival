@@ -56,7 +56,7 @@ echo page_head(A('غرفة التحكم', 'CONTROL ROOM'), A('لوحة التح�
   </div>
 
   <?php if ($audit): ?>
-  <div class="panel"><h2 class="sec-h" style="margin-top:0">🛡️ <?= e(A('سجل التدقيق', 'Audit log')) ?></h2>
+  <div class="panel"><h2 class="sec-h" style="margin-top:0"><?= icon('shield') ?> <?= e(A('سجل التدقيق', 'Audit log')) ?></h2>
     <?php foreach ($audit as $x): ?>
       <div class="sched-row" style="padding:7px 0;border-top:1px dashed var(--line)"><strong><?= e($x['event']) ?></strong>
         <?php if ($x['detail']): ?><span class="muted"><?= e($x['detail']) ?></span><?php endif; ?>

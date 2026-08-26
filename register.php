@@ -17,14 +17,14 @@ echo page_head(A('انضم إلينا', 'JOIN US'), A('التسجيل والان
       : A('تعذّر إرسال الطلب — تأكد من تعبئة الحقول المطلوبة بشكل صحيح.', 'Could not submit — please check that the required fields are filled in correctly.')) ?></div>
   <?php endif; ?>
   <?php if (isset($_GET['ok'])): ?>
-    <div class="panel success-panel" style="text-align:center"><div class="be">✅</div>
+    <div class="panel success-panel" style="text-align:center"><div class="be"><?= icon('check') ?></div>
       <h2><?= e(A('تم استلام طلبك', 'Application received')) ?></h2>
       <p><?= e(A('رقمك المرجعي', 'Your reference')) ?>: <b dir="ltr"><?= e($_GET['ok']) ?></b></p>
       <p class="muted"><?= e(A('يظهر طلبك في لوحة التحكم وتتم مراجعته من اللجنة.', 'Your application appears in the admin panel for committee review.')) ?></p>
       <div class="btn-row" style="justify-content:center"><?= btn(A('الرئيسية', 'Home'), 'index.php', 'primary') . ' ' . btn(A('تسجيل آخر', 'Register again'), 'register.php', 'ghost') ?></div>
     </div>
   <?php elseif ($type === ''): ?>
-    <div class="panel" style="margin-bottom:16px"><strong>🏆 <?= e(A('مشارك في بطولة؟', 'Competing in a sport?')) ?></strong>
+    <div class="panel" style="margin-bottom:16px"><strong><?= icon('trophy') ?> <?= e(A('مشارك في بطولة؟', 'Competing in a sport?')) ?></strong>
       <?= btn(A('سجّل من صفحة الرياضة', 'Register from the sport page'), 'champs.php', 'sm gold') ?></div>
     <p class="sec-intro"><?= e(A('اختر نوع التسجيل:', 'Choose a registration type:')) ?></p>
     <div class="grid g2">

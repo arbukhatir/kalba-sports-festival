@@ -12,7 +12,7 @@ echo page_head(A('الموقع', 'THE VENUE'), A('أرض المهرجان', 'The
   <div class="def-feat">
     <div class="def-feat-img"><a class="planlink" href="map.html" aria-label="<?= e(A('افتح الخريطة التفاعلية', 'Open the interactive map')) ?>">
       <img src="portals/festival-map.webp" alt="<?= e(A('المخطط الرسمي لأرض المهرجان', 'The official festival ground plan')) ?>" loading="lazy">
-      <span class="planlink-cta">🗺️ <?= e(A('استكشف الخريطة التفاعلية', 'Explore the interactive map')) ?></span>
+      <span class="planlink-cta"><?= icon('map') ?> <?= e(A('استكشف الخريطة التفاعلية', 'Explore the interactive map')) ?></span>
     </a></div>
     <div class="def-feat-txt"><div class="def-over"><?= e(A('الموقع', 'THE VENUE')) ?></div>
       <h2 class="sec-h"><?= e(A('خريطة أرض المهرجان التفاعلية', 'Interactive Festival Ground Map')) ?></h2>

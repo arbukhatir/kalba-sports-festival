@@ -15,7 +15,7 @@ echo page_head(A('الصور والفيديو', 'PHOTOS & VIDEO'), A('المعر
       <a class="gallery-item" href="#gimg<?= $k ?>"><img src="<?= e($g['src']) ?>" alt="<?= e(tx($g['cap'])) ?>" loading="lazy"><span class="gallery-cap"><?= e(tx($g['cap'])) ?></span></a>
     <?php endforeach; ?>
   </div>
-  <div class="panel" style="margin-top:16px"><strong>📰 <?= e(A('للإعلام والصحافة', 'Media & press')) ?></strong>
+  <div class="panel" style="margin-top:16px"><strong><?= icon('news') ?> <?= e(A('للإعلام والصحافة', 'Media & press')) ?></strong>
     <?= btn(A('اعتماد إعلامي', 'Media accreditation'), 'register.php?type=media', 'sm ghost') ?></div>
 </section>
 <?php foreach ($GALLERY as $k => $g): ?>

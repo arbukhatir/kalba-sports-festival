@@ -13,10 +13,10 @@ echo page_head(A('من نحن', 'ABOUT'), A('حين تتحول مدينة إلى
   <div class="grid g2">
     <?php
     $blocks = [
-      ['🏟️', A('١٣ رياضة معتمدة', '13 official sports'), A('من كرة القدم والطائرة المجتمعية إلى الجيوجيستو والكاياك، منافسات رسمية بأربع فئات.', 'From football and community volleyball to jiu-jitsu and kayak — official competitions across four categories.')],
-      ['🎓', A('تحدي المدارس', 'Schools challenge'), A('خمسة أيام من التحديات المعرفية والرياضية والإبداعية لطلبة المدارس وأسرهم.', 'Five days of knowledge, sports and creative challenges for students and their families.')],
-      ['👨‍👩‍👧‍👦', A('فعاليات مجتمعية', 'Community events'), A('ورش صحية وألعاب عائلية وفعاليات ترفيهية للجميع طوال أيام المهرجان.', 'Health workshops, family games and entertainment for everyone throughout the festival.')],
-      ['🛡️', A('تنظيم وأمان', 'Safety & organization'), A('إشراف مجلس الشارقة الرياضي مع الشرطة والدفاع المدني والفرق الطبية.', 'Run by the Sharjah Sports Council with police, civil defence and medical teams on site.')],
+      [icon('stadium'), A('١٣ رياضة معتمدة', '13 official sports'), A('من كرة القدم والطائرة المجتمعية إلى الجيوجيستو والكاياك، منافسات رسمية بأربع فئات.', 'From football and community volleyball to jiu-jitsu and kayak — official competitions across four categories.')],
+      [icon('grad'), A('تحدي المدارس', 'Schools challenge'), A('خمسة أيام من التحديات المعرفية والرياضية والإبداعية لطلبة المدارس وأسرهم.', 'Five days of knowledge, sports and creative challenges for students and their families.')],
+      [icon('family'), A('فعاليات مجتمعية', 'Community events'), A('ورش صحية وألعاب عائلية وفعاليات ترفيهية للجميع طوال أيام المهرجان.', 'Health workshops, family games and entertainment for everyone throughout the festival.')],
+      [icon('shield'), A('تنظيم وأمان', 'Safety & organization'), A('إشراف مجلس الشارقة الرياضي مع الشرطة والدفاع المدني والفرق الطبية.', 'Run by the Sharjah Sports Council with police, civil defence and medical teams on site.')],
     ];
     foreach ($blocks as $b) echo '<div class="panel"><h2 class="sec-h" style="margin-top:0">' . $b[0] . ' ' . e($b[1]) . '</h2><p class="muted">' . e($b[2]) . '</p></div>';
     ?>

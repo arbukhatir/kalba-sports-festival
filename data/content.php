@@ -117,7 +117,7 @@ $CHAMPS = [
     's' => 'boxing',
     'zone' => 'boxing',
     'c' => 'solo',
-    'ic' => '🥊',
+    'ic' => icon('boxing', 'sport-icon'),
     'ar' => 'الملاكمة',
     'en' => 'Boxing',
     'f' => '',
@@ -139,7 +139,7 @@ $CHAMPS = [
     's' => 'jiujitsu',
     'zone' => 'jiujitsu',
     'c' => 'solo',
-    'ic' => '🥋',
+    'ic' => icon('martial', 'sport-icon'),
     'ar' => 'الجيوجيستو',
     'en' => 'Jiu-Jitsu',
     'f' => '',
@@ -161,7 +161,7 @@ $CHAMPS = [
     's' => 'taekwondo',
     'zone' => 'taekwondo',
     'c' => 'solo',
-    'ic' => '🥋',
+    'ic' => icon('martial', 'sport-icon'),
     'ar' => 'التايكوندو',
     'en' => 'Taekwondo',
     'f' => '',
@@ -182,7 +182,7 @@ $CHAMPS = [
   [
     's' => 'running',
     'c' => 'solo',
-    'ic' => '🏃',
+    'ic' => icon('running', 'sport-icon'),
     'ar' => 'سباق مهرجان كلباء للجري',
     'en' => 'Kalba Festival Running Race',
     'f' => '',
@@ -198,7 +198,7 @@ $CHAMPS = [
   [
     's' => 'cycling',
     'c' => 'solo',
-    'ic' => '🚴',
+    'ic' => icon('cycling', 'sport-icon'),
     'ar' => 'سباق مهرجان كلباء للدراجات',
     'en' => 'Kalba Festival Cycling Race',
     'f' => '',
@@ -215,7 +215,7 @@ $CHAMPS = [
     's' => 'obstacles',
     'zone' => 'barriers',
     'c' => 'solo',
-    'ic' => '🧗',
+    'ic' => icon('obstacles', 'sport-icon'),
     'ar' => 'الحواجز والمانع',
     'en' => 'Obstacle Course',
     'f' => '',
@@ -233,7 +233,7 @@ $CHAMPS = [
     'zone' => 'football',
     'team' => ['min' => 7, 'max' => 12],
     'c' => 'team',
-    'ic' => '<img src="portals/BeachSoccer.png" class="sport-icon" alt="">',
+    'ic' => icon('football', 'sport-icon'),
     'ar' => 'كرة القدم',
     'en' => 'Football',
     'f' => '',
@@ -286,7 +286,7 @@ $CHAMPS = [
     'zone' => 'basketball-stands',
     'team' => ['min' => 3, 'max' => 5],
     'c' => 'team',
-    'ic' => '<img src="portals/Basketball.png" class="sport-icon" alt="">',
+    'ic' => icon('basketball', 'sport-icon'),
     'ar' => 'كرة السلة',
     'en' => 'Basketball',
     'f' => '',
@@ -319,7 +319,7 @@ $CHAMPS = [
     'zone' => 'community-volleyball',
     'team' => ['min' => 6, 'max' => 12],
     'c' => 'team',
-    'ic' => '<img src="portals/BeachVolleyball.png" class="sport-icon" alt="">',
+    'ic' => icon('volleyball', 'sport-icon'),
     'ar' => 'كرة الطائرة المجتمعية',
     'en' => 'Community Volleyball',
     'f' => '',
@@ -372,7 +372,7 @@ $CHAMPS = [
     'zone' => 'tennis',
     'team' => ['min' => 2, 'max' => 4],
     'c' => 'team',
-    'ic' => '🎾',
+    'ic' => icon('racket', 'sport-icon'),
     'ar' => 'البادل',
     'en' => 'Padel',
     'f' => '',
@@ -400,7 +400,7 @@ $CHAMPS = [
     'zone' => 'airsoft',
     'team' => ['min' => 5, 'max' => 10],
     'c' => 'team',
-    'ic' => '🎯',
+    'ic' => icon('target', 'sport-icon'),
     'ar' => 'ايرسويفت',
     'en' => 'Airsoft',
     'f' => '',
@@ -426,7 +426,7 @@ $CHAMPS = [
   [
     's' => 'kayak',
     'c' => 'marine',
-    'ic' => '🛶',
+    'ic' => icon('kayak', 'sport-icon'),
     'ar' => 'الكاياك',
     'en' => 'Kayak',
     'f' => '',
@@ -443,7 +443,7 @@ $CHAMPS = [
     's' => 'schools-esports',
     'zone' => 'egames',
     'c' => 'esport',
-    'ic' => '🎮',
+    'ic' => icon('gamepad', 'sport-icon'),
     'ar' => 'تحدي المدارس الإلكترونية',
     'en' => 'Schools Esports Challenge',
     'f' => '',
@@ -470,7 +470,7 @@ $CHAMPS = [
 
 $FORMS = [
   'food' => [
-    'ic' => '🍽️',
+    'ic' => icon('food'),
     't' => [
       'ar' => 'المطاعم وعربات الطعام',
       'en' => 'Restaurants & Food Trucks'
@@ -565,7 +565,7 @@ $FORMS = [
     ]
   ],
   'games' => [
-    'ic' => '🎠',
+    'ic' => icon('wheel'),
     't' => [
       'ar' => 'موردو الألعاب (منطقة الأطفال)',
       'en' => 'Games Suppliers (Kids Zone)'
@@ -682,7 +682,7 @@ $FORMS = [
     ]
   ],
   'exhibitor' => [
-    'ic' => '🛍️',
+    'ic' => icon('shop'),
     't' => [
       'ar' => 'العارضون والأكشاك',
       'en' => 'Exhibitors & Kiosks'
@@ -745,7 +745,7 @@ $FORMS = [
     ]
   ],
   'sponsor' => [
-    'ic' => '🤝',
+    'ic' => icon('users'),
     't' => [
       'ar' => 'الرعاة والشركاء',
       'en' => 'Sponsors & Partners'
@@ -803,7 +803,7 @@ $FORMS = [
     ]
   ],
   'volunteer' => [
-    'ic' => '🙌',
+    'ic' => icon('volunteer'),
     't' => [
       'ar' => 'المتطوعون',
       'en' => 'Volunteers'
@@ -893,7 +893,7 @@ $FORMS = [
     ]
   ],
   'talent' => [
-    'ic' => '🎭',
+    'ic' => icon('stage'),
     't' => [
       'ar' => 'المواهب ومقدمو العروض',
       'en' => 'Talents & Performers'
@@ -969,7 +969,7 @@ $FORMS = [
     ]
   ],
   'sports' => [
-    'ic' => '🏅',
+    'ic' => icon('medal'),
     't' => [
       'ar' => 'المسابقات الرياضية',
       'en' => 'Sports Competitions'
@@ -1054,7 +1054,7 @@ $FORMS = [
     ]
   ],
   'media' => [
-    'ic' => '📸',
+    'ic' => icon('news'),
     't' => [
       'ar' => 'الإعلام والصحافة',
       'en' => 'Media & Press'

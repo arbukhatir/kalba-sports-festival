@@ -29,7 +29,7 @@ echo page_head(
 );
 ?>
 <section class="container section" style="padding-bottom:0"><div class="panel">
-  <h2 class="sec-h" style="margin-top:0">🗓️ <?= e(A('جدول المنافسات', 'Fixture schedule')) ?></h2>
+  <h2 class="sec-h" style="margin-top:0"><?= icon('calendar') ?> <?= e(A('جدول المنافسات', 'Fixture schedule')) ?></h2>
   <p class="sec-intro"><?= e(days_label(count($c['sch'])) . ' · ' . champ_dates($c) . ' · ' . A('كورنيش كلباء', 'Kalba Corniche')) ?></p>
   <div class="tbl-wrap"><table class="fx-table">
     <thead><tr>
@@ -48,9 +48,9 @@ echo page_head(
 <section class="container section"><div class="grid g2">
   <?php
   $blocks = [
-    ['🎯', A('الفئات وشروط المشاركة', 'Categories & conditions'), A('أشبال / ناشئون / كبار / سيدات — التفاصيل تُدار من لوحة التحكم.', 'Cubs / juniors / seniors / women — details managed from the admin panel.')],
-    ['📋', A('اللوائح والقواعد', 'Rules & regulations'), A('تُطبّق لوائح الاتحاد المعتمدة ويلتزم المشاركون بقرارات الحكام.', 'Official federation regulations apply.')],
-    ['🏅', A('الجوائز والتكريم', 'Prizes'), A('كأس وميداليات للمراكز الثلاثة الأولى وشهادات للجميع.', 'Cup & medals for the top three, certificates for all.')],
+    [icon('target'), A('الفئات وشروط المشاركة', 'Categories & conditions'), A('أشبال / ناشئون / كبار / سيدات — التفاصيل تُدار من لوحة التحكم.', 'Cubs / juniors / seniors / women — details managed from the admin panel.')],
+    [icon('clipboard'), A('اللوائح والقواعد', 'Rules & regulations'), A('تُطبّق لوائح الاتحاد المعتمدة ويلتزم المشاركون بقرارات الحكام.', 'Official federation regulations apply.')],
+    [icon('medal'), A('الجوائز والتكريم', 'Prizes'), A('كأس وميداليات للمراكز الثلاثة الأولى وشهادات للجميع.', 'Cup & medals for the top three, certificates for all.')],
   ];
   foreach ($blocks as $b) echo '<div class="panel"><h2 class="sec-h" style="margin-top:0">' . $b[0] . ' ' . e($b[1]) . '</h2><p class="muted">' . e($b[2]) . '</p></div>';
   ?>

@@ -15,12 +15,12 @@ echo page_head('404', A('الصفحة غير موجودة', 'Page not found'),
 <section class="container section" style="max-width:760px">
   <div class="grid g2">
     <?php foreach ([
-      ['index.php',       '🏠', 'الصفحة الرئيسية', 'Home',        'كل ما يجري في المهرجان', 'Everything happening at the festival'],
-      ['champs.php',      '🏆', 'الرياضات',        'Sports',      '١٣ رياضة معتمدة',        '13 official sports'],
-      ['agenda.php',      '🗓️', 'الأجندة',         'Programme',   'جدول الأيام الثمانية',   'The eight-day schedule'],
-      ['register.php',    '📝', 'التسجيل',         'Register',    'شارك أو انضم كمورّد',    'Compete or join as a vendor'],
-      ['venue.php',       '📍', 'الموقع',          'Venue',       'أرض المهرجان والخريطة',  'The grounds and the map'],
-      ['contact.php',     '✉️', 'تواصل معنا',      'Contact',     'نسعد بأسئلتكم',          'We are happy to help'],
+      ['index.php',       icon('home'), 'الصفحة الرئيسية', 'Home',        'كل ما يجري في المهرجان', 'Everything happening at the festival'],
+      ['champs.php',      icon('trophy'), 'الرياضات',        'Sports',      '١٣ رياضة معتمدة',        '13 official sports'],
+      ['agenda.php',      icon('calendar'), 'الأجندة',         'Programme',   'جدول الأيام الثمانية',   'The eight-day schedule'],
+      ['register.php',    icon('edit'), 'التسجيل',         'Register',    'شارك أو انضم كمورّد',    'Compete or join as a vendor'],
+      ['venue.php',       icon('pin'), 'الموقع',          'Venue',       'أرض المهرجان والخريطة',  'The grounds and the map'],
+      ['contact.php',     icon('mail'), 'تواصل معنا',      'Contact',     'نسعد بأسئلتكم',          'We are happy to help'],
     ] as $l): ?>
       <a class="card link" href="<?= e(url($l[0])) ?>">
         <div class="ic" aria-hidden="true"><?= $l[1] ?></div>

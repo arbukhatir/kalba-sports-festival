@@ -11,7 +11,7 @@ echo page_head(A('بطاقة الزائر', 'VISITOR PASS'), A('بطاقتي', '
 ?>
 <section class="container section" style="max-width:520px"><div class="panel">
   <?php if ($v): ?>
-    <div class="vcard"><div class="vh">★ <?= e($v['name']) ?></div>
+    <div class="vcard"><div class="vh"><?= icon('star') ?> <?= e($v['name']) ?></div>
       <div class="vstats"><div class="vstat"><div class="n"><?= (int)$v['points'] ?></div><div class="l"><?= e(A('نقطة', 'points')) ?></div></div>
         <div class="vstat"><div class="n" dir="ltr"><?= e($v['code']) ?></div><div class="l"><?= e(A('رمز البطاقة', 'Pass code')) ?></div></div></div></div>
   <?php else: ?>

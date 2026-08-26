@@ -2672,3 +2672,25 @@ nav.main .menu.open > .menu-btn .caret{transform:rotate(180deg);}
   .sc-list .sc-item.open { border-color: transparent; box-shadow: var(--nm-raise-lg); }
   .sc-dayhead { background: var(--surface-2); border-color: transparent;
     border-inline-start: 4px solid var(--gold) !important; box-shadow: var(--nm-raise-sm); }
+
+  /* ---- icon system: one stroked 24x24 grid, coloured by its context ----
+     Icons size from the font-size they inherit, so a heading icon grows with
+     the heading and a chip icon stays chip-sized, with no per-slot overrides. */
+  .ic-svg { width: 1em; height: 1em; display: inline-block; vertical-align: -.125em;
+    flex: 0 0 auto; overflow: visible; }
+  /* the fixed slots that used to hold a photo icon */
+  svg.sport-icon { width: 42px; height: 42px; color: var(--gold-soft); }
+  .points-board-title svg.sport-icon, .live-championship-icon svg.sport-icon { width: 40px; height: 40px; }
+  .se-sport svg.sport-icon { width: 26px; height: 26px; }
+  .sc-node svg.sport-icon { width: 17px; height: 17px; }
+  .fm-p-head svg.sport-icon { width: 22px; height: 22px; }
+  .win-card svg.sport-icon { width: 34px; height: 34px; }
+  .match-row .m-champ svg.sport-icon { width: 26px !important; height: 26px !important; }
+  /* card and portal tiles: the icon is a quiet mark, not a mascot */
+  .card .ic { display: inline-flex; color: var(--gold-soft); font-size: 1.6rem; }
+  .card .ic .ic-svg { width: 1.5rem; height: 1.5rem; }
+  .reg-picked .ic .ic-svg { width: 1.75rem; height: 1.75rem; color: var(--gold-soft); }
+  .cw-ic .ic-svg { width: 1.15rem; height: 1.15rem; color: var(--gold-soft); }
+  .success-panel .be .ic-svg, .panel .be .ic-svg { width: 2.5rem; height: 2.5rem; color: var(--gold-soft); }
+  .sec-h .ic-svg, h2 .ic-svg, h3 .ic-svg { width: .95em; height: .95em; color: var(--gold-soft); margin-inline-end: .35em; }
+  @media (max-width: 700px) { svg.sport-icon { width: 34px; height: 34px; } }
