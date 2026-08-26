@@ -15,6 +15,24 @@ $typeParam = 'register.php' . ($type !== '' ? '?type=' . rawurlencode($type) : '
 if ($name === '' || $phone === '') back($typeParam . (strpos($typeParam, '?') === false ? '?' : '&') . 'err=1');
 if ($email !== '' && !filter_var($email, FILTER_VALIDATE_EMAIL)) back($typeParam . '&err=1');
 
+/* Team entries must carry a squad of at least the sport's minimum size. The
+   count is validated here as well as in the browser, since the roster rows
+   past the minimum are optional and can be left blank. */
+if (isset($_POST['f_team_name'])) {
+  $players = isset($_POST['f_players']) && is_array($_POST['f_players'])
+    ? array_values(array_filter(array_map('trim', $_POST['f_players']), 'strlen'))
+    : [];
+  $min = max(1, (int) ($_POST['f_team_min'] ?? 1));
+  if (trim($_POST['f_team_name']) === '' || count($players) < $min) {
+    $ref = $_SERVER['HTTP_REFERER'] ?? '';
+    $path = basename(parse_url($ref, PHP_URL_PATH) ?: '') ?: 'register.php';
+    parse_str(parse_url($ref, PHP_URL_QUERY) ?: '', $qs);
+    unset($qs['ok'], $qs['err']); $qs['err'] = 'roster';
+    back($path . '?' . http_build_query($qs));
+  }
+  $_POST['f_players'] = $players;
+}
+
 /* collect the type-specific fields + any uploaded files */
 $payload = [];
 foreach ($_POST as $k => $v) {

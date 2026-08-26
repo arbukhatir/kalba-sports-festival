@@ -9,9 +9,17 @@ $PAGE_DESC = A(champ_name($c) . ' في مهرجان كلباء الرياضي 20
 require __DIR__ . '/partials/head.php';
 require __DIR__ . '/partials/header.php';
 
+/* The map takes ?zone=<id> and flies to that arena on load. Route events
+   (running, cycling, kayak) have no fixed zone, so they open the plan itself. */
+$mapHref = !empty($c['zone']) ? 'map.html?zone=' . rawurlencode($c['zone']) : 'map.html';
+$mapLabel = !empty($c['zone'])
+  ? A('عرض الموقع على الخريطة', 'SHOW ON MAP')
+  : A('خريطة المهرجان', 'FESTIVAL MAP');
+$isTeam = ($c['c'] === 'team');
 $actions =
-  btn(A('سجّل الآن', 'REGISTER NOW'), 'pform.php?i=' . $i, 'gold def') . ' ' .
-  btn(A('عرض على الخريطة', 'VIEW ON MAP'), 'map.html', 'def defghost');
+  btn($isTeam ? A('سجّل فريقك', 'REGISTER YOUR TEAM') : A('سجّل الآن', 'REGISTER NOW'),
+      'pform.php?i=' . $i, 'gold def') . ' ' .
+  btn($mapLabel, $mapHref, 'def defghost');
 
 echo page_head(
   A('رياضة معتمدة', 'OFFICIAL SPORT'),

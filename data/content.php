@@ -115,6 +115,7 @@ $ROUNDS = [
 $CHAMPS = [
   [
     's' => 'boxing',
+    'zone' => 'boxing',
     'c' => 'solo',
     'ic' => '🥊',
     'ar' => 'الملاكمة',
@@ -136,6 +137,7 @@ $CHAMPS = [
   ],
   [
     's' => 'jiujitsu',
+    'zone' => 'jiujitsu',
     'c' => 'solo',
     'ic' => '🥋',
     'ar' => 'الجيوجيستو',
@@ -157,6 +159,7 @@ $CHAMPS = [
   ],
   [
     's' => 'taekwondo',
+    'zone' => 'taekwondo',
     'c' => 'solo',
     'ic' => '🥋',
     'ar' => 'التايكوندو',
@@ -210,6 +213,7 @@ $CHAMPS = [
   ],
   [
     's' => 'obstacles',
+    'zone' => 'barriers',
     'c' => 'solo',
     'ic' => '🧗',
     'ar' => 'الحواجز والمانع',
@@ -226,6 +230,8 @@ $CHAMPS = [
   ],
   [
     's' => 'football',
+    'zone' => 'football',
+    'team' => ['min' => 7, 'max' => 12],
     'c' => 'team',
     'ic' => '<img src="portals/BeachSoccer.png" class="sport-icon" alt="">',
     'ar' => 'كرة القدم',
@@ -277,6 +283,8 @@ $CHAMPS = [
   ],
   [
     's' => 'basketball',
+    'zone' => 'basketball-stands',
+    'team' => ['min' => 3, 'max' => 5],
     'c' => 'team',
     'ic' => '<img src="portals/Basketball.png" class="sport-icon" alt="">',
     'ar' => 'كرة السلة',
@@ -308,6 +316,8 @@ $CHAMPS = [
   ],
   [
     's' => 'community-volleyball',
+    'zone' => 'community-volleyball',
+    'team' => ['min' => 6, 'max' => 12],
     'c' => 'team',
     'ic' => '<img src="portals/BeachVolleyball.png" class="sport-icon" alt="">',
     'ar' => 'كرة الطائرة المجتمعية',
@@ -359,6 +369,8 @@ $CHAMPS = [
   ],
   [
     's' => 'padel',
+    'zone' => 'tennis',
+    'team' => ['min' => 2, 'max' => 4],
     'c' => 'team',
     'ic' => '🎾',
     'ar' => 'البادل',
@@ -385,6 +397,8 @@ $CHAMPS = [
   ],
   [
     's' => 'airsoft',
+    'zone' => 'airsoft',
+    'team' => ['min' => 5, 'max' => 10],
     'c' => 'team',
     'ic' => '🎯',
     'ar' => 'ايرسويفت',
@@ -427,6 +441,7 @@ $CHAMPS = [
   ],
   [
     's' => 'schools-esports',
+    'zone' => 'egames',
     'c' => 'esport',
     'ic' => '🎮',
     'ar' => 'تحدي المدارس الإلكترونية',

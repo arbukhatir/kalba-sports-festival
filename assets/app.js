@@ -91,4 +91,50 @@
     var sel = '.stat, .def-stat, .ev-card, .ev-grid > *, .def-feat, .card, .sec-title';
     document.querySelectorAll(sel).forEach(function (el, n) { el.style.setProperty('--rvi', n % 12); io.observe(el); });
   }
+
+  /* ---- team registration: squad roster rows ----
+     The first `min` rows are rendered server-side and stay required; extra rows
+     up to `max` are optional, so a team can enter with fewer than the maximum. */
+  var roster = document.getElementById('pfRoster');
+  var addBtn = document.getElementById('pfAdd');
+  if (roster && addBtn) {
+    var min = parseInt(roster.dataset.min, 10) || 1;
+    var max = parseInt(roster.dataset.max, 10) || min;
+    var rows = function () { return roster.querySelectorAll('.pf-player'); };
+    var renumber = function () {
+      rows().forEach(function (row, i) {
+        var num = row.querySelector('.pf-num');
+        var input = row.querySelector('input');
+        if (num) num.textContent = i + 1;
+        if (input) input.placeholder = roster.dataset.label + ' ' + (i + 1);
+        var del = row.querySelector('.pf-del');
+        /* the first `min` rows are the required core of the squad */
+        if (del) del.style.visibility = rows().length > min ? 'visible' : 'hidden';
+      });
+      addBtn.disabled = rows().length >= max;
+      addBtn.style.opacity = addBtn.disabled ? '.5' : '';
+    };
+    addBtn.addEventListener('click', function () {
+      if (rows().length >= max) return;
+      var i = rows().length;
+      var row = document.createElement('div');
+      row.className = 'field pf-player';
+      row.innerHTML = '<span class="pf-num" aria-hidden="true">' + (i + 1) + '</span>' +
+        '<label class="sr-only" for="pl' + i + '">' + roster.dataset.label + ' ' + (i + 1) + '</label>' +
+        '<input type="text" id="pl' + i + '" name="f_players[]" maxlength="120" placeholder="' +
+        roster.dataset.label + ' ' + (i + 1) + '">' +
+        '<button type="button" class="pf-del" aria-label="' + roster.dataset.remove + '">✕</button>';
+      roster.appendChild(row);
+      renumber();
+      row.querySelector('input').focus();
+    });
+    roster.addEventListener('click', function (e) {
+      var del = e.target.closest('.pf-del');
+      if (!del) return;
+      if (rows().length <= min) return;
+      del.closest('.pf-player').remove();
+      renumber();
+    });
+    renumber();
+  }
 })();
