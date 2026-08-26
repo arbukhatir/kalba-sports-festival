@@ -6,7 +6,7 @@ $C = content();
 $PAGE_TITLE = A('لوحة التحكم', 'Admin');
 
 $stats = ['apps' => 0, 'pending' => 0, 'accepted' => 0, 'visitors' => 0, 'messages' => 0, 'subs' => 0];
-$apps = []; $audit = []; $dbError = false;
+$apps = []; $audit = []; $messages = []; $subs = []; $dbError = false;
 try {
   $stats['apps']     = (int) (db_one('SELECT COUNT(*) n FROM applications')['n'] ?? 0);
   $stats['pending']  = (int) (db_one("SELECT COUNT(*) n FROM applications WHERE status='pending'")['n'] ?? 0);
@@ -16,6 +16,10 @@ try {
   $stats['subs']     = (int) (db_one('SELECT COUNT(*) n FROM subscribers')['n'] ?? 0);
   $apps  = db_all('SELECT * FROM applications ORDER BY id DESC LIMIT 20');
   $audit = db_all('SELECT * FROM audit_log ORDER BY id DESC LIMIT 10');
+  /* these two were counted on the dashboard but never readable: every
+     enquiry sent through the contact form was effectively write-only */
+  $messages = db_all('SELECT * FROM messages ORDER BY id DESC LIMIT 25');
+  $subs     = db_all('SELECT email, created_at FROM subscribers ORDER BY id DESC LIMIT 50');
 } catch (Throwable $ex) { $dbError = true; }
 
 require __DIR__ . '/partials/head.php';
@@ -66,6 +70,52 @@ echo page_head(A('غرفة التحكم', 'CONTROL ROOM'), A('لوحة التح�
         </tr>
       <?php endforeach; ?>
     </table></div>
+    <?php endif; ?>
+  </div>
+
+  <div class="panel">
+    <h2 class="sec-h" style="margin-top:0"><?= icon('mail') ?> <?= e(A('رسائل التواصل', 'Contact messages')) ?>
+      <span class="se-count"><?= count($messages) ?></span></h2>
+    <?php if (!$messages): ?>
+      <p class="muted"><?= e(A('لا رسائل بعد.', 'No messages yet.')) ?></p>
+    <?php else: ?>
+      <div class="tbl-wrap"><table class="t">
+        <thead><tr>
+          <th scope="col"><?= e(A('المرسل', 'From')) ?></th>
+          <th scope="col"><?= e(A('الرسالة', 'Message')) ?></th>
+          <th scope="col"><?= e(A('التاريخ', 'Received')) ?></th>
+        </tr></thead>
+        <tbody>
+          <?php foreach ($messages as $m): ?>
+            <tr>
+              <td>
+                <b><?= e($m['name']) ?></b>
+                <?php if (!empty($m['email'])): ?><br><a href="mailto:<?= e($m['email']) ?>" dir="ltr"><?= e($m['email']) ?></a><?php endif; ?>
+              </td>
+              <td><?= nl2br(e($m['body'])) ?></td>
+              <td dir="ltr"><?= e($m['created_at'] ?? '') ?></td>
+            </tr>
+          <?php endforeach; ?>
+        </tbody>
+      </table></div>
+    <?php endif; ?>
+  </div>
+
+  <div class="panel">
+    <h2 class="sec-h" style="margin-top:0"><?= icon('users') ?> <?= e(A('مشتركو النشرة', 'Newsletter subscribers')) ?>
+      <span class="se-count"><?= count($subs) ?></span></h2>
+    <?php if (!$subs): ?>
+      <p class="muted"><?= e(A('لا مشتركين بعد.', 'No subscribers yet.')) ?></p>
+    <?php else: ?>
+      <div class="sub-list">
+        <?php foreach ($subs as $sb): ?>
+          <a class="sub-chip" href="mailto:<?= e($sb['email']) ?>" dir="ltr"><?= e($sb['email']) ?></a>
+        <?php endforeach; ?>
+      </div>
+      <div class="btn-row">
+        <?= btn(A('تصدير المشتركين (CSV)', 'Export subscribers (CSV)'), 'actions/export.php?set=subscribers', 'ghost sm') ?>
+        <?= btn(A('تصدير الرسائل (CSV)', 'Export messages (CSV)'), 'actions/export.php?set=messages', 'ghost sm') ?>
+      </div>
     <?php endif; ?>
   </div>
 

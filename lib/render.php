@@ -173,6 +173,14 @@ function overall_standings($rows, $champs) {
 function champions_by_sport($rows, $champs) {
     $out = [];
     foreach ($champs as $i => $c) {
+        /* Only crown a sport whose fixtures are all played. Taking the top of
+           a partial table declared a champion off a single group result. */
+        $played = 0; $pending = 0;
+        foreach ($rows as $r) {
+            if ((string)$r['sport'] !== $c['s']) continue;
+            if (($r['status'] ?? '') === 'finished') $played++; else $pending++;
+        }
+        if ($played === 0 || $pending > 0) continue;
         $s = standings_from_matches($rows, $c['s']);
         if (!$s) continue;
         $name = array_key_first($s);

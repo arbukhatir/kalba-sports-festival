@@ -2842,3 +2842,11 @@ nav.main .menu.open > .menu-btn .caret{transform:rotate(180deg);}
     .se-day { flex: 1 0 100%; min-width: 0; }
     .se-row .se-team { flex: 1 1 40%; }
   }
+
+  /* ---- admin: subscriber chips, section counts ---- */
+  .se-count { margin-inline-start: 8px; font-size: .74rem; font-weight: 700; color: var(--gold-soft);
+    background: rgba(245,168,28,.14); border-radius: 999px; padding: 2px 9px; }
+  .sub-list { display: flex; flex-wrap: wrap; gap: 6px; margin-bottom: 12px; }
+  .sub-chip { font-size: .8rem; padding: 5px 11px; border-radius: 999px; background: var(--surface-in);
+    box-shadow: var(--nm-press-sm); color: var(--gold-soft); }
+  .sub-chip:hover { color: var(--paper); }

@@ -26,11 +26,21 @@ function role_can($role, $view) {
   return !empty($map[$role][$view]);
 }
 
+/* A guard can run from a page at the web root or from an endpoint inside
+   actions/. A bare relative redirect resolves against the caller's folder, so
+   a refusal inside actions/ used to land on actions/index.php, which does not
+   exist. This puts the redirect back at the root either way. */
+function auth_back($page) {
+  $inActions = basename(dirname($_SERVER['SCRIPT_NAME'] ?? '')) === 'actions';
+  header('Location: ' . ($inActions ? '../' : '') . url($page));
+  exit;
+}
+
 /* Guard a page: redirect to the gate if not logged in / not allowed. */
 function require_view($view) {
   $u = current_user();
-  if (!$u) { header('Location: ' . url('gate.php')); exit; }
-  if (!role_can($u['role'], $view)) { header('Location: ' . url('index.php')); exit; }
+  if (!$u) auth_back('gate.php');
+  if (!role_can($u['role'], $view)) auth_back('index.php');
   return $u;
 }
 

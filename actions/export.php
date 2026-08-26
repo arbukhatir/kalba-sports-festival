@@ -6,7 +6,30 @@ require_once __DIR__ . '/../lib/auth.php';
 /* same guard as the panel itself: only a signed-in admin may export */
 require_view('admin');
 
+$set  = isset($_GET['set']) ? trim($_GET['set']) : '';
 $type = isset($_GET['type']) ? trim($_GET['type']) : '';
+
+/* contact messages and newsletter subscribers export the same way */
+if ($set === 'messages' || $set === 'subscribers') {
+    $name = 'kalba-' . $set . '-' . date('Ymd-Hi') . '.csv';
+    header('Content-Type: text/csv; charset=utf-8');
+    header('Content-Disposition: attachment; filename="' . $name . '"');
+    $out = fopen('php://output', 'w');
+    fwrite($out, chr(0xEF) . chr(0xBB) . chr(0xBF));
+    try {
+        if ($set === 'messages') {
+            fputcsv($out, ['Name', 'Email', 'Message', 'Received'], ',', '"', '');
+            foreach (db_all('SELECT name, email, body, created_at FROM messages ORDER BY id DESC') as $r)
+                fputcsv($out, [$r['name'], $r['email'], $r['body'], $r['created_at']], ',', '"', '');
+        } else {
+            fputcsv($out, ['Email', 'Subscribed'], ',', '"', '');
+            foreach (db_all('SELECT email, created_at FROM subscribers ORDER BY id DESC') as $r)
+                fputcsv($out, [$r['email'], $r['created_at']], ',', '"', '');
+        }
+    } catch (Throwable $ex) { /* an empty file is clearer than a fatal */ }
+    fclose($out);
+    exit;
+}
 $rows = [];
 try {
   $rows = $type !== ''

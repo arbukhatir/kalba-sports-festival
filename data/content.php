@@ -536,6 +536,30 @@ $CHAMPS = [
 ];
 
 $FORMS = [
+  /* Seat reservation for the six health workshops. community.php links here
+     with ?w=<slug>, which preselects the session. */
+  'workshop' => [
+    'ic' => icon('bulb'),
+    't' => ['ar' => 'حجز مقعد في ورشة', 'en' => 'Reserve a workshop seat'],
+    'd' => ['ar' => 'المقاعد محدودة — احجز مقعدك في إحدى الورش الصحية والتوعوية.',
+            'en' => 'Seats are limited — reserve yours in one of the health and awareness workshops.'],
+    'fields' => [
+      ['n' => 'workshop', 'req' => true, 'type' => 'select',
+       'l' => ['ar' => 'الورشة', 'en' => 'Workshop'],
+       'o' => array_map(function ($w) { return $w['t']; }, $WORKSHOPS)],
+      ['n' => 'seats', 'req' => true, 'type' => 'select',
+       'l' => ['ar' => 'عدد المقاعد', 'en' => 'Number of seats'],
+       'o' => [
+         ['ar' => 'مقعد واحد', 'en' => '1 seat'],
+         ['ar' => 'مقعدان', 'en' => '2 seats'],
+         ['ar' => '3 مقاعد', 'en' => '3 seats'],
+         ['ar' => '4 مقاعد', 'en' => '4 seats'],
+       ]],
+      ['n' => 'notes', 'req' => false, 'type' => 'textarea',
+       'l' => ['ar' => 'ملاحظات (اختياري)', 'en' => 'Notes (optional)']],
+    ],
+  ],
+
   'food' => [
     'ic' => icon('food'),
     't' => [

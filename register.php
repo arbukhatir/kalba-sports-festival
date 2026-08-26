@@ -2,6 +2,12 @@
 require_once __DIR__ . '/lib/render.php';
 $C = content(); $FORMS = $C['FORMS'];
 $type = isset($_GET['type']) && isset($FORMS[$_GET['type']]) ? $_GET['type'] : '';
+/* community.php links here as register.php?type=workshop&w=<slug>; carry the
+   chosen session through so the visitor does not have to find it again. */
+$preWorkshop = '';
+if ($type === 'workshop' && isset($_GET['w'])) {
+  foreach ($C['WORKSHOPS'] as $w) if ($w['s'] === $_GET['w']) { $preWorkshop = tx($w['t']); break; }
+}
 $PAGE_TITLE = A('التسجيل', 'Register');
 $PAGE_DESC = A('سجّل في مهرجان كلباء الرياضي 2026 — تسجيل المشاركين والمطاعم والعارضين والرعاة والمتطوعين.', 'Register for Kalba Sports Festival 2026 — competitors, restaurants, exhibitors, sponsors and volunteers.');
 require __DIR__ . '/partials/head.php';
@@ -39,6 +45,10 @@ echo page_head(A('انضم إلينا', 'JOIN US'), A('التسجيل والان
       <form method="post" action="<?= e(url('actions/register.php')) ?>" enctype="multipart/form-data">
       <?= csrf_field() ?>
         <input type="hidden" name="type" value="<?= e($type) ?>">
+        <?php if ($preWorkshop !== ''): ?>
+          <input type="hidden" name="f_workshop_picked" value="<?= e($preWorkshop) ?>">
+          <p class="hint"><?= e(A('الورشة المختارة:', 'Chosen workshop:')) ?> <b><?= e($preWorkshop) ?></b></p>
+        <?php endif; ?>
         <h2 class="sec-h reg-sub"><?= e(A('بيانات مقدّم الطلب', 'Applicant details')) ?></h2>
         <div class="field"><label class="flabel" for="_name"><?= e(A('الاسم الكامل', 'Full name')) ?> <span class="req">*</span></label><input type="text" id="_name" name="_name" maxlength="150" required></div>
         <div class="field"><label class="flabel" for="_phone"><?= e(A('رقم الهاتف', 'Phone')) ?> <span class="req">*</span></label><input type="tel" id="_phone" name="_phone" dir="ltr" maxlength="30" required></div>
