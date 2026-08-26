@@ -34,6 +34,11 @@ echo page_head(A('غرفة التحكم', 'CONTROL ROOM'), A('لوحة التح�
     <?php endforeach; ?>
   </div>
 
+      <div class="btn-row" style="margin-bottom:14px">
+        <?= btn(A('إدخال النتائج', 'Score entry'), 'scores.php', 'gold') ?>
+        <?= btn(A('منح النقاط', 'Award points'), 'award.php', 'ghost') ?>
+        <?= btn(A('شاشة العرض', 'Big screen'), 'screen.php', 'ghost') ?>
+      </div>
       <div class="adm-export">
         <span class="hint"><?= e(A('تصدير قوائم المسجلين للجنة المنظمة:', 'Export the registration lists for the committee:')) ?></span>
         <a class="btn ghost sm" href="<?= e(url('actions/export.php')) ?>"><?= icon('clipboard') ?> <?= e(A('كل الطلبات (CSV)', 'All registrations (CSV)')) ?></a>

@@ -116,7 +116,7 @@ function sport_card($c, $i) {
    every table on the next page load with nothing to re-sync.
    Win 3, draw 1, loss 0. Ties broken by goal difference, then goals for.
    ============================================================================= */
-function standings_from_matches($rows, $sportIdx = null) {
+function standings_from_matches($rows, $sportSlug = null) {
     $t = [];
     $put = function (&$t, $ar, $en) {
         $key = trim($ar) !== '' ? trim($ar) : trim($en);
@@ -126,7 +126,7 @@ function standings_from_matches($rows, $sportIdx = null) {
         return $key;
     };
     foreach ($rows as $r) {
-        if ($sportIdx !== null && (int)$r['sport'] !== (int)$sportIdx) continue;
+        if ($sportSlug !== null && (string)$r['sport'] !== (string)$sportSlug) continue;
         if (($r['status'] ?? '') !== 'finished') continue;
         if ($r['score_a'] === null || $r['score_b'] === null) continue;
         $a = $put($t, $r['side_a_ar'] ?? '', $r['side_a_en'] ?? '');
@@ -152,8 +152,8 @@ function standings_from_matches($rows, $sportIdx = null) {
 /* Level 3: one table across every championship, plus the winner of each. */
 function overall_standings($rows, $champs) {
     $all = [];
-    foreach ($champs as $i => $c) {
-        foreach (standings_from_matches($rows, $i) as $name => $s) {
+    foreach ($champs as $c) {
+        foreach (standings_from_matches($rows, $c['s']) as $name => $s) {
             if (!isset($all[$name])) $all[$name] = ['ar' => $s['ar'], 'en' => $s['en'],
                 'pts' => 0, 'p' => 0, 'w' => 0, 'sports' => 0];
             $all[$name]['pts']    += $s['pts'];
@@ -173,7 +173,7 @@ function overall_standings($rows, $champs) {
 function champions_by_sport($rows, $champs) {
     $out = [];
     foreach ($champs as $i => $c) {
-        $s = standings_from_matches($rows, $i);
+        $s = standings_from_matches($rows, $c['s']);
         if (!$s) continue;
         $name = array_key_first($s);
         $out[$i] = ['champ' => $c, 'name' => $s[$name]];

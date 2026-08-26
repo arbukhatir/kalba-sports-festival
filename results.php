@@ -37,7 +37,7 @@ echo page_head(A('النتائج', 'RESULTS'), A('النتائج الفورية'
 
   <?php elseif ($tab === 'live'): ?>
     <?php foreach ($CHAMPS as $i => $c):
-      $m = array_values(array_filter($rows, function ($r) use ($i) { return (int)$r['sport'] === $i; }));
+      $m = array_values(array_filter($rows, function ($r) use ($c) { return (string)$r['sport'] === $c['s']; }));
       if (!$m) continue; ?>
       <h2 class="sec-title"><?= $c['ic'] ?> <?= e(champ_name($c)) ?></h2>
       <?php foreach ($m as $r): ?>
@@ -53,7 +53,7 @@ echo page_head(A('النتائج', 'RESULTS'), A('النتائج الفورية'
 
   <?php elseif ($tab === 'tables'): ?>
     <?php $any = false; foreach ($CHAMPS as $i => $c):
-      $s = standings_from_matches($rows, $i);
+      $s = standings_from_matches($rows, $c['s']);
       if (!$s) continue; $any = true; ?>
       <div class="points-board">
         <div class="points-board-head">

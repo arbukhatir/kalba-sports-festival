@@ -18,13 +18,15 @@ CREATE TABLE IF NOT EXISTS applications (
 
 CREATE TABLE IF NOT EXISTS matches (
   id           INT AUTO_INCREMENT PRIMARY KEY,
-  sport        INT NOT NULL,                    -- CHAMPS index
+  sport        VARCHAR(40) NOT NULL,            -- CHAMPS slug ('football'), not the array position:
+                                                 -- reordering the sports list must never reassign results
   day          VARCHAR(8) NOT NULL,             -- '06/11'
   side_a_ar    VARCHAR(120) NULL, side_a_en VARCHAR(120) NULL,
   side_b_ar    VARCHAR(120) NULL, side_b_en VARCHAR(120) NULL,
   score_a      INT NULL, score_b INT NULL,
   status       ENUM('upcoming','live','finished') NOT NULL DEFAULT 'upcoming',
-  updated_at   TIMESTAMP NOT NULL DEFAULT CURRENT_TIMESTAMP ON UPDATE CURRENT_TIMESTAMP
+  updated_at   TIMESTAMP NOT NULL DEFAULT CURRENT_TIMESTAMP ON UPDATE CURRENT_TIMESTAMP,
+  INDEX idx_matches_sport (sport)
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4;
 
 CREATE TABLE IF NOT EXISTS activities (

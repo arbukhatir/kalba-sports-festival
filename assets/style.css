@@ -2818,3 +2818,27 @@ nav.main .menu.open > .menu-btn .caret{transform:rotate(180deg);}
     .ws-n { grid-row: 1; } .ws-ic { display: none; }
     .ws-body { grid-column: 2; } .ws-act { grid-column: 2; justify-self: start; }
   }
+
+  /* ---- score entry: one fixture per row ---- */
+  .sc-form .frow { align-items: flex-end; }
+  .se-row { display: flex; align-items: center; gap: 10px; flex-wrap: wrap;
+    padding: 12px 14px; margin-bottom: 8px; border-radius: 12px;
+    background: var(--surface); box-shadow: var(--nm-raise-sm); }
+  .se-day { font-size: .78rem; font-weight: 700; color: var(--gold-soft); min-width: 96px; }
+  .se-row .se-team { flex: 1 1 120px; min-width: 90px; font-weight: 600; color: var(--ink); }
+  .se-row .se-team:last-of-type { text-align: end; }
+  .se-row input.se-score { width: 62px; flex: 0 0 auto; text-align: center;
+    font-variant-numeric: tabular-nums; font-weight: 800; }
+  .se-row .se-vs { color: var(--muted); font-weight: 800; }
+  .se-row select.se-st { width: auto; flex: 0 0 auto; min-width: 108px; }
+  .se-row .btn.sm { flex: 0 0 auto; }
+  .se-del { flex: 0 0 auto; width: 40px; min-height: 40px; border: 0; border-radius: 10px;
+    background: var(--surface-in); box-shadow: var(--nm-press-sm); color: var(--bad-ink);
+    display: grid; place-items: center; cursor: pointer; }
+  .se-del:hover { color: #fff; background: #3a1a1e; }
+  .se-del .ic-svg { width: 16px; height: 16px; }
+  @media (max-width: 700px) {
+    .se-row { gap: 8px; }
+    .se-day { flex: 1 0 100%; min-width: 0; }
+    .se-row .se-team { flex: 1 1 40%; }
+  }

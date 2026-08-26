@@ -13,7 +13,13 @@ echo page_head(A('للمصرح لهم', 'STAFF'), A('تسجيل دخول الم�
   <?php if ($u): ?>
     <p><?= e(A('أنت مسجّل الدخول باسم', 'Logged in as')) ?> <b dir="ltr"><?= e($u['username']) ?></b> (<?= e($u['role']) ?>)</p>
     <div class="btn-row">
-      <?php if (role_can($u['role'], 'admin')) echo btn(A('لوحة التحكم', 'Admin panel'), 'admin.php', 'primary'); ?>
+      <?php
+      /* one button per tool this role actually holds */
+      if (role_can($u['role'], 'admin'))   echo btn(A('لوحة التحكم', 'Admin panel'), 'admin.php', 'primary') . ' ';
+      if (role_can($u['role'], 'results')) echo btn(A('إدخال النتائج', 'Score entry'), 'scores.php', 'gold') . ' ';
+      if (role_can($u['role'], 'award'))   echo btn(A('منح النقاط', 'Award points'), 'award.php', 'gold') . ' ';
+      if (role_can($u['role'], 'screen'))  echo btn(A('شاشة العرض', 'Big screen'), 'screen.php', 'ghost') . ' ';
+      ?>
       <?= btn(A('تسجيل الخروج', 'Log out'), 'actions/logout.php', 'ghost') ?>
     </div>
   <?php else: ?>
