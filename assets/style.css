@@ -2516,3 +2516,159 @@ nav.main .menu.open > .menu-btn .caret{transform:rotate(180deg);}
     font-size: .88rem; font-weight: 600; }
   .nl-flash.ok  { background: rgba(76,194,118,.14); color: #7fe0a2; border: 1px solid rgba(76,194,118,.4); }
   .nl-flash.err { background: rgba(248,113,113,.14); color: #ffb3b3; border: 1px solid rgba(248,113,113,.4); }
+
+  /* ==========================================================================
+     SOFT-UI (NEUMORPHIC) LAYER + CRAFT PASS
+     Elevation is now one language: surfaces are shaped by a paired light/dark
+     shadow rather than by a border plus a shadow plus a background shift. The
+     light source is fixed top-left and does NOT mirror in RTL, because a light
+     source is physical, not typographic.
+     This layer also flattens the decorative gradients and coloured glows the
+     earlier passes accumulated: emphasis now comes from weight, size and
+     space, and colour is stated once rather than faded.
+     ========================================================================== */
+  :root {
+    /* the two halves of every extrusion */
+    --nm-lit: rgba(228,244,255,.07);
+    --nm-shade: rgba(2,9,16,.66);
+    --nm-raise:    -5px -5px 12px var(--nm-lit), 6px 6px 16px var(--nm-shade);
+    --nm-raise-sm: -3px -3px 7px var(--nm-lit), 3px 3px 9px var(--nm-shade);
+    --nm-raise-lg: -8px -8px 20px var(--nm-lit), 10px 10px 28px var(--nm-shade);
+    --nm-press:    inset 4px 4px 10px var(--nm-shade), inset -3px -3px 8px var(--nm-lit);
+    --nm-press-sm: inset 2px 2px 6px var(--nm-shade), inset -2px -2px 5px var(--nm-lit);
+    /* surface ramp - each step is a real, named tone, not an opacity guess */
+    --surface: #0C2436;
+    --surface-2: #10293C;
+    --surface-in: #091E2D;
+    /* flat, accessible coral: 5.18:1 with white, so button labels pass AA */
+    --coral-flat: #C8391A;
+    --coral-flat-hi: #D9411F;
+    /* off-white - pure white on this navy reads glary */
+    --paper: #F2F7FB;
+    --ease-out-soft: cubic-bezier(.22,.61,.36,1);
+  }
+
+  /* ---- surfaces: shadow-only elevation, no competing hairline ---- */
+  .card, .panel, .stat, .faq-item, .aday, .reg-picked, .lb-detail,
+  .rank-card, .ov-card, .points-board, .live-championship, .lb-toolbar,
+  .services-card, .cal, .sc-empty, .lb-empty, .results-group, .rank-panel {
+    background: var(--surface);
+    border: 1px solid transparent;
+    box-shadow: var(--nm-raise);
+  }
+  .panel, .points-board, .live-championship, .rank-panel { box-shadow: var(--nm-raise-lg); }
+
+  /* lift on hover is a change of depth, not a change of colour */
+  .card.link, .ev-card, .rank-card, .nw-card, .wv-card {
+    transition: box-shadow 180ms var(--ease-out-soft), transform 180ms var(--ease-out-soft);
+  }
+  .card.link:hover, .rank-card:hover { box-shadow: var(--nm-raise-lg); transform: translateY(-3px); }
+  .card.link:active { box-shadow: var(--nm-press); transform: translateY(0); }
+
+  /* ---- controls: raised at rest, genuinely pressed on tap ---- */
+  .btn { box-shadow: var(--nm-raise-sm);
+    transition: background-color 150ms ease, color 150ms ease,
+                box-shadow 150ms var(--ease-out-soft), transform 120ms var(--ease-out-soft); }
+  .btn:hover { box-shadow: var(--nm-raise); }
+  .btn:active { box-shadow: var(--nm-press-sm); transform: translateY(1px); }
+  /* the primary action stays a solid, high-contrast block - a soft-UI button
+     that blends into its background is the one thing this style gets wrong */
+  .btn.primary, .btn.gold { background: var(--coral-flat); color: #fff; }
+  .btn.primary:hover, .btn.gold:hover { background: var(--coral-flat-hi); transform: translateY(-1px); box-shadow: var(--nm-raise); }
+  .btn.primary:active, .btn.gold:active { background: var(--coral-flat); transform: translateY(1px); box-shadow: var(--nm-press-sm); }
+  .btn.ghost, .btn.defghost { background: var(--surface); box-shadow: var(--nm-raise-sm); }
+  .btn.defghost { color: var(--gold-soft); }
+  .btn[disabled], .btn:disabled { box-shadow: var(--nm-press-sm); color: var(--muted); cursor: not-allowed; transform: none; }
+
+  /* chips, pills and tabs: selected means pressed in, not glowing */
+  .sc-chip, .fpill, .lb-tab, .live-chip, .seg-btn, .fm-hit, .qj-chip, .faq-pop {
+    background: var(--surface); border-color: transparent; box-shadow: var(--nm-raise-sm);
+    transition: box-shadow 160ms var(--ease-out-soft), color 160ms ease, background-color 160ms ease; }
+  .sc-chip:hover, .fpill:hover, .lb-tab:hover, .live-chip:hover, .seg-btn:hover { box-shadow: var(--nm-raise); }
+  .sc-chip.on, .fpill.on, .lb-tab.active, .seg-btn.on, .live-chip.active-filter {
+    background: var(--surface-in); color: var(--gold-soft); box-shadow: var(--nm-press-sm); border-color: transparent; }
+  .sc-chip.on .sc-n { background: rgba(245,168,28,.16); color: var(--gold-soft); }
+
+  /* inputs read as carved into the surface - the clearest affordance soft UI has */
+  input[type=text], input[type=email], input[type=tel], input[type=number],
+  input[type=password], select, textarea, input[type=file], .lb-search input, .faq-search input {
+    background: var(--surface-in); border: 1px solid transparent;
+    box-shadow: var(--nm-press-sm);
+    transition: box-shadow 160ms var(--ease-out-soft), background-color 160ms ease; }
+  input:focus, select:focus, textarea:focus, .lb-search input:focus {
+    outline: none; background: var(--surface-in);
+    box-shadow: var(--nm-press-sm), 0 0 0 2px var(--gold-soft); }
+  .field.invalid input, .field.invalid select, .field.invalid textarea {
+    box-shadow: var(--nm-press-sm), 0 0 0 2px var(--bad-ink); background: #24141a; }
+
+  /* one focus ring for the whole site, drawn as a ring rather than an outline
+     so it follows the rounded soft-UI shapes */
+  :focus-visible { outline: none; box-shadow: 0 0 0 3px rgba(245,168,28,.55); }
+  .btn:focus-visible { box-shadow: var(--nm-raise-sm), 0 0 0 3px rgba(245,168,28,.55); }
+
+  /* ---- craft: flatten decorative gradients (R1) and drop glows (R2) ---- */
+  .pagehead { background: var(--deep); }
+  .showcase-wrap { background: var(--sand); }
+  .footer { background: var(--sand); }
+  .footer::before { display: none; }
+  .points-board-head, .live-championship-header { background: var(--deep); border-bottom: 2px solid var(--gold); }
+  .vcard { background: var(--surface-2); box-shadow: var(--nm-raise-lg); }
+  .cal-cta { background: var(--surface-2); box-shadow: var(--nm-raise); }
+  .lbd-next-bar span { background: var(--gold); }
+  .lbd-lead { background: var(--surface-2); }
+  .lb-podium { background: var(--surface-2); box-shadow: var(--nm-raise-lg); }
+  .rank-card.t1 .rank-card-circle, .ov-card.t1 .ov-card-badge, .champ-card-badge {
+    background: var(--gold); color: #06202F; box-shadow: var(--nm-raise-sm); }
+  .rank-card.t2 .rank-card-circle, .ov-card.t2 .ov-card-badge { background: #B7C4CF; color: #06202F; }
+  .rank-card.t3 .rank-card-circle, .ov-card.t3 .ov-card-badge { background: #C98F57; color: #06202F; }
+  .stat.lead { box-shadow: var(--nm-raise-lg); border-color: transparent; }
+  .stat::before { display: none; }
+  .lb-row.t1 { box-shadow: var(--nm-raise); border-color: transparent; }
+  .lb-row.t1 .lb-rank { background: var(--gold); color: #06202F; }
+  .match-row.live .m-score { background: var(--coral-flat); }
+  .bb-item.bb-cta .bb-ic { background: var(--coral-flat); box-shadow: var(--nm-raise); }
+  .brand .dot { box-shadow: none; }
+  #kbotBtn { background: var(--coral-flat); box-shadow: var(--nm-raise); }
+  .btn.primary::after, .btn.gold::after, .btn.def::after { display: none; }
+
+  /* ---- craft: no pure white for text (R7) ---- */
+  .def-hero h1, .pagehead h1, .def-state h2, .def-sec-head h2, .sc-ti,
+  .news-feat .nf-title, .cat-head, .faq-cat-head, .footer .fb, .wv-card h3 { color: var(--paper); }
+
+  /* ---- craft: motion that means something (R12) ----
+     Decorative infinite loops stand down; the live-status pulse stays, because
+     it is the only one carrying information. */
+  .spark { display: none; }
+  .mk-dot { animation: none; }
+  .mk-dot::before { animation: none; opacity: 0; }
+  .mk.sel .mk-dot::before { opacity: .8; }
+
+  @media (prefers-reduced-motion: reduce) {
+    .card.link, .ev-card, .rank-card, .nw-card, .wv-card, .btn { transition: box-shadow 120ms ease; }
+    .card.link:hover, .rank-card:hover, .btn:hover, .btn.primary:hover, .btn.gold:hover { transform: none; }
+  }
+
+  /* the soft-UI surfaces need a touch more room than a flat card did */
+  @media (min-width: 769px) {
+    .card { padding: 22px; }
+    .panel { padding: 26px; }
+  }
+
+  /* two stragglers the layer above did not reach */
+  .sc-item.open .sc-node { box-shadow: var(--nm-press-sm); }
+  .live-search-btn { background: var(--surface); box-shadow: var(--nm-raise-sm); color: var(--gold-soft); }
+  .live-search-btn:active { box-shadow: var(--nm-press-sm); }
+
+  /* .btn.gold / .btn.primary outrank the bare .btn rule, so the elevation has
+     to be restated at their specificity or the old coral glow survives */
+  .btn.primary, .btn.gold { box-shadow: var(--nm-raise-sm); }
+  .btn.primary:hover, .btn.gold:hover { box-shadow: var(--nm-raise); }
+  .btn.primary:active, .btn.gold:active { box-shadow: var(--nm-press-sm); }
+  .btn.primary:focus-visible, .btn.gold:focus-visible { box-shadow: var(--nm-raise-sm), 0 0 0 3px rgba(245,168,28,.55); }
+
+  /* agenda timeline rows: one elevation language, like every other surface */
+  .sc-list .sc-item { background: var(--surface); border-color: transparent; box-shadow: var(--nm-raise-sm); }
+  .sc-list .sc-item:hover { border-color: transparent; box-shadow: var(--nm-raise); }
+  .sc-list .sc-item.open { border-color: transparent; box-shadow: var(--nm-raise-lg); }
+  .sc-dayhead { background: var(--surface-2); border-color: transparent;
+    border-inline-start: 4px solid var(--gold) !important; box-shadow: var(--nm-raise-sm); }
