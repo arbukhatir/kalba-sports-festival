@@ -1,0 +1,203 @@
+<!doctype html>
+
+<html lang="ar" dir="rtl">
+
+<head>
+
+<meta charset="utf-8">
+
+<meta name="viewport" content="width=device-width, initial-scale=1.0, viewport-fit=cover">
+
+<title>التسجيل — مهرجان كلباء الرياضي 2026</title>
+
+<meta name="description" content="سجّل في مهرجان كلباء الرياضي 2026 — تسجيل المشاركين والمطاعم والعارضين والرعاة والمتطوعين.">
+
+<meta property="og:title" content="التسجيل">
+
+<meta property="og:description" content="سجّل في مهرجان كلباء الرياضي 2026 — تسجيل المشاركين والمطاعم والعارضين والرعاة والمتطوعين.">
+
+<meta property="og:type" content="website">
+
+<meta property="og:locale" content="ar_AE">
+
+
+<meta name="referrer" content="strict-origin-when-cross-origin">
+
+<meta name="theme-color" content="#0A2133">
+
+<link rel="icon" type="image/png" href="assets/img/favicon.png">
+
+<link rel="stylesheet" href="assets/style.css">
+
+</head>
+
+<body>
+
+<a class="skip-link" href="#app">تخطَّ إلى المحتوى</a>
+
+<header class="topbar">
+
+  <div class="topbar-in">
+
+    <a class="brand" href="index.html">
+
+      <img class="brand-logo" src="assets/img/logo-mark.png" alt="" aria-hidden="true">
+
+      <span id="brandName">مهرجان كلباء الرياضي 2026</span>
+
+    </a>
+
+    <button class="mobile-menu-btn" id="mobileMenuBtn" type="button" aria-label="القائمة" aria-expanded="false" onclick="toggleMobileNav()">
+
+      <span></span><span></span><span></span>
+
+    </button>
+
+    <nav class="main" id="mainNav">
+
+              <a href="index.html">الرئيسية</a>
+
+              <a href="champs.html">المنافسات</a>
+
+              <a href="agenda.html">الأجندة</a>
+
+              <a href="results.html">النتائج</a>
+
+              <a href="leaderboard.html">نقاط الزوار</a>
+
+              <a href="register.html" class="active">التسجيل</a>
+
+              <a href="venue.html">الموقع</a>
+
+              <a href="contact.html">تواصل</a>
+
+            <a class="nav-login" href="gate.html">تسجيل الدخول</a>
+
+      <a class="lang" href="register-en.html">English</a>
+
+    </nav>
+
+  </div>
+
+</header>
+
+<div class="mobile-nav-overlay" id="mobileNavOverlay" onclick="closeMobileNav()"></div>
+
+<main id="app" tabindex="-1">
+
+<header class="pagehead"><div class="ph-bg" style="background-image:url(champs/ai-obstacles.webp)"></div><div class="pagehead-in"><div class="ph-kicker">انضم إلينا</div><h1>التسجيل والانضمام</h1><p class="ph-sub">اختر نوع التسجيل ثم عبّئ النموذج — يصلك رقم مرجعي فور الإرسال.</p></div></header><section class="container section" style="max-width:720px">
+
+        <div class="panel">
+
+      <div class="reg-picked"><span class="ic"><svg class="ic-svg" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true" focusable="false"><circle cx="12" cy="14.5" r="5.5"/><path d="M12 11.8l1.1 2.2 2.4.3-1.8 1.7.5 2.4-2.2-1.2-2.2 1.2.5-2.4-1.8-1.7 2.4-.3z"/><path d="M8.5 9 6 3.5h12L15.5 9"/></svg></span><div><b>المسابقات الرياضية</b><span>يُنشأ حسابك تلقائياً بعد التسجيل — يصلك الرقم السري PIN ورمز QR على بريدك ويُمسح الرمز عند كل مباراة</span></div></div>
+
+      <form method="post" action="actions/register.php" enctype="multipart/form-data">
+
+      <input type="hidden" name="_csrf" value="905872c68831e3561e90303fe8329c869807994259e04d8c1dbf6a00cbf88573">        <input type="hidden" name="type" value="sports">
+
+                <h2 class="sec-h reg-sub">بيانات مقدّم الطلب</h2>
+
+        <div class="field"><label class="flabel" for="_name">الاسم الكامل <span class="req">*</span></label><input type="text" id="_name" name="_name" maxlength="150" required></div>
+
+        <div class="field"><label class="flabel" for="_phone">رقم الهاتف <span class="req">*</span></label><input type="tel" id="_phone" name="_phone" dir="ltr" maxlength="30" required></div>
+
+        <div class="field"><label class="flabel" for="_email">البريد الإلكتروني <span class="req">*</span></label><input type="email" id="_email" name="_email" dir="ltr" maxlength="150" required></div>
+
+        <h2 class="sec-h reg-sub">تفاصيل الطلب</h2>
+
+        <div class="field"><label class="flabel" for="f_act">المسابقة <span class="req">*</span></label><select id="f_act" name="f_act" required><option value="">اختر</option><option value="تحدي القوة">تحدي القوة</option><option value="الكاياك">الكاياك</option><option value="الجري">الجري</option><option value="السباحة">السباحة</option><option value="كرة القدم الشاطئية">كرة القدم الشاطئية</option></select></div><div class="field"><label class="flabel" for="f_acat">الفئة العمرية <span class="req">*</span></label><select id="f_acat" name="f_acat" required><option value="">اختر</option><option value="أطفال">أطفال</option><option value="ناشئون">ناشئون</option><option value="كبار">كبار</option></select></div><div class="field"><label class="flabel" for="f_team">اسم الفريق <span class="opt">(اختياري)</span></label><input type="text" id="f_team" name="f_team" maxlength="200"></div><div class="field"><label class="flabel" for="f_iban">شهادة الآيبان IBAN من البنك (لصرف الجوائز) <span class="req">*</span></label><input type="file" id="f_iban" name="f_iban" accept=".pdf,.jpg,.jpeg,.png" required><div class="hint">PDF / JPG / PNG — 8 MB</div></div>        <button class="btn primary block" type="submit" style="margin-top:16px">إرسال الطلب</button>
+
+      </form>
+
+    </div>
+
+  </section>
+
+</main>
+
+<footer class="footer">
+
+  <img class="footer-mark" src="assets/img/logo-mark-white.png" alt="" aria-hidden="true">
+
+  <div class="fb">مهرجان كلباء الرياضي 2026</div>
+
+  <div id="footNote">مدينة كلباء · إمارة الشارقة · 6–13 نوفمبر 2026</div>
+
+  <nav class="foot-links" aria-label="روابط">
+
+    <a href="about.html">عن المهرجان</a><a href="gallery.html">المعرض</a><a href="news.html">الأخبار</a><a href="schools.html">تحدي المدارس</a><a href="surveys.html">الاستبيانات</a><a href="join.html">تصريح الزيارة</a><a href="my.html">تتبّع طلبي</a><a href="community.html">المجتمع والورش</a><a href="results.html">النتائج الفورية</a><a href="faq.html">الأسئلة الشائعة</a><a href="contact.html">تواصل معنا</a><a href="terms.html">الشروط</a><a href="privacy.html">الخصوصية</a><a href="map.html">الخريطة التفاعلية</a>  </nav>
+
+    <form class="footer-nl" method="post" action="actions/subscribe.php" style="justify-content:center;margin-top:12px">
+
+      <input type="hidden" name="_csrf" value="905872c68831e3561e90303fe8329c869807994259e04d8c1dbf6a00cbf88573">    <label class="sr-only" for="nlEmail">بريدك الإلكتروني للنشرة البريدية</label>
+
+    <input type="email" id="nlEmail" name="email" dir="ltr" required
+
+           placeholder="بريدك الإلكتروني" style="max-width:240px">
+
+    <button class="btn gold sm" type="submit">اشترك</button>
+
+  </form>
+
+</footer>
+
+<nav class="bottombar" aria-label="التنقل السريع">
+
+      <a class="bb-item"
+
+       href="index.html">
+
+      <span class="bb-ic"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M3 10.5 12 3l9 7.5"/><path d="M5 9.5V21h14V9.5"/></svg></span>
+
+      <span class="bb-lbl">الرئيسية</span>
+
+    </a>
+
+      <a class="bb-item"
+
+       href="champs.html">
+
+      <span class="bb-ic"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M8 21h8M12 17v4M7 4h10v4a5 5 0 0 1-10 0z"/><path d="M7 6H4v1a4 4 0 0 0 3 3.9M17 6h3v1a4 4 0 0 1-3 3.9"/></svg></span>
+
+      <span class="bb-lbl">الرياضات</span>
+
+    </a>
+
+      <a class="bb-item bb-cta active"
+
+       href="register.html" aria-current="page">
+
+      <span class="bb-ic"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" aria-hidden="true"><path d="M12 5v14M5 12h14"/></svg></span>
+
+      <span class="bb-lbl">سجّل</span>
+
+    </a>
+
+      <a class="bb-item"
+
+       href="results.html">
+
+      <span class="bb-ic"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M4 20V10M12 20V4M20 20v-7"/></svg></span>
+
+      <span class="bb-lbl">النتائج</span>
+
+    </a>
+
+      <a class="bb-item"
+
+       href="agenda.html">
+
+      <span class="bb-ic"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><rect x="3" y="5" width="18" height="16" rx="2"/><path d="M8 3v4M16 3v4M3 10h18"/></svg></span>
+
+      <span class="bb-lbl">الأجندة</span>
+
+    </a>
+
+  </nav>
+
+<script src="assets/app.js"></script>
+
+</body>
+
+</html>
+

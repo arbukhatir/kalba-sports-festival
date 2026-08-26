@@ -1,0 +1,331 @@
+<!doctype html>
+
+<html lang="en" dir="ltr">
+
+<head>
+
+<meta charset="utf-8">
+
+<meta name="viewport" content="width=device-width, initial-scale=1.0, viewport-fit=cover">
+
+<title>Team registration — Kalba Sports Festival 2026</title>
+
+<meta name="description" content="Register to compete in Football at Kalba Sports Festival 2026.">
+
+<meta property="og:title" content="Team registration">
+
+<meta property="og:description" content="Register to compete in Football at Kalba Sports Festival 2026.">
+
+<meta property="og:type" content="website">
+
+<meta property="og:locale" content="en_AE">
+
+
+<meta name="referrer" content="strict-origin-when-cross-origin">
+
+<meta name="theme-color" content="#0A2133">
+
+<link rel="icon" type="image/png" href="assets/img/favicon.png">
+
+<link rel="stylesheet" href="assets/style.css">
+
+</head>
+
+<body>
+
+<a class="skip-link" href="#app">تخطَّ إلى المحتوى</a>
+
+<header class="topbar">
+
+  <div class="topbar-in">
+
+    <a class="brand" href="index-en.html">
+
+      <img class="brand-logo" src="assets/img/logo-mark.png" alt="" aria-hidden="true">
+
+      <span id="brandName">Kalba Sports Festival 2026</span>
+
+    </a>
+
+    <button class="mobile-menu-btn" id="mobileMenuBtn" type="button" aria-label="القائمة" aria-expanded="false" onclick="toggleMobileNav()">
+
+      <span></span><span></span><span></span>
+
+    </button>
+
+    <nav class="main" id="mainNav">
+
+              <a href="index-en.html">Home</a>
+
+              <a href="champs-en.html">Sports</a>
+
+              <a href="agenda-en.html">Agenda</a>
+
+              <a href="results-en.html">Results</a>
+
+              <a href="leaderboard-en.html">Visitor points</a>
+
+              <a href="register-en.html">Register</a>
+
+              <a href="venue-en.html">Venue</a>
+
+              <a href="contact-en.html">Contact</a>
+
+            <a class="nav-login" href="gate-en.html">Log in</a>
+
+      <a class="lang" href="pform.html">عربي</a>
+
+    </nav>
+
+  </div>
+
+</header>
+
+<div class="mobile-nav-overlay" id="mobileNavOverlay" onclick="closeMobileNav()"></div>
+
+<main id="app" tabindex="-1">
+
+<header class="pagehead"><div class="ph-bg" style="background-image:url(champs/ai-football.webp)"></div><div class="pagehead-in"><a class="ph-back" href="champ-6-en.html">&larr; Football</a><div class="ph-kicker">TEAM ENTRY</div><h1>Football</h1><p class="ph-sub">Register your team for this sport — captain details and the squad list. You get a reference number on submit.</p></div></header><section class="container section" style="max-width:660px"><div class="panel">
+
+          <form method="post" action="actions/register.php?lang=en" enctype="multipart/form-data">
+
+      <input type="hidden" name="_csrf" value="a5ae9fc20d1a20976abe46bb9088930d94fde7be917d94b49e3c245f0a772d8a">      <input type="hidden" name="type" value="football">
+
+      <input type="hidden" name="_sport" value="6">
+
+              <div class="field"><label class="flabel" for="_team">Team name <span class="req">*</span></label>
+
+          <input type="text" id="_team" name="f_team_name" maxlength="120" required></div>
+
+        <div class="field"><label class="flabel" for="_club">Club or organisation <span class="opt">(optional)</span></label>
+
+          <input type="text" id="_club" name="f_club" maxlength="120"></div>
+
+        <h2 class="sec-h reg-sub">Team captain</h2>
+
+            <div class="field"><label class="flabel" for="_name">Captain name <span class="req">*</span></label><input type="text" id="_name" name="_name" maxlength="150" required></div>
+
+      <div class="frow">
+
+        <div class="field"><label class="flabel" for="_phone">Phone <span class="req">*</span></label><input type="tel" id="_phone" name="_phone" dir="ltr" required></div>
+
+        <div class="field"><label class="flabel" for="_email">Email <span class="req">*</span></label><input type="email" id="_email" name="_email" dir="ltr" required></div>
+
+      </div>
+
+      <div class="field"><label class="flabel" for="_cat">Category <span class="req">*</span></label>
+
+        <select id="_cat" name="f_category" required><option value="">Choose</option>
+
+          <option>Juniors</option><option>Seniors</option><option>Women</option></select></div>
+
+              <h2 class="sec-h reg-sub">Squad list</h2>
+
+        <p class="hint" style="margin:-4px 0 10px">Between 7 and 12 players — the captain counts as one of them.</p>
+
+        <div class="pf-roster" id="pfRoster" data-min="7" data-max="12"
+
+             data-label="Player name"
+
+             data-remove="Remove player">
+
+                      <div class="field pf-player">
+
+              <span class="pf-num" aria-hidden="true">1</span>
+
+              <label class="sr-only" for="pl0">Player name 1</label>
+
+              <input type="text" id="pl0" name="f_players[]" maxlength="120" required
+
+                     placeholder="Player name 1">
+
+              <button type="button" class="pf-del" aria-label="Remove player"><svg class="ic-svg" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true" focusable="false"><path d="m6.5 6.5 11 11M17.5 6.5l-11 11"/></svg></button>
+
+            </div>
+
+                      <div class="field pf-player">
+
+              <span class="pf-num" aria-hidden="true">2</span>
+
+              <label class="sr-only" for="pl1">Player name 2</label>
+
+              <input type="text" id="pl1" name="f_players[]" maxlength="120" required
+
+                     placeholder="Player name 2">
+
+              <button type="button" class="pf-del" aria-label="Remove player"><svg class="ic-svg" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true" focusable="false"><path d="m6.5 6.5 11 11M17.5 6.5l-11 11"/></svg></button>
+
+            </div>
+
+                      <div class="field pf-player">
+
+              <span class="pf-num" aria-hidden="true">3</span>
+
+              <label class="sr-only" for="pl2">Player name 3</label>
+
+              <input type="text" id="pl2" name="f_players[]" maxlength="120" required
+
+                     placeholder="Player name 3">
+
+              <button type="button" class="pf-del" aria-label="Remove player"><svg class="ic-svg" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true" focusable="false"><path d="m6.5 6.5 11 11M17.5 6.5l-11 11"/></svg></button>
+
+            </div>
+
+                      <div class="field pf-player">
+
+              <span class="pf-num" aria-hidden="true">4</span>
+
+              <label class="sr-only" for="pl3">Player name 4</label>
+
+              <input type="text" id="pl3" name="f_players[]" maxlength="120" required
+
+                     placeholder="Player name 4">
+
+              <button type="button" class="pf-del" aria-label="Remove player"><svg class="ic-svg" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true" focusable="false"><path d="m6.5 6.5 11 11M17.5 6.5l-11 11"/></svg></button>
+
+            </div>
+
+                      <div class="field pf-player">
+
+              <span class="pf-num" aria-hidden="true">5</span>
+
+              <label class="sr-only" for="pl4">Player name 5</label>
+
+              <input type="text" id="pl4" name="f_players[]" maxlength="120" required
+
+                     placeholder="Player name 5">
+
+              <button type="button" class="pf-del" aria-label="Remove player"><svg class="ic-svg" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true" focusable="false"><path d="m6.5 6.5 11 11M17.5 6.5l-11 11"/></svg></button>
+
+            </div>
+
+                      <div class="field pf-player">
+
+              <span class="pf-num" aria-hidden="true">6</span>
+
+              <label class="sr-only" for="pl5">Player name 6</label>
+
+              <input type="text" id="pl5" name="f_players[]" maxlength="120" required
+
+                     placeholder="Player name 6">
+
+              <button type="button" class="pf-del" aria-label="Remove player"><svg class="ic-svg" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true" focusable="false"><path d="m6.5 6.5 11 11M17.5 6.5l-11 11"/></svg></button>
+
+            </div>
+
+                      <div class="field pf-player">
+
+              <span class="pf-num" aria-hidden="true">7</span>
+
+              <label class="sr-only" for="pl6">Player name 7</label>
+
+              <input type="text" id="pl6" name="f_players[]" maxlength="120" required
+
+                     placeholder="Player name 7">
+
+              <button type="button" class="pf-del" aria-label="Remove player"><svg class="ic-svg" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true" focusable="false"><path d="m6.5 6.5 11 11M17.5 6.5l-11 11"/></svg></button>
+
+            </div>
+
+                  </div>
+
+        <button type="button" class="btn ghost sm" id="pfAdd" style="margin-bottom:14px">＋ Add player</button>
+
+            <div class="field"><label class="flabel" for="_iban">IBAN certificate from the bank (for prize payouts) <span class="req">*</span></label><input type="file" id="_iban" name="f_iban" accept=".pdf,.jpg,.jpeg,.png" required><div class="hint">PDF / JPG / PNG — 8 MB</div></div>
+
+      <div class="field"><label class="flabel" for="_id">ID copy <span class="opt">(optional)</span></label><input type="file" id="_id" name="f_id" accept=".pdf,.jpg,.jpeg,.png"></div>
+
+      <button class="btn gold block" type="submit">Register the team</button>
+
+    </form>
+
+  </div></section>
+
+</main>
+
+<footer class="footer">
+
+  <img class="footer-mark" src="assets/img/logo-mark-white.png" alt="" aria-hidden="true">
+
+  <div class="fb">Kalba Sports Festival 2026</div>
+
+  <div id="footNote">Kalba · Sharjah · 6–13 November 2026</div>
+
+  <nav class="foot-links" aria-label="Links">
+
+    <a href="about-en.html">About</a><a href="gallery-en.html">Gallery</a><a href="news-en.html">News</a><a href="schools-en.html">Schools</a><a href="surveys-en.html">Surveys</a><a href="join-en.html">Visitor pass</a><a href="my-en.html">Track my application</a><a href="community-en.html">Community</a><a href="results-en.html">Live results</a><a href="faq-en.html">FAQ</a><a href="contact-en.html">Contact</a><a href="terms-en.html">Terms</a><a href="privacy-en.html">Privacy</a><a href="map.html?lang=en">Interactive map</a>  </nav>
+
+    <form class="footer-nl" method="post" action="actions/subscribe.php?lang=en" style="justify-content:center;margin-top:12px">
+
+      <input type="hidden" name="_csrf" value="a5ae9fc20d1a20976abe46bb9088930d94fde7be917d94b49e3c245f0a772d8a">    <label class="sr-only" for="nlEmail">Your email for the newsletter</label>
+
+    <input type="email" id="nlEmail" name="email" dir="ltr" required
+
+           placeholder="Your email" style="max-width:240px">
+
+    <button class="btn gold sm" type="submit">Subscribe</button>
+
+  </form>
+
+</footer>
+
+<nav class="bottombar" aria-label="Quick navigation">
+
+      <a class="bb-item"
+
+       href="index-en.html">
+
+      <span class="bb-ic"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M3 10.5 12 3l9 7.5"/><path d="M5 9.5V21h14V9.5"/></svg></span>
+
+      <span class="bb-lbl">Home</span>
+
+    </a>
+
+      <a class="bb-item"
+
+       href="champs-en.html">
+
+      <span class="bb-ic"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M8 21h8M12 17v4M7 4h10v4a5 5 0 0 1-10 0z"/><path d="M7 6H4v1a4 4 0 0 0 3 3.9M17 6h3v1a4 4 0 0 1-3 3.9"/></svg></span>
+
+      <span class="bb-lbl">Sports</span>
+
+    </a>
+
+      <a class="bb-item bb-cta"
+
+       href="register-en.html">
+
+      <span class="bb-ic"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" aria-hidden="true"><path d="M12 5v14M5 12h14"/></svg></span>
+
+      <span class="bb-lbl">Register</span>
+
+    </a>
+
+      <a class="bb-item"
+
+       href="results-en.html">
+
+      <span class="bb-ic"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M4 20V10M12 20V4M20 20v-7"/></svg></span>
+
+      <span class="bb-lbl">Results</span>
+
+    </a>
+
+      <a class="bb-item"
+
+       href="agenda-en.html">
+
+      <span class="bb-ic"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><rect x="3" y="5" width="18" height="16" rx="2"/><path d="M8 3v4M16 3v4M3 10h18"/></svg></span>
+
+      <span class="bb-lbl">Agenda</span>
+
+    </a>
+
+  </nav>
+
+<script src="assets/app.js"></script>
+
+</body>
+
+</html>
+
