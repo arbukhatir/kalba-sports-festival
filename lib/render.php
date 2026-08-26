@@ -100,3 +100,83 @@ function sport_card($c, $i) {
     '<span class="ev-tag">' . e(champ_cat_name($c['c'])) . '</span></span>' .
     '<span class="ev-title">' . e(champ_name($c)) . '</span></a>';
 }
+
+/* =============================================================================
+   Standings — level 2 and 3 of the results requirement.
+
+   The matches table is the single source of truth; standings are derived from
+   it rather than stored, so a score corrected in the control room re-ranks
+   every table on the next page load with nothing to re-sync.
+   Win 3, draw 1, loss 0. Ties broken by goal difference, then goals for.
+   ============================================================================= */
+function standings_from_matches($rows, $sportIdx = null) {
+    $t = [];
+    $put = function (&$t, $ar, $en) {
+        $key = trim($ar) !== '' ? trim($ar) : trim($en);
+        if ($key === '') return null;
+        if (!isset($t[$key])) $t[$key] = ['ar' => trim($ar), 'en' => trim($en),
+            'p' => 0, 'w' => 0, 'd' => 0, 'l' => 0, 'gf' => 0, 'ga' => 0, 'pts' => 0];
+        return $key;
+    };
+    foreach ($rows as $r) {
+        if ($sportIdx !== null && (int)$r['sport'] !== (int)$sportIdx) continue;
+        if (($r['status'] ?? '') !== 'finished') continue;
+        if ($r['score_a'] === null || $r['score_b'] === null) continue;
+        $a = $put($t, $r['side_a_ar'] ?? '', $r['side_a_en'] ?? '');
+        $b = $put($t, $r['side_b_ar'] ?? '', $r['side_b_en'] ?? '');
+        if ($a === null || $b === null) continue;
+        $sa = (int)$r['score_a']; $sb = (int)$r['score_b'];
+        $t[$a]['p']++; $t[$b]['p']++;
+        $t[$a]['gf'] += $sa; $t[$a]['ga'] += $sb;
+        $t[$b]['gf'] += $sb; $t[$b]['ga'] += $sa;
+        if ($sa > $sb)      { $t[$a]['w']++; $t[$a]['pts'] += 3; $t[$b]['l']++; }
+        elseif ($sa < $sb)  { $t[$b]['w']++; $t[$b]['pts'] += 3; $t[$a]['l']++; }
+        else                { $t[$a]['d']++; $t[$b]['d']++; $t[$a]['pts']++; $t[$b]['pts']++; }
+    }
+    foreach ($t as $k => $row) { $t[$k]['gd'] = $row['gf'] - $row['ga']; }
+    uasort($t, function ($x, $y) {
+        if ($x['pts'] !== $y['pts']) return $y['pts'] <=> $x['pts'];
+        if ($x['gd']  !== $y['gd'])  return $y['gd']  <=> $x['gd'];
+        return $y['gf'] <=> $x['gf'];
+    });
+    return $t;
+}
+
+/* Level 3: one table across every championship, plus the winner of each. */
+function overall_standings($rows, $champs) {
+    $all = [];
+    foreach ($champs as $i => $c) {
+        foreach (standings_from_matches($rows, $i) as $name => $s) {
+            if (!isset($all[$name])) $all[$name] = ['ar' => $s['ar'], 'en' => $s['en'],
+                'pts' => 0, 'p' => 0, 'w' => 0, 'sports' => 0];
+            $all[$name]['pts']    += $s['pts'];
+            $all[$name]['p']      += $s['p'];
+            $all[$name]['w']      += $s['w'];
+            $all[$name]['sports'] += 1;
+        }
+    }
+    uasort($all, function ($x, $y) {
+        if ($x['pts'] !== $y['pts']) return $y['pts'] <=> $x['pts'];
+        return $y['w'] <=> $x['w'];
+    });
+    return $all;
+}
+
+/* The champion of each championship: top of its table once matches are done. */
+function champions_by_sport($rows, $champs) {
+    $out = [];
+    foreach ($champs as $i => $c) {
+        $s = standings_from_matches($rows, $i);
+        if (!$s) continue;
+        $name = array_key_first($s);
+        $out[$i] = ['champ' => $c, 'name' => $s[$name]];
+    }
+    return $out;
+}
+
+/* Team display name in the current language, falling back to the other. */
+function team_name($t) {
+    $ar = $t['ar'] ?? ''; $en = $t['en'] ?? '';
+    if (lang() === 'ar') return $ar !== '' ? $ar : $en;
+    return $en !== '' ? $en : $ar;
+}
