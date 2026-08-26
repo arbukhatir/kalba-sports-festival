@@ -12,7 +12,11 @@ $ages = [['<12','أقل من 12','Under 12'],['12-17','12–17','12–17'],['18-
 ?>
 <section class="container section" style="max-width:600px"><div class="panel">
   <?php if (isset($_GET['ok'])): ?>
-    <div class="flash ok"><?= e(A('تم إنشاء تصريحك! رمزك', 'Your pass is ready! Your code')) ?>: <b dir="ltr"><?= e($_GET['ok']) ?></b></div>
+    <div class="flash ok" role="status"><?= e(A('تم إنشاء تصريحك!', 'Your pass is ready!')) ?></div>
+    <div class="vcard">
+      <div class="vqr"><?= qr_svg($_GET['ok'], 190) ?></div>
+      <div class="vcode"><?= e(A('امسح الرمز عند البوابة', 'Scan this at the gate')) ?> · <b dir="ltr"><?= e($_GET['ok']) ?></b></div>
+    </div>
     <p class="muted"><?= e(A('أظهر هذا الرمز عند الدخول ونقاط الأنشطة.', 'Show this code at entry and activity points.')) ?></p>
     <div class="btn-row" style="justify-content:center"><?= btn(A('الرئيسية','Home'),'index.php','primary') ?></div>
   <?php else: ?>

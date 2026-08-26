@@ -63,8 +63,16 @@ if ($one) {
     $fname = 'kalba-sports-festival-2026.ics';
 }
 
+/* Disposition decides what a phone does with this.
+   A single event is served inline: iOS Safari then opens its "Add Event"
+   sheet directly instead of dropping a file in Downloads, and Android Chrome
+   still hands it to Google Calendar. The whole-programme file is an import,
+   so that one is offered as a download.
+   text/calendar is what both platforms match on, so it is stated explicitly
+   and the filename keeps the .ics extension Android relies on. */
 header('Content-Type: text/calendar; charset=utf-8');
-header('Content-Disposition: attachment; filename="' . $fname . '"');
+header('Content-Disposition: ' . ($one ? 'inline' : 'attachment') . '; filename="' . $fname . '"');
+header('Cache-Control: no-store');
 
 $out = ["BEGIN:VCALENDAR", "VERSION:2.0",
         "PRODID:-//Kalba Sports Festival//2026//" . strtoupper(lang()),

@@ -33,9 +33,10 @@ $STATES = [
   <?php if ($v): ?>
     <div class="vcard">
       <div class="vh"><?= icon('star') ?> <?= e($v['name']) ?></div>
+      <div class="vqr"><?= qr_svg($v['code'], 190) ?></div>
+      <div class="vcode"><?= e(A('امسح الرمز عند البوابة', 'Scan this at the gate')) ?> · <b dir="ltr"><?= e($v['code']) ?></b></div>
       <div class="vstats">
         <div class="vstat"><div class="n"><?= (int)$v['points'] ?></div><div class="l"><?= e(A('نقطة', 'points')) ?></div></div>
-        <div class="vstat"><div class="n" dir="ltr"><?= e($v['code']) ?></div><div class="l"><?= e(A('رمز البطاقة', 'Pass code')) ?></div></div>
       </div>
       <?php if (!empty($v['age_group'])): ?><div class="vage"><?= e($v['age_group']) ?></div><?php endif; ?>
     </div>
@@ -88,6 +89,12 @@ $STATES = [
         </div>
       <?php endif; ?>
 
+      <?php if ($app['status'] === 'accepted'): ?>
+        <div class="acc-qr">
+          <div class="vqr"><?= qr_svg($app['ref'], 190) ?></div>
+          <p class="hint"><?= e(A('اعرض هذا الرمز عند نقطة الاعتماد الميداني — يُمسح مرة واحدة لتأكيد مشاركتك.', 'Show this code at the field accreditation desk — one scan confirms your entry.')) ?></p>
+        </div>
+      <?php endif; ?>
       <p class="hint"><?= e(A('احتفظ بهذا الرقم — هو ما نطلبه عند الاعتماد الميداني وفي أي استفسار.', 'Keep this reference — it is what we ask for at field accreditation and in any enquiry.')) ?></p>
       <div class="btn-row"><?= btn(A('تواصل معنا', 'Contact us'), 'contact.php', 'ghost sm') ?></div>
     </div>

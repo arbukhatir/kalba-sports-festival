@@ -21,6 +21,10 @@ echo page_head($isTeam ? A('تسجيل فريق', 'TEAM ENTRY') : A('تسجيل 
 <section class="container section" style="max-width:660px"><div class="panel">
   <?php if (isset($_GET['ok'])): ?>
     <div class="flash ok" role="status"><?= e($isTeam ? A('تم تسجيل فريقك! رقمكم المرجعي', 'Your team is registered! Your reference') : A('تم التسجيل! رقمك المرجعي', 'Registered! Your reference')) ?>: <b dir="ltr"><?= e($_GET['ok']) ?></b></div>
+    <div class="vcard">
+      <div class="vqr"><?= qr_svg($_GET['ok'], 190) ?></div>
+      <div class="vcode"><?= e(A('اعرض هذا الرمز عند الاعتماد الميداني', 'Show this at field accreditation')) ?> · <b dir="ltr"><?= e($_GET['ok']) ?></b></div>
+    </div>
     <div class="btn-row"><?= btn(A('الرياضات', 'Sports'), 'champs.php', 'primary') ?></div>
   <?php else: ?>
     <?php if (isset($_GET['err'])): ?><div class="flash err" role="alert"><?= e($_GET['err'] === 'roster'
