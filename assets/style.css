@@ -2785,3 +2785,36 @@ nav.main .menu.open > .menu-btn .caret{transform:rotate(180deg);}
   .adm-export { display: flex; align-items: center; gap: 8px; flex-wrap: wrap; margin: 6px 0 16px; }
   .adm-export .hint { flex: 1 1 100%; margin-bottom: 2px; }
   .adm-export .btn { text-decoration: none; }
+
+  /* ---- community events + workshops ---- */
+  .cw-stats { justify-content: flex-start; gap: 34px; margin-bottom: 28px; }
+  .ce-card { display: flex; flex-direction: column; gap: 8px; }
+  .ce-top { display: flex; align-items: center; gap: 10px; }
+  .ce-ic { display: grid; place-items: center; width: 40px; height: 40px; border-radius: 12px;
+    background: var(--surface-in); box-shadow: var(--nm-press-sm); color: var(--gold-soft); flex: 0 0 auto; }
+  .ce-ic .ic-svg { width: 21px; height: 21px; }
+  .ce-card .tt { margin: 0; font-family: var(--font-display); font-size: 1.05rem; }
+  .ce-meta { list-style: none; margin: 6px 0 0; padding: 0; display: grid; gap: 6px; }
+  .ce-meta li { display: flex; align-items: center; gap: 8px; font-size: .85rem; color: var(--muted); }
+  .ce-meta .ic-svg { width: 15px; height: 15px; color: var(--gold-soft); }
+
+  .ws-list { display: grid; gap: 10px; }
+  .ws-row { display: grid; grid-template-columns: auto auto 1fr auto; align-items: center; gap: 14px;
+    padding: 14px 16px; border-radius: 14px; background: var(--surface); box-shadow: var(--nm-raise-sm); }
+  .ws-n { font-family: var(--font-sport); font-size: 1.1rem; color: var(--gold); opacity: .85; }
+  .ws-ic { display: grid; place-items: center; width: 38px; height: 38px; border-radius: 11px;
+    background: var(--surface-in); box-shadow: var(--nm-press-sm); color: var(--gold-soft); }
+  .ws-ic .ic-svg { width: 19px; height: 19px; }
+  .ws-body { display: grid; gap: 3px; min-width: 0; }
+  .ws-t { font-weight: 700; color: var(--ink); }
+  .ws-d { font-size: .85rem; color: var(--muted); line-height: 1.6; }
+  .ws-meta { font-size: .78rem; color: var(--gold-soft); display: flex; align-items: center;
+    gap: 5px; flex-wrap: wrap; font-variant-numeric: tabular-nums; }
+  .ws-meta .ic-svg { width: 14px; height: 14px; }
+  .ws-act .btn { white-space: nowrap; }
+  .ws-tba { opacity: .78; }
+  @media (max-width: 700px) {
+    .ws-row { grid-template-columns: auto 1fr; gap: 10px; }
+    .ws-n { grid-row: 1; } .ws-ic { display: none; }
+    .ws-body { grid-column: 2; } .ws-act { grid-column: 2; justify-self: start; }
+  }

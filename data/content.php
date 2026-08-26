@@ -50,6 +50,73 @@ $CONTACT = [
   'hours'    => ['ar' => 'خلال أيام المهرجان: 4:00 مساءً – 11:00 مساءً', 'en' => 'During the festival: 4:00 PM – 11:00 PM'],
 ];
 
+/* The four community events and six health workshops the requirements deck
+   specifies. The two workshops the deck leaves unnamed are shown as announced
+   later rather than filled with invented titles. */
+$COMMUNITY = [
+  ['s' => 'daily-challenges', 'ic' => 'trophy',
+   't'  => ['ar' => 'التحديات اليومية والكالستينكس', 'en' => 'Daily challenges & calisthenics'],
+   'd'  => ['ar' => 'محطات قصيرة ومسابقات سريعة — كرة قدم، رميات، وعروض كالستينكس، مع إعلان الفائزين يومياً.',
+            'en' => 'Short stations and quick contests — football, throwing games and calisthenics shows, with daily winners announced.'],
+   'who' => ['ar' => 'زوار المهرجان، الشباب، الأطفال', 'en' => 'Visitors, youth and children'],
+   'when' => ['ar' => 'يومياً 17:00–21:00', 'en' => 'Daily 17:00–21:00'],
+   'where' => ['ar' => 'ساحة الأنشطة المجتمعية', 'en' => 'Community activity yard']],
+  ['s' => 'folk-games', 'ic' => 'wheel',
+   't'  => ['ar' => 'الألعاب الشعبية', 'en' => 'Folk games'],
+   'd'  => ['ar' => 'محطات ألعاب شعبية تجمع الأجيال — الكيرم وشد الحبل وألعاب تراثية أخرى.',
+            'en' => 'Traditional game stations that bring the generations together — carrom, tug of war and other heritage games.'],
+   'who' => ['ar' => 'العائلات والمبتدئون', 'en' => 'Families and beginners'],
+   'when' => ['ar' => 'يومياً 16:30–21:30', 'en' => 'Daily 16:30–21:30'],
+   'where' => ['ar' => 'منطقة الألعاب المصاحبة', 'en' => 'Side games area']],
+  ['s' => 'pro-meet', 'ic' => 'users',
+   't'  => ['ar' => 'برامج تعريفية مع المحترفين', 'en' => 'Meet the professionals'],
+   'd'  => ['ar' => 'جلسات مفتوحة مع رياضيين محترفين — تجربة الرياضة عن قرب وأسئلة مباشرة.',
+            'en' => 'Open sessions with professional athletes — try the sport up close and ask directly.'],
+   'who' => ['ar' => 'الشباب والرياضيون الناشئون', 'en' => 'Youth and emerging athletes'],
+   'when' => ['ar' => 'الخميس والجمعة 18:00', 'en' => 'Thursday & Friday 18:00'],
+   'where' => ['ar' => 'المسرح الرئيسي', 'en' => 'Main stage']],
+  ['s' => 'closing-honours', 'ic' => 'medal',
+   't'  => ['ar' => 'حفل التكريم والتتويج', 'en' => 'Honours & closing ceremony'],
+   'd'  => ['ar' => 'تتويج أبطال البطولات الثلاث عشرة وتكريم المشاركين والمتطوعين في ختام المهرجان.',
+            'en' => 'Crowning the champions of all thirteen championships and honouring participants and volunteers.'],
+   'who' => ['ar' => 'الجميع', 'en' => 'Everyone'],
+   'when' => ['ar' => '13 نوفمبر · 20:00', 'en' => '13 November · 20:00'],
+   'where' => ['ar' => 'المسرح الرئيسي', 'en' => 'Main stage']],
+];
+
+$WORKSHOPS = [
+  ['s' => 'fitness-basics', 'ic' => 'boxing',
+   't' => ['ar' => 'أساسيات اللياقة العامة', 'en' => 'General fitness basics'],
+   'd' => ['ar' => 'مبادئ التمرين الآمن وبناء روتين أسبوعي يناسب المبتدئين.',
+           'en' => 'Safe training principles and building a weekly routine that suits beginners.'],
+   'when' => ['ar' => '07 نوفمبر · 17:00', 'en' => '07 Nov · 17:00'], 'len' => 45, 'seats' => 30],
+  ['s' => 'sports-nutrition', 'ic' => 'food',
+   't' => ['ar' => 'التغذية الرياضية الصحية', 'en' => 'Sports nutrition'],
+   'd' => ['ar' => 'ماذا تأكل قبل المنافسة وبعدها، وكيف ترتب وجباتك حول التمرين.',
+           'en' => 'What to eat before and after competing, and how to plan meals around training.'],
+   'when' => ['ar' => '08 نوفمبر · 17:00', 'en' => '08 Nov · 17:00'], 'len' => 45, 'seats' => 30],
+  ['s' => 'injury-prevention', 'ic' => 'medical',
+   't' => ['ar' => 'الوقاية من الإصابات الرياضية', 'en' => 'Preventing sports injuries'],
+   'd' => ['ar' => 'الإحماء والإطالة وعلامات الإجهاد التي لا يجب تجاهلها.',
+           'en' => 'Warm-ups, stretching, and the strain signals you should not ignore.'],
+   'when' => ['ar' => '09 نوفمبر · 17:00', 'en' => '09 Nov · 17:00'], 'len' => 45, 'seats' => 30],
+  ['s' => 'running-basics', 'ic' => 'running',
+   't' => ['ar' => 'أساسيات الجري والاستعداد للسباقات', 'en' => 'Running basics & race preparation'],
+   'd' => ['ar' => 'من أول كيلومتر إلى خط البداية — الوتيرة والتنفس وخطة الأسابيع الأخيرة.',
+           'en' => 'From your first kilometre to the start line — pacing, breathing and the final weeks.'],
+   'when' => ['ar' => '10 نوفمبر · 17:00', 'en' => '10 Nov · 17:00'], 'len' => 45, 'seats' => 30],
+  ['s' => 'workshop-5', 'ic' => 'bulb',
+   't' => ['ar' => 'ورشة صحية — يُعلن عنوانها قريباً', 'en' => 'Health workshop — title announced soon'],
+   'd' => ['ar' => 'الورشة الخامسة ضمن البرنامج الصحي، ويُعلن عنوانها ومحاورها قبل انطلاق المهرجان.',
+           'en' => 'The fifth session in the health programme; its title and topics are announced before the festival opens.'],
+   'when' => ['ar' => '11 نوفمبر · 17:00', 'en' => '11 Nov · 17:00'], 'len' => 45, 'seats' => 30],
+  ['s' => 'workshop-6', 'ic' => 'bulb',
+   't' => ['ar' => 'ورشة صحية — يُعلن عنوانها قريباً', 'en' => 'Health workshop — title announced soon'],
+   'd' => ['ar' => 'الورشة السادسة ضمن البرنامج الصحي، ويُعلن عنوانها ومحاورها قبل انطلاق المهرجان.',
+           'en' => 'The sixth session in the health programme; its title and topics are announced before the festival opens.'],
+   'when' => ['ar' => '12 نوفمبر · 17:00', 'en' => '12 Nov · 17:00'], 'len' => 45, 'seats' => 30],
+];
+
 $CHAMP_CATS = [
   [
     'k' => 'team',
@@ -1125,8 +1192,8 @@ $FORMS = [
 $NEWS = [
   [
     'u' => 1,
-    'ar' => 'افتتاح باب التسجيل في الرياضات الـ15 المعتمدة',
-    'en' => 'Registration opens for the 15 approved sports'
+    'ar' => 'افتتاح باب التسجيل في الرياضات الـ13 المعتمدة',
+    'en' => 'Registration opens for the 13 approved sports'
   ],
   [
     'u' => 0,
@@ -1254,4 +1321,4 @@ $FAQS = [
   ]
 ];
 
-return compact('CONTACT', 'GALLERY', 'CHAMP_CATS', 'ROUNDS', 'CHAMPS', 'FORMS', 'NEWS', 'FAQ_CATS', 'FAQS');
+return compact('CONTACT', 'COMMUNITY', 'WORKSHOPS', 'GALLERY', 'CHAMP_CATS', 'ROUNDS', 'CHAMPS', 'FORMS', 'NEWS', 'FAQ_CATS', 'FAQS');

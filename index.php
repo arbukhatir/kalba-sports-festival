@@ -69,11 +69,30 @@ require __DIR__ . '/partials/header.php';
   </div>
 </section>
 
+<section class="def-wrap news-strip">
+  <div class="def-sec-head" style="text-align:start;margin-bottom:18px">
+    <h2><?= e(A('آخر الأخبار والتحديثات', 'Latest news & updates')) ?></h2>
+    <p><?= e(A('أهم الإعلانات والتغطيات من غرفة أخبار المهرجان.', 'The announcements and coverage that matter, from the festival newsroom.')) ?></p>
+  </div>
+  <div class="nw-grid">
+    <?php foreach (array_slice($C['NEWS'], 0, 4) as $k => $n): ?>
+      <a class="nw-card" href="<?= e(url('news.php')) ?>">
+        <span class="nw-date">
+          <?php if (!empty($n['u'])): ?><span class="nw-live"><?= e(A('عاجل', 'Breaking')) ?></span> <?php endif; ?>
+          <?= e(sprintf(A('تحديث %02d', 'Update %02d'), $k + 1)) ?>
+        </span>
+        <span class="nw-title"><?= e(tx($n)) ?></span>
+        <span class="nw-more"><?= e(A('اقرأ المزيد', 'Read more')) ?> →</span>
+      </a>
+    <?php endforeach; ?>
+  </div>
+</section>
+
 <section class="def-state">
   <h2><?= A('<b>٨ أيام.</b> مدينة واحدة. <b>حماس لا يتوقف!</b>', '<b>8 DAYS.</b> ONE CITY. <b>GAME ON!</b>') ?></h2>
   <p><?= e(A('من 6 إلى 13 نوفمبر تتحول كلباء إلى ملعب كبير مفتوح للجميع — منافسات رسمية على الشاطئ وتحديات للمدارس والعائلات وفعاليات مجتمعية.', 'From 6 to 13 November, Kalba becomes one giant open playground — official beach competitions, school and family challenges, and community events.')) ?></p>
   <div class="def-stats">
-    <?php foreach ([['13','رياضة معتمدة','official sports'],['8','أيام منافسة','days of competition'],['+50,000','زائر متوقع','expected visitors'],['4','فئات رياضية','sport categories']] as $s): ?>
+    <?php foreach ([['13','بطولة معتمدة','official championships'],['4','فعاليات مجتمعية','community events'],['6','ورش صحية','health workshops'],['8','أيام منافسة','days of competition']] as $s): ?>
       <div class="def-stat"><b><?= e($s[0]) ?></b><span><?= e(A($s[1], $s[2])) ?></span></div>
     <?php endforeach; ?>
   </div>

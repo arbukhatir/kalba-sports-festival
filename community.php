@@ -1,25 +1,76 @@
 <?php
 require_once __DIR__ . '/lib/render.php';
-$C = content();
+$C = content(); $COMMUNITY = $C['COMMUNITY']; $WORKSHOPS = $C['WORKSHOPS'];
 $PAGE_TITLE = A('المجتمع والورش', 'Community');
-$PAGE_DESC = A('فعاليات وورش المجتمع في مهرجان كلباء الرياضي 2026 — أنشطة لكل أفراد العائلة.', 'Community events and workshops at Kalba Sports Festival 2026 — activities for the whole family.');
+$PAGE_DESC = A('أربع فعاليات مجتمعية وست ورش صحية في مهرجان كلباء الرياضي 2026 — المواعيد والمواقع والتسجيل المسبق.', 'Four community events and six health workshops at Kalba Sports Festival 2026 — times, venues and how to reserve a seat.');
 require __DIR__ . '/partials/head.php';
 require __DIR__ . '/partials/header.php';
-echo page_head(A('للعائلة كلها', 'FOR EVERYONE'), A('المجتمع والورش', 'Community & Workshops'),
-  A('ورش صحية وفعاليات عائلية مجانية طوال أيام المهرجان — المقاعد محدودة.', 'Free health workshops and family events throughout the festival — seats are limited.'),
-  ['bg' => 'champs/ai-schools-esports.webp', 'actions' => btn(A('تصريح الزيارة المجاني', 'Free visitor pass'), 'join.php', 'gold def')]);
+echo page_head(A('للعائلة كلها', 'FOR EVERYONE'), A('المجتمع والورش', 'Community & workshops'),
+  A('المهرجان ليس للمتفرجين فقط — أربع فعاليات مجتمعية وست ورش صحية مفتوحة للجميع طوال أيام المهرجان.', 'The festival is not for spectators only — four community events and six health workshops, open to everyone across all eight days.'),
+  ['bg' => 'champs/ai-schools-esports.webp',
+   'actions' => btn(A('تصريح الزيارة المجاني', 'Free visitor pass'), 'join.php', 'gold def')]);
 ?>
-<section class="container section"><div class="grid g3">
-  <?php
-  $b = [
-    [icon('medical'), A('ورش صحية', 'Health workshops'), A('توعية ولياقة وإسعافات أولية بإشراف مختصين.', 'Wellness, fitness and first-aid sessions led by specialists.')],
-    [icon('palette'), A('ورش أطفال', 'Kids workshops'), A('أنشطة إبداعية يومية للأطفال.', 'Daily creative activities for children.')],
-    [icon('gamepad'), A('الألعاب الإلكترونية', 'E-games'), A('بطولات وتحديات مفتوحة للجميع.', 'Open tournaments and challenges for all.')],
-    [icon('wheel'), A('ألعاب مصاحبة', 'Side games'), A('ألعاب عائلية على مدار اليوم.', 'Family side games all day.')],
-    [icon('food'), A('قسم المطاعم', 'Food court'), A('مأكولات ومقاهٍ بجلسات خارجية.', 'Restaurants and cafés with outdoor seating.')],
-    [icon('star'), A('نظام النقاط', 'Points system'), A('امسح رمز QR بعد كل نشاط لتجمع النقاط.', 'Scan your QR after each activity to collect points.')],
-  ];
-  foreach ($b as $x) echo '<div class="card" style="text-align:center"><div class="ic">' . $x[0] . '</div><div class="tt">' . e($x[1]) . '</div><p class="muted" style="font-size:.88rem">' . e($x[2]) . '</p></div>';
-  ?>
-</div></section>
+<section class="container section" style="max-width:900px">
+
+  <div class="def-stats cw-stats">
+    <div class="def-stat"><b>4</b><span><?= e(A('فعاليات مجتمعية', 'community events')) ?></span></div>
+    <div class="def-stat"><b>6</b><span><?= e(A('ورش صحية وتوعوية', 'health workshops')) ?></span></div>
+    <div class="def-stat"><b>8</b><span><?= e(A('أيام مفتوحة للجميع', 'days open to all')) ?></span></div>
+  </div>
+
+  <h2 class="sec-title"><?= e(A('الفعاليات المجتمعية', 'Community events')) ?></h2>
+  <p class="sec-intro"><?= e(A('مشاركة فعلية لا مشاهدة — محطات ومسابقات وجلسات مفتوحة بلا تسجيل مسبق.', 'Take part rather than watch — stations, contests and open sessions, no booking needed.')) ?></p>
+  <div class="grid g2">
+    <?php foreach ($COMMUNITY as $ev): ?>
+      <article class="card ce-card">
+        <div class="ce-top">
+          <span class="ce-ic"><?= icon($ev['ic']) ?></span>
+          <h3 class="tt"><?= e(tx($ev['t'])) ?></h3>
+        </div>
+        <p class="dd"><?= e(tx($ev['d'])) ?></p>
+        <ul class="ce-meta">
+          <li><?= icon('clock') ?> <span><?= e(tx($ev['when'])) ?></span></li>
+          <li><?= icon('pin') ?> <span><?= e(tx($ev['where'])) ?></span></li>
+          <li><?= icon('users') ?> <span><?= e(tx($ev['who'])) ?></span></li>
+        </ul>
+      </article>
+    <?php endforeach; ?>
+  </div>
+
+  <h2 class="sec-title" style="margin-top:34px"><?= e(A('الورش الصحية والتوعوية', 'Health & awareness workshops')) ?></h2>
+  <p class="sec-intro"><?= e(A('ست ورش بمقاعد محدودة — احجز مقعدك مسبقاً لضمانه، والحضور مجاني بالكامل.', 'Six workshops with limited seats — reserve ahead to secure yours. Attendance is free.')) ?></p>
+  <div class="ws-list">
+    <?php foreach ($WORKSHOPS as $n => $w): $tba = strpos($w['s'], 'workshop-') === 0; ?>
+      <article class="ws-row<?= $tba ? ' ws-tba' : '' ?>">
+        <span class="ws-n"><?= sprintf('%02d', $n + 1) ?></span>
+        <span class="ws-ic"><?= icon($w['ic']) ?></span>
+        <span class="ws-body">
+          <span class="ws-t"><?= e(tx($w['t'])) ?></span>
+          <span class="ws-d"><?= e(tx($w['d'])) ?></span>
+          <span class="ws-meta">
+            <?= icon('calendar') ?> <?= e(tx($w['when'])) ?>
+            · <?= e(sprintf(A('%d دقيقة', '%d min'), (int)$w['len'])) ?>
+            · <?= e(sprintf(A('%d مقعداً', '%d seats'), (int)$w['seats'])) ?>
+          </span>
+        </span>
+        <span class="ws-act">
+          <?php if ($tba): ?>
+            <span class="badge pending"><?= e(A('يُعلن قريباً', 'Announced soon')) ?></span>
+          <?php else: ?>
+            <a class="btn gold sm" href="<?= e(url('register.php?type=workshop&w=' . rawurlencode($w['s']))) ?>"><?= e(A('احجز مقعدك', 'Reserve a seat')) ?></a>
+          <?php endif; ?>
+        </span>
+      </article>
+    <?php endforeach; ?>
+  </div>
+
+  <div class="cal-cta" style="margin-top:26px">
+    <span class="cal-cta-ic"><?= icon('bulb') ?></span>
+    <span class="cal-cta-txt">
+      <strong><?= e(A('محتوى تعليمي مرافق', 'Learning material')) ?></strong>
+      <span class="cal-cta-sub"><?= e(A('مقاطع قصيرة ونصائح صحية تُنشر مع كل ورشة في قسم الأخبار والإعلام.', 'Short clips and health tips are published alongside each workshop in the news section.')) ?></span>
+    </span>
+    <?= btn(A('الأخبار والإعلام', 'News & media'), 'news.php', 'ghost') ?>
+  </div>
+</section>
 <?php require __DIR__ . '/partials/footer.php'; ?>
