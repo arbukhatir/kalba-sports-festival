@@ -4,9 +4,9 @@
 <meta charset="utf-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0, viewport-fit=cover">
 <title>تسجيل مشارك — مهرجان كلباء الرياضي 2026</title>
-<meta name="description" content="سجّل مشاركتك في التايكوندو ضمن مهرجان كلباء الرياضي 2026.">
+<meta name="description" content="سجّل مشاركتك في سباق مهرجان كلباء للجري ضمن مهرجان كلباء الرياضي 2026.">
 <meta property="og:title" content="تسجيل مشارك">
-<meta property="og:description" content="سجّل مشاركتك في التايكوندو ضمن مهرجان كلباء الرياضي 2026.">
+<meta property="og:description" content="سجّل مشاركتك في سباق مهرجان كلباء للجري ضمن مهرجان كلباء الرياضي 2026.">
 <meta property="og:type" content="website">
 <meta property="og:locale" content="ar_AE">
 <meta http-equiv="Content-Security-Policy" content="default-src 'self'; base-uri 'self'; object-src 'none'; script-src 'self' 'unsafe-inline'; style-src 'self' 'unsafe-inline'; font-src 'self'; img-src 'self' data:; connect-src 'self'; form-action 'self'">
@@ -42,9 +42,9 @@
 </header>
 <div class="mobile-nav-overlay" id="mobileNavOverlay" onclick="closeMobileNav()"></div>
 <main id="app" tabindex="-1">
-<header class="pagehead"><div class="ph-bg" style="background-image:url(champs/ai-taekwondo.webp)"></div><div class="pagehead-in"><a class="ph-back" href="champ-2.html">&larr; التايكوندو</a><div class="ph-kicker">تسجيل مشارك</div><h1>التايكوندو</h1><p class="ph-sub">سجّل مشاركتك في هذه الرياضة — يصلك رقم مرجعي فور الإرسال.</p></div></header><section class="container section" style="max-width:660px"><div class="panel">
-          <form method="post" action="actions/register.php" enctype="multipart/form-data">
-      <input type="hidden" name="_csrf" value="d29063bb2741ad65c5af3b9d8264500482929f9693e57a9d4f52bc2bbff20aa4">      <input type="hidden" name="type" value="taekwondo">
+<header class="pagehead"><div class="ph-bg" style="background-image:url(champs/ai-running.webp)"></div><div class="pagehead-in"><a class="ph-back" href="champ-2.html">&larr; سباق مهرجان كلباء للجري</a><div class="ph-kicker">تسجيل مشارك</div><h1>سباق مهرجان كلباء للجري</h1><p class="ph-sub">سجّل مشاركتك في هذه الرياضة — يصلك رقم مرجعي فور الإرسال.</p></div></header><section class="container section" style="max-width:660px"><div class="panel">
+          <form method="post" action="actions/register.php?i=2" enctype="multipart/form-data">
+      <input type="hidden" name="_csrf" value="8c12e88833884318d24ede48c45f2c54f3129495a65b3437e2cff3be33b4c002">      <input type="hidden" name="type" value="running">
       <input type="hidden" name="_sport" value="2">
             <div class="field"><label class="flabel" for="_name">الاسم الكامل <span class="req">*</span></label><input type="text" id="_name" name="_name" maxlength="150" required></div>
       <div class="frow">
@@ -54,20 +54,20 @@
       <div class="field"><label class="flabel" for="_cat">الفئة <span class="req">*</span></label>
         <select id="_cat" name="f_category" required><option value="">اختر</option>
           <option>ناشئون</option><option>كبار</option><option>سيدات</option></select></div>
-            <div class="field"><label class="flabel" for="_iban">شهادة الآيبان IBAN من البنك (لصرف الجوائز) <span class="req">*</span></label><input type="file" id="_iban" name="f_iban" accept=".pdf,.jpg,.jpeg,.png" required><div class="hint">PDF / JPG / PNG — 8 MB</div></div>
-      <div class="field"><label class="flabel" for="_id">صورة الهوية <span class="opt">(اختياري)</span></label><input type="file" id="_id" name="f_id" accept=".pdf,.jpg,.jpeg,.png"></div>
-      <button class="btn gold block" type="submit">سجّل الآن</button>
+                    <div class="field"><label class="flabel" for="_iban">شهادة الآيبان IBAN من البنك (لصرف الجوائز) <span class="req">*</span></label><input type="file" id="_iban" name="f_iban" accept=".pdf,.jpg,.jpeg,.png" required><div class="hint">PDF / JPG / PNG — 2 MB</div></div>
+        <div class="field"><label class="flabel" for="_id">صورة الهوية <span class="opt">(اختياري)</span></label><input type="file" id="_id" name="f_id" accept=".pdf,.jpg,.jpeg,.png"></div>
+            <button class="btn gold block" type="submit">سجّل الآن</button>
     </form>
   </div></section>
 </main>
 <footer class="footer">
   <img class="footer-mark" src="assets/img/logo-mark-white.png" alt="" aria-hidden="true">
   <div class="fb">مهرجان كلباء الرياضي 2026</div>
-  <div id="footNote">مدينة كلباء · إمارة الشارقة · 6–13 نوفمبر 2026</div>
+  <div id="footNote">مدينة كلباء · إمارة الشارقة · 6–14 نوفمبر 2026</div>
   <nav class="foot-links" aria-label="روابط">
     <a href="about.html">عن المهرجان</a><a href="gallery.html">المعرض</a><a href="news.html">الأخبار</a><a href="schools.html">تحدي المدارس</a><a href="surveys.html">الاستبيانات</a><a href="join.html">تصريح الزيارة</a><a href="my.html">تتبّع طلبي</a><a href="community.html">المجتمع والورش</a><a href="results.html">النتائج الفورية</a><a href="faq.html">الأسئلة الشائعة</a><a href="contact.html">تواصل معنا</a><a href="terms.html">الشروط</a><a href="privacy.html">الخصوصية</a><a href="map.html">الخريطة التفاعلية</a>  </nav>
     <form class="footer-nl" method="post" action="actions/subscribe.php" style="justify-content:center;margin-top:12px">
-      <input type="hidden" name="_csrf" value="d29063bb2741ad65c5af3b9d8264500482929f9693e57a9d4f52bc2bbff20aa4">    <label class="sr-only" for="nlEmail">بريدك الإلكتروني للنشرة البريدية</label>
+      <input type="hidden" name="_csrf" value="8c12e88833884318d24ede48c45f2c54f3129495a65b3437e2cff3be33b4c002">    <label class="sr-only" for="nlEmail">بريدك الإلكتروني للنشرة البريدية</label>
     <input type="email" id="nlEmail" name="email" dir="ltr" required
            placeholder="بريدك الإلكتروني" style="max-width:240px">
     <button class="btn gold sm" type="submit">اشترك</button>

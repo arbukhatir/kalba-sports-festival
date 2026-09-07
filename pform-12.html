@@ -43,8 +43,8 @@
 <div class="mobile-nav-overlay" id="mobileNavOverlay" onclick="closeMobileNav()"></div>
 <main id="app" tabindex="-1">
 <header class="pagehead"><div class="ph-bg" style="background-image:url(champs/ai-schools-esports.webp)"></div><div class="pagehead-in"><a class="ph-back" href="champ-12.html">&larr; تحدي المدارس الإلكترونية</a><div class="ph-kicker">تسجيل مشارك</div><h1>تحدي المدارس الإلكترونية</h1><p class="ph-sub">سجّل مشاركتك في هذه الرياضة — يصلك رقم مرجعي فور الإرسال.</p></div></header><section class="container section" style="max-width:660px"><div class="panel">
-          <form method="post" action="actions/register.php" enctype="multipart/form-data">
-      <input type="hidden" name="_csrf" value="e0460f869be79d47e3f42f9d74596cad148c1444db6860afb0348150baa9394d">      <input type="hidden" name="type" value="schools-esports">
+          <form method="post" action="actions/register.php?i=12" enctype="multipart/form-data">
+      <input type="hidden" name="_csrf" value="786a9a677ce76515c928effa262da9a9e0c04ca23192b20faefb78c81cf914df">      <input type="hidden" name="type" value="schools-esports">
       <input type="hidden" name="_sport" value="12">
             <div class="field"><label class="flabel" for="_name">الاسم الكامل <span class="req">*</span></label><input type="text" id="_name" name="_name" maxlength="150" required></div>
       <div class="frow">
@@ -54,20 +54,20 @@
       <div class="field"><label class="flabel" for="_cat">الفئة <span class="req">*</span></label>
         <select id="_cat" name="f_category" required><option value="">اختر</option>
           <option>ناشئون</option><option>كبار</option><option>سيدات</option></select></div>
-            <div class="field"><label class="flabel" for="_iban">شهادة الآيبان IBAN من البنك (لصرف الجوائز) <span class="req">*</span></label><input type="file" id="_iban" name="f_iban" accept=".pdf,.jpg,.jpeg,.png" required><div class="hint">PDF / JPG / PNG — 8 MB</div></div>
-      <div class="field"><label class="flabel" for="_id">صورة الهوية <span class="opt">(اختياري)</span></label><input type="file" id="_id" name="f_id" accept=".pdf,.jpg,.jpeg,.png"></div>
-      <button class="btn gold block" type="submit">سجّل الآن</button>
+                    <div class="field"><label class="flabel" for="_iban">شهادة الآيبان IBAN من البنك (لصرف الجوائز) <span class="req">*</span></label><input type="file" id="_iban" name="f_iban" accept=".pdf,.jpg,.jpeg,.png" required><div class="hint">PDF / JPG / PNG — 2 MB</div></div>
+        <div class="field"><label class="flabel" for="_id">صورة الهوية <span class="opt">(اختياري)</span></label><input type="file" id="_id" name="f_id" accept=".pdf,.jpg,.jpeg,.png"></div>
+            <button class="btn gold block" type="submit">سجّل الآن</button>
     </form>
   </div></section>
 </main>
 <footer class="footer">
   <img class="footer-mark" src="assets/img/logo-mark-white.png" alt="" aria-hidden="true">
   <div class="fb">مهرجان كلباء الرياضي 2026</div>
-  <div id="footNote">مدينة كلباء · إمارة الشارقة · 6–13 نوفمبر 2026</div>
+  <div id="footNote">مدينة كلباء · إمارة الشارقة · 6–14 نوفمبر 2026</div>
   <nav class="foot-links" aria-label="روابط">
     <a href="about.html">عن المهرجان</a><a href="gallery.html">المعرض</a><a href="news.html">الأخبار</a><a href="schools.html">تحدي المدارس</a><a href="surveys.html">الاستبيانات</a><a href="join.html">تصريح الزيارة</a><a href="my.html">تتبّع طلبي</a><a href="community.html">المجتمع والورش</a><a href="results.html">النتائج الفورية</a><a href="faq.html">الأسئلة الشائعة</a><a href="contact.html">تواصل معنا</a><a href="terms.html">الشروط</a><a href="privacy.html">الخصوصية</a><a href="map.html">الخريطة التفاعلية</a>  </nav>
     <form class="footer-nl" method="post" action="actions/subscribe.php" style="justify-content:center;margin-top:12px">
-      <input type="hidden" name="_csrf" value="e0460f869be79d47e3f42f9d74596cad148c1444db6860afb0348150baa9394d">    <label class="sr-only" for="nlEmail">بريدك الإلكتروني للنشرة البريدية</label>
+      <input type="hidden" name="_csrf" value="786a9a677ce76515c928effa262da9a9e0c04ca23192b20faefb78c81cf914df">    <label class="sr-only" for="nlEmail">بريدك الإلكتروني للنشرة البريدية</label>
     <input type="email" id="nlEmail" name="email" dir="ltr" required
            placeholder="بريدك الإلكتروني" style="max-width:240px">
     <button class="btn gold sm" type="submit">اشترك</button>

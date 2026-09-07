@@ -43,8 +43,8 @@
 <div class="mobile-nav-overlay" id="mobileNavOverlay" onclick="closeMobileNav()"></div>
 <main id="app" tabindex="-1">
 <header class="pagehead"><div class="ph-bg" style="background-image:url(champs/ai-kayak.webp)"></div><div class="pagehead-in"><a class="ph-back" href="champ-11-en.html">&larr; Kayak</a><div class="ph-kicker">PARTICIPANT</div><h1>Kayak</h1><p class="ph-sub">Register for this sport — you get a reference number on submit.</p></div></header><section class="container section" style="max-width:660px"><div class="panel">
-          <form method="post" action="actions/register.php?lang=en" enctype="multipart/form-data">
-      <input type="hidden" name="_csrf" value="98d0fc508b679e8e575998729510f7638a1fab4a5b69a55f3b59c373002e3a57">      <input type="hidden" name="type" value="kayak">
+          <form method="post" action="actions/register.php?i=11&amp;lang=en" enctype="multipart/form-data">
+      <input type="hidden" name="_csrf" value="c1b448cc031b4bc9a1c0ef987fe20efc5bfa86461e27f7d0c79893ee7f73e336">      <input type="hidden" name="type" value="kayak">
       <input type="hidden" name="_sport" value="11">
             <div class="field"><label class="flabel" for="_name">Full name <span class="req">*</span></label><input type="text" id="_name" name="_name" maxlength="150" required></div>
       <div class="frow">
@@ -54,20 +54,20 @@
       <div class="field"><label class="flabel" for="_cat">Category <span class="req">*</span></label>
         <select id="_cat" name="f_category" required><option value="">Choose</option>
           <option>Juniors</option><option>Seniors</option><option>Women</option></select></div>
-            <div class="field"><label class="flabel" for="_iban">IBAN certificate from the bank (for prize payouts) <span class="req">*</span></label><input type="file" id="_iban" name="f_iban" accept=".pdf,.jpg,.jpeg,.png" required><div class="hint">PDF / JPG / PNG — 8 MB</div></div>
-      <div class="field"><label class="flabel" for="_id">ID copy <span class="opt">(optional)</span></label><input type="file" id="_id" name="f_id" accept=".pdf,.jpg,.jpeg,.png"></div>
-      <button class="btn gold block" type="submit">Register now</button>
+                    <div class="field"><label class="flabel" for="_iban">IBAN certificate from the bank (for prize payouts) <span class="req">*</span></label><input type="file" id="_iban" name="f_iban" accept=".pdf,.jpg,.jpeg,.png" required><div class="hint">PDF / JPG / PNG — 2 MB</div></div>
+        <div class="field"><label class="flabel" for="_id">ID copy <span class="opt">(optional)</span></label><input type="file" id="_id" name="f_id" accept=".pdf,.jpg,.jpeg,.png"></div>
+            <button class="btn gold block" type="submit">Register now</button>
     </form>
   </div></section>
 </main>
 <footer class="footer">
   <img class="footer-mark" src="assets/img/logo-mark-white.png" alt="" aria-hidden="true">
   <div class="fb">Kalba Sports Festival 2026</div>
-  <div id="footNote">Kalba · Sharjah · 6–13 November 2026</div>
+  <div id="footNote">Kalba · Sharjah · 6–14 November 2026</div>
   <nav class="foot-links" aria-label="Links">
     <a href="about-en.html">About</a><a href="gallery-en.html">Gallery</a><a href="news-en.html">News</a><a href="schools-en.html">Schools</a><a href="surveys-en.html">Surveys</a><a href="join-en.html">Visitor pass</a><a href="my-en.html">Track my application</a><a href="community-en.html">Community</a><a href="results-en.html">Live results</a><a href="faq-en.html">FAQ</a><a href="contact-en.html">Contact</a><a href="terms-en.html">Terms</a><a href="privacy-en.html">Privacy</a><a href="map.html?lang=en">Interactive map</a>  </nav>
     <form class="footer-nl" method="post" action="actions/subscribe.php?lang=en" style="justify-content:center;margin-top:12px">
-      <input type="hidden" name="_csrf" value="98d0fc508b679e8e575998729510f7638a1fab4a5b69a55f3b59c373002e3a57">    <label class="sr-only" for="nlEmail">Your email for the newsletter</label>
+      <input type="hidden" name="_csrf" value="c1b448cc031b4bc9a1c0ef987fe20efc5bfa86461e27f7d0c79893ee7f73e336">    <label class="sr-only" for="nlEmail">Your email for the newsletter</label>
     <input type="email" id="nlEmail" name="email" dir="ltr" required
            placeholder="Your email" style="max-width:240px">
     <button class="btn gold sm" type="submit">Subscribe</button>

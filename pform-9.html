@@ -43,8 +43,8 @@
 <div class="mobile-nav-overlay" id="mobileNavOverlay" onclick="closeMobileNav()"></div>
 <main id="app" tabindex="-1">
 <header class="pagehead"><div class="ph-bg" style="background-image:url(champs/ai-padel.webp)"></div><div class="pagehead-in"><a class="ph-back" href="champ-9.html">&larr; البادل</a><div class="ph-kicker">تسجيل فريق</div><h1>البادل</h1><p class="ph-sub">سجّل فريقك في هذه الرياضة — بيانات كابتن الفريق وقائمة اللاعبين، ويصلك رقم مرجعي فور الإرسال.</p></div></header><section class="container section" style="max-width:660px"><div class="panel">
-          <form method="post" action="actions/register.php" enctype="multipart/form-data">
-      <input type="hidden" name="_csrf" value="a2109e0f3000ba51f22ca628adc833075efa6a0443b727437acb8acd546f41a0">      <input type="hidden" name="type" value="padel">
+          <form method="post" action="actions/register.php?i=9" enctype="multipart/form-data">
+      <input type="hidden" name="_csrf" value="97791f747448cb76f5f4669d841b24c497d65eaea3dcc3b6536f4d6f1d273c57">      <input type="hidden" name="type" value="padel">
       <input type="hidden" name="_sport" value="9">
               <div class="field"><label class="flabel" for="_team">اسم الفريق <span class="req">*</span></label>
           <input type="text" id="_team" name="f_team_name" maxlength="120" required></div>
@@ -60,40 +60,55 @@
         <select id="_cat" name="f_category" required><option value="">اختر</option>
           <option>ناشئون</option><option>كبار</option><option>سيدات</option></select></div>
               <h2 class="sec-h reg-sub">قائمة اللاعبين</h2>
-        <p class="hint" style="margin:-4px 0 10px">من 2 إلى 4 لاعبين — الكابتن ضمن القائمة.</p>
-        <div class="pf-roster" id="pfRoster" data-min="2" data-max="4"
+        <p class="hint" style="margin:-4px 0 10px">من 2 إلى 2 لاعبين — الكابتن ضمن القائمة. لكل لاعب شهادة آيبان خاصة به.</p>
+                <div class="pf-roster" id="pfRoster" data-min="2" data-max="2"
              data-label="اسم اللاعب"
-             data-remove="احذف اللاعب">
+             data-remove="احذف اللاعب"
+             data-iban="شهادة الآيبان"
+             data-idlbl="صورة الهوية"
+             data-optional="اختياري"
+             data-accept=".pdf,.jpg,.jpeg,.png">
                       <div class="field pf-player">
               <span class="pf-num" aria-hidden="true">1</span>
               <label class="sr-only" for="pl0">اسم اللاعب 1</label>
-              <input type="text" id="pl0" name="f_players[]" maxlength="120" required
+              <input type="text" id="pl0" name="f_players[0]" maxlength="120" required
                      placeholder="اسم اللاعب 1">
               <button type="button" class="pf-del" aria-label="احذف اللاعب"><svg class="ic-svg" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true" focusable="false"><path d="m6.5 6.5 11 11M17.5 6.5l-11 11"/></svg></button>
+              <div class="pf-docs">
+                <label class="pf-doc" for="pi0"><span>شهادة الآيبان <span class="req">*</span></span>
+                  <input type="file" id="pi0" name="f_player_iban[0]" accept=".pdf,.jpg,.jpeg,.png" required></label>
+                <label class="pf-doc" for="pd0"><span>صورة الهوية <span class="opt">(اختياري)</span></span>
+                  <input type="file" id="pd0" name="f_player_id[0]" accept=".pdf,.jpg,.jpeg,.png"></label>
+              </div>
             </div>
                       <div class="field pf-player">
               <span class="pf-num" aria-hidden="true">2</span>
               <label class="sr-only" for="pl1">اسم اللاعب 2</label>
-              <input type="text" id="pl1" name="f_players[]" maxlength="120" required
+              <input type="text" id="pl1" name="f_players[1]" maxlength="120" required
                      placeholder="اسم اللاعب 2">
               <button type="button" class="pf-del" aria-label="احذف اللاعب"><svg class="ic-svg" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true" focusable="false"><path d="m6.5 6.5 11 11M17.5 6.5l-11 11"/></svg></button>
+              <div class="pf-docs">
+                <label class="pf-doc" for="pi1"><span>شهادة الآيبان <span class="req">*</span></span>
+                  <input type="file" id="pi1" name="f_player_iban[1]" accept=".pdf,.jpg,.jpeg,.png" required></label>
+                <label class="pf-doc" for="pd1"><span>صورة الهوية <span class="opt">(اختياري)</span></span>
+                  <input type="file" id="pd1" name="f_player_id[1]" accept=".pdf,.jpg,.jpeg,.png"></label>
+              </div>
             </div>
                   </div>
         <button type="button" class="btn ghost sm" id="pfAdd" style="margin-bottom:14px">＋ أضف لاعباً</button>
-            <div class="field"><label class="flabel" for="_iban">شهادة الآيبان IBAN من البنك (لصرف الجوائز) <span class="req">*</span></label><input type="file" id="_iban" name="f_iban" accept=".pdf,.jpg,.jpeg,.png" required><div class="hint">PDF / JPG / PNG — 8 MB</div></div>
-      <div class="field"><label class="flabel" for="_id">صورة الهوية <span class="opt">(اختياري)</span></label><input type="file" id="_id" name="f_id" accept=".pdf,.jpg,.jpeg,.png"></div>
-      <button class="btn gold block" type="submit">سجّل الفريق</button>
+                    <p class="hint" style="margin-bottom:14px">المرفقات: PDF أو JPG أو PNG، بحد أقصى 2 ميغابايت للملف الواحد.</p>
+            <button class="btn gold block" type="submit">سجّل الفريق</button>
     </form>
   </div></section>
 </main>
 <footer class="footer">
   <img class="footer-mark" src="assets/img/logo-mark-white.png" alt="" aria-hidden="true">
   <div class="fb">مهرجان كلباء الرياضي 2026</div>
-  <div id="footNote">مدينة كلباء · إمارة الشارقة · 6–13 نوفمبر 2026</div>
+  <div id="footNote">مدينة كلباء · إمارة الشارقة · 6–14 نوفمبر 2026</div>
   <nav class="foot-links" aria-label="روابط">
     <a href="about.html">عن المهرجان</a><a href="gallery.html">المعرض</a><a href="news.html">الأخبار</a><a href="schools.html">تحدي المدارس</a><a href="surveys.html">الاستبيانات</a><a href="join.html">تصريح الزيارة</a><a href="my.html">تتبّع طلبي</a><a href="community.html">المجتمع والورش</a><a href="results.html">النتائج الفورية</a><a href="faq.html">الأسئلة الشائعة</a><a href="contact.html">تواصل معنا</a><a href="terms.html">الشروط</a><a href="privacy.html">الخصوصية</a><a href="map.html">الخريطة التفاعلية</a>  </nav>
     <form class="footer-nl" method="post" action="actions/subscribe.php" style="justify-content:center;margin-top:12px">
-      <input type="hidden" name="_csrf" value="a2109e0f3000ba51f22ca628adc833075efa6a0443b727437acb8acd546f41a0">    <label class="sr-only" for="nlEmail">بريدك الإلكتروني للنشرة البريدية</label>
+      <input type="hidden" name="_csrf" value="97791f747448cb76f5f4669d841b24c497d65eaea3dcc3b6536f4d6f1d273c57">    <label class="sr-only" for="nlEmail">بريدك الإلكتروني للنشرة البريدية</label>
     <input type="email" id="nlEmail" name="email" dir="ltr" required
            placeholder="بريدك الإلكتروني" style="max-width:240px">
     <button class="btn gold sm" type="submit">اشترك</button>

@@ -101,10 +101,15 @@
     var min = parseInt(roster.dataset.min, 10) || 1;
     var max = parseInt(roster.dataset.max, 10) || min;
     var rows = function () { return roster.querySelectorAll('.pf-player'); };
+    /* A player's name, IBAN and ID share one index, and that is the only thing
+       pairing them once the form is posted. The counter therefore never goes
+       backwards: reusing rows().length after a middle row is removed hands two
+       rows the same index, and one player's documents overwrite another's. */
+    var seq = rows().length;
     var renumber = function () {
       rows().forEach(function (row, i) {
         var num = row.querySelector('.pf-num');
-        var input = row.querySelector('input');
+        var input = row.querySelector('input[type="text"]');
         if (num) num.textContent = i + 1;
         if (input) input.placeholder = roster.dataset.label + ' ' + (i + 1);
         var del = row.querySelector('.pf-del');
@@ -114,19 +119,38 @@
       addBtn.disabled = rows().length >= max;
       addBtn.style.opacity = addBtn.disabled ? '.5' : '';
     };
+    var docField = function (i, kind, label, req) {
+      var id = (kind === 'iban' ? 'pi' : 'pd') + i;
+      return '<label class="pf-doc" for="' + id + '"><span>' + label +
+        (req ? ' <span class="req">*</span>' : ' <span class="opt">(' + roster.dataset.optional + ')</span>') +
+        '</span><input type="file" id="' + id + '" name="f_player_' + kind + '[' + i + ']" accept="' +
+        roster.dataset.accept + '"></label>';
+    };
     addBtn.addEventListener('click', function () {
       if (rows().length >= max) return;
-      var i = rows().length;
+      var i = seq++;
+      var n = rows().length + 1;
       var row = document.createElement('div');
       row.className = 'field pf-player';
-      row.innerHTML = '<span class="pf-num" aria-hidden="true">' + (i + 1) + '</span>' +
-        '<label class="sr-only" for="pl' + i + '">' + roster.dataset.label + ' ' + (i + 1) + '</label>' +
-        '<input type="text" id="pl' + i + '" name="f_players[]" maxlength="120" placeholder="' +
-        roster.dataset.label + ' ' + (i + 1) + '">' +
-        '<button type="button" class="pf-del" aria-label="' + roster.dataset.remove + '">✕</button>';
+      row.innerHTML = '<span class="pf-num" aria-hidden="true">' + n + '</span>' +
+        '<label class="sr-only" for="pl' + i + '">' + roster.dataset.label + ' ' + n + '</label>' +
+        '<input type="text" id="pl' + i + '" name="f_players[' + i + ']" maxlength="120" placeholder="' +
+        roster.dataset.label + ' ' + n + '">' +
+        '<button type="button" class="pf-del" aria-label="' + roster.dataset.remove + '">✕</button>' +
+        '<div class="pf-docs">' + docField(i, 'iban', roster.dataset.iban, true) +
+        docField(i, 'id', roster.dataset.idlbl, false) + '</div>';
       roster.appendChild(row);
       renumber();
-      row.querySelector('input').focus();
+      row.querySelector('input[type="text"]').focus();
+    });
+    /* Naming an extra player commits you to their payout details, which is what
+       the server enforces. Asking for it here saves a round trip. */
+    roster.addEventListener('input', function (e) {
+      var input = e.target;
+      if (input.type !== 'text' || !input.name || input.name.indexOf('f_players[') !== 0) return;
+      var row = input.closest('.pf-player');
+      var iban = row && row.querySelector('input[name^="f_player_iban"]');
+      if (iban) iban.required = input.value.trim() !== '';
     });
     roster.addEventListener('click', function (e) {
       var del = e.target.closest('.pf-del');
